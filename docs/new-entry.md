@@ -49,7 +49,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 1. Draw each chemical structure you need inside the chemical editor, or paste your chemical equation from e.g. ChemDraw or ChemSketch (if nothing happens, try "copy as SMILES" :) )
 2. Repeat Step 1 to 5 except 4 in [Method 1](#method-1-recommended-first-data-entry-then-chemical-equation)
 
-## 4. Calculation of the amounts of reagents required (*Ansatztberechnung*)
+## 4. Calculation of the amounts of reagents required (*Ansatzberechnung*)
 > *The following instructions are only based on OC2-Praktikum.*
 
 <video controls muted width="100%" poster="../assets/videos/thumbnail_how-to-start-5.png">
@@ -59,7 +59,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 1. If necessary, amend the purity and density.
 > Possible units for purity: `%`, molar `M` (mmoles/mL), millimolar `mM` and loading `L` (mmoles/g)
 2. Enter the required amount of `mmoles` or `ml` or `g` of the reactants according to your script (*Versuchsanleitung*) and press 'Enter' to confirm. Cells in `g`, `ml`, `mmoles` and `equiv` would be automatically updated. If not, usually it is due to missing information of density or the material is in solid under standard condition. Sometimes manual input might be required. Left click for the next cell for next entry.
-> Instead of left clicking the next cell, press 'Enter', then 'Tab' or 'Shift'+'Tab' to activate next cell for entry.
+> Alternatively, instead of clicking, press 'Enter', then 'Tab' or 'Shift'+'Tab' to activate next cell for entry.
 3. Make sure your have the “Linked” checkbox on the right side checked. 
 > The 'Theoretical yield' of produtcs on the right is calculated based on the starting materials with 1 equiv.
 4. Fill in the desired yielding of your product (e.g. in `g` 10 for liquid or 5 for solid compounds). The amount of reactants required would then be automatically updated.

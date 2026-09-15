@@ -19,7 +19,7 @@ Go to 'Prefs' and check the box in 'Autoupdate snippets'. Click 'Save preference
 
 Stay on this page. Here we do all the configuration.
 
-## Video: thorough walkthrough
+## Walkthrough
 
 <video id="snippets-preset" muted controls width="100%" poster="../assets/videos/thumbnail_snippets-preset.png">
   <source src="../assets/videos/snippets-preset.mp4" type="video/mp4">
