@@ -43,6 +43,11 @@ typography:
     fontSize: "1.2rem"
     fontWeight: 700
     lineHeight: 1.22
+  fold-title:
+    fontFamily: "Atkinson Hyperlegible Next Variable, Atkinson Hyperlegible Next, system-ui, sans-serif"
+    fontSize: "1.1rem"
+    fontWeight: 700
+    lineHeight: 1.35
   lead:
     fontFamily: "Atkinson Hyperlegible Next Variable, Atkinson Hyperlegible Next, system-ui, sans-serif"
     fontSize: "1.3rem"
@@ -162,6 +167,15 @@ components:
     textColor: "{colors.ink}"
     rounded: "{rounded.none}"
     padding: "0.75rem 1rem"
+  fold-box:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "0 1rem"
+  fold-box-title:
+    textColor: "{colors.ink}"
+    typography: "{typography.fold-title}"
+    padding: "0.8rem 3.3rem 0.8rem 1rem"
   untranslated-notice:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
@@ -204,11 +218,11 @@ A cool, near-monochrome notebook page in FSU blue, with one green for action and
 
 ### Primary
 - **FSU Ballpoint Ink** (#002350): all type, headings and the navbar (the notebook cover). The same value is kept as the cover colour for the navbar and the mobile sidebar brand bar. White on ink reads at about 15:1.
-- **Faded Ink** (#3a5f91): secondary text only: condition-box labels, index descriptions, table-of-contents links, footer copyright, search placeholder, the tick-box border.
+- **Faded Ink** (#3a5f91): secondary text only: condition-box labels, index descriptions, table-of-contents links, footer copyright, search placeholder, fold-box teasers, the tick-box border.
 
 ### Secondary
-- **Faculty Green, text grade** (#4e7f0a): links, the language switch, page links, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
-- **Deep Green** (#3d6d00): hover state of every green link, the active table-of-contents link, the active sidebar entry number, the tick mark, the index progress count.
+- **Faculty Green, text grade** (#4e7f0a): links, the language switch, page links, the fold-box plus, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
+- **Deep Green** (#3d6d00): hover state of every green link and of the fold-box plus, the active table-of-contents link, the active sidebar entry number, the tick mark, the index progress count.
 - **Green Wash** (#dcf0cd): the fill of the current sidebar entry, a ticked box, text selection, highlighted code lines and dropdown hover; at 60% opacity, the hover fill of index rows. Text on it stays ink or deep green.
 
 ### Tertiary
@@ -216,11 +230,11 @@ A cool, near-monochrome notebook page in FSU blue, with one green for action and
 - **Gold Ink** (#6f5b27): gold when it has to be read: sidebar entry numbers, index section names, heading anchor links (about 6.4:1 on paper, 5.6:1 where a glyph crosses a grid line).
 
 ### Neutral
-- **Notebook Paper** (#fcfdfe): the page background beneath the grid, and the fill of condition boxes, notes, the notice, the search field, the mobile table of contents and dropdowns.
+- **Notebook Paper** (#fcfdfe): the page background beneath the grid, and the fill of condition boxes, notes, fold boxes, the notice, the search field, the mobile table of contents and dropdowns.
 - **Print White** (#ffffff): things laid onto the paper: print mats, tables, tick boxes, inline code, the home cover label.
 - **Grid Line** (rgb(0 35 80 / 0.075)): the 20px squares drawn on the html element, two 1px linear gradients.
-- **Rule** (rgb(0 35 80 / 0.22)): hairlines inside content: table cells, print borders, inline code, horizontal rules, the sidebar and table-of-contents dividers.
-- **Strong Rule** (rgb(0 35 80 / 0.45)): structural lines: condition boxes, index row dividers, the page-links rule, the footer rule, dashed note borders, dropdown and mobile table-of-contents borders, scrollbar thumb.
+- **Rule** (rgb(0 35 80 / 0.22)): hairlines inside content: table cells, print borders, inline code, horizontal rules, the line under an open fold-box title, the sidebar and table-of-contents dividers.
+- **Strong Rule** (rgb(0 35 80 / 0.45)): structural lines: condition boxes, fold boxes, index row dividers, the page-links rule, the footer rule, dashed note borders, dropdown and mobile table-of-contents borders, scrollbar thumb.
 
 ### Named Rules
 **The Ink-and-Green Rule.** Type is ink. Green marks only what can be followed or done: a link, the current entry, an entry number, a tick. If it is green and cannot be pressed or is not a number, it is wrong.
@@ -246,6 +260,7 @@ The root is 112.5% (18px at default settings), so every rem below is 18px.
 - **Headline** (Barlow Semi Condensed 600, clamp(2.1rem, 1.5rem + 2.4vw, 3.1rem), line-height 1.04, -0.005em, balanced): page titles. On a numbered entry the entry number precedes it at 1.6em in green, tabular, line-height 0.82, aligned on the baseline in a two-column grid. Entry titles carry no section prefix.
 - **Title** (Atkinson 700, 1.5rem, line-height 1.22, balanced): h2 and numbered steps ("1. Open your ELN Entry"), 2.75rem above.
 - **Subtitle** (Atkinson 700, 1.2rem): h3, 2rem above.
+- **Fold title** (Atkinson 700, 1.1rem, line-height 1.35): the title of a fold box. A teaser under it is Atkinson 400 at 1rem, line-height 1.5, in faded ink; the text inside the box is 1rem, like notes.
 - **Lead** (Atkinson 400, 1.3rem, line-height 1.5, max 52ch; 1.18rem at 600px and below): the home page opening line, "Welcome to Kladde, your electronic lab notebook!".
 - **Body** (Atkinson 400, 18px, line-height 1.6, max 68ch): paragraphs, lists (0.35rem between items), notes at 1rem.
 - **Label** (Barlow Semi Condensed 600, 0.95rem, line-height 1.2, tabular figures): condition-line values and the language switch; box labels at 500 in faded ink. The same face at 600 sets sidebar section names (1.08rem), table heads (1.02rem), footer titles (1.05rem) and sidebar entry numbers; index section names at 500.
@@ -266,8 +281,8 @@ Docusaurus's three-column docs layout on squared paper: sidebar index, the entry
 
 - **Grid:** 20px (5 mm) squares on the html element; nothing aligns to it strictly, it is paper, not a layout grid.
 - **Margin column:** each doc page is indented by the margin column (2.6rem; 3.5rem from 997px). A 1px gold rule runs the full height of the article 0.8rem left of the text. Numbered steps place their tick box at the outer edge of this column. The page links align with the text, not the margin.
-- **Measure:** paragraphs, lists, notes and the notice stop at 68ch; the home lead at 52ch; the home index at 48rem.
-- **Rhythm:** h2 and steps 2.75rem above, h3 2rem, prints 2.25rem above and 2rem below (1.75rem above portraits, 1.25rem inside notes), notes 1.5rem, page links 3rem above a strong rule with 1.1rem padding.
+- **Measure:** paragraphs, lists, notes, fold boxes and the notice stop at 68ch; the home lead at 52ch; the home index at 48rem.
+- **Rhythm:** h2 and steps 2.75rem above, h3 2rem, prints 2.25rem above and 2rem below (1.75rem above portraits, 1.25rem inside notes), notes 1.5rem, fold boxes 1.25rem above and 1.5rem below (neighbours share a rule), page links 3rem above a strong rule with 1.1rem padding.
 - **Condition line:** the first thing in every page, above the mobile table of contents. On wider screens its boxes sit in one right-aligned row sharing borders; at 600px and below they stack into a full-width column, label left and value right.
 - **Home index:** full-width rows of number, title, section and description. Wide: number column 3.5rem, section name right-aligned. At 600px and below: number column 2.75rem, section name drops under the title.
 - **Page links:** on wider screens previous and next share one row; at 600px and below they stack, previous at the left and next at the right on the row below.
@@ -290,7 +305,7 @@ Flat paper. Depth comes from ruled lines and from white things laid onto paper; 
 
 ## Shapes
 
-Square paper geometry. Corners are square (condition boxes, prints, notes, the notice, index rows, tables) or a 2px hairline radius where Infima draws a control (menu links, page links, tick boxes, inline code, search field, dropdown, mobile table of contents, the navbar label). Borders are 1px rules; the tick box is 1.5px; the home cover label is a 2px ink border with a 1px ink outline 5px outside it, and the navbar label is a 1px ink outline inset 4px, both reading as a label stuck on a notebook cover. Notes use a 1px dashed border. Tape strips are the only irregular silhouettes: rendered PNG strips (440 by 128) with torn ends, placed 13px above the print's top edge, width clamp(54px, 17%, 96px), tilted between -3deg and 3deg. Icons are inline SVG line drawings on a 24px box: round caps and joins, stroke 1.75 (arrows) or 2.4 (check).
+Square paper geometry. Corners are square (condition boxes, prints, notes, fold boxes, the notice, index rows, tables) or a 2px hairline radius where Infima draws a control (menu links, page links, tick boxes, inline code, search field, dropdown, mobile table of contents, the navbar label). Borders are 1px rules; the tick box is 1.5px; the home cover label is a 2px ink border with a 1px ink outline 5px outside it, and the navbar label is a 1px ink outline inset 4px, both reading as a label stuck on a notebook cover. Notes use a 1px dashed border. Tape strips are the only irregular silhouettes: rendered PNG strips (440 by 128) with torn ends, placed 13px above the print's top edge, width clamp(54px, 17%, 96px), tilted between -3deg and 3deg. Icons are inline SVG line drawings on a 24px box: round caps and joins, stroke 1.75 (arrows), 2 (the fold-box plus, drawn as a CSS mask) or 2.4 (check).
 
 ### Named Rules
 **The Hairline Corner Rule.** Nothing is rounded beyond 2px. No pills, no rounded cards.
@@ -298,7 +313,7 @@ Square paper geometry. Corners are square (condition boxes, prints, notes, the n
 ## Components
 
 ### Buttons
-The site has no filled buttons. Actions are green underlined links, and the one pressable control of its own is the tick box.
+The site has no filled buttons. Actions are green underlined links, and the pressable controls of its own are the tick box and the fold-box title.
 
 ### Navigation
 - **Navbar (the cover):** ink background, 3.75rem tall, a 1px rgb(0 0 0 / 0.25) bottom line, no shadow. The title "Kladde" is a paper label with an inset ink outline in the label face. Links are white Atkinson 600; hover and active turn green wash, hover adds a 1px underline, the active section a 2px underline offset 0.35em. The search field is a paper box with a 2px radius. The mobile drawer is paper with an ink brand bar.
@@ -327,11 +342,21 @@ Previous and next at the end of each entry, under a strong rule: green Atkinson 
 - **Inline code:** white, 1px rule border, 2px radius, ink text.
 - **Timestamp links:** green Atkinson 650 with tabular figures, led by a play-in-circle SVG mask in the current colour; they seek the recording on the page.
 
+### Fold Boxes
+Tips that open in place, such as the Tips and Tricks in entry 02. Authors write a native `<details>` in Markdown: the `<summary>` is the title, and a `<strong>` title followed by text turns that text into a teaser that stays visible while the box is closed. `src/theme/MDXComponents.js` renders `details` as the browser's own element, not the theme's Details component, which stops click events (timestamp links inside it would no longer seek) and brings Infima's tinted, rounded alert styling.
+
+- **Box:** paper fill, a 1px strong-rule border, square corners, no shadow; 1rem side padding, 1rem text, max 68ch; 1.25rem above and 1.5rem below. Neighbouring boxes overlap by 1px and share their rules, like the condition line.
+- **Title row:** the whole row is the control. Atkinson 700 at 1.1rem (line-height 1.35) in ink, padded 0.8rem by 1rem with 3.3rem kept free on the right for the plus. Hover lays the faint ink fill (rgb(0 35 80 / 0.045)) over it in 150ms; keyboard focus shows the green outline. A teaser under the title is Atkinson 400 at 1rem, line-height 1.5, in faded ink.
+- **Plus:** a 1.35rem green line mark (stroke 2, round caps, drawn as a CSS mask) in the top right corner, deep green on hover. While the box is open its upright stroke lies flat, so the plus reads as a minus; the stroke turns in 240ms.
+- **Open:** a 1px rule under the title row; the content starts 0.9rem below it and ends 1rem above the bottom border. Screenshots inside are taped prints, 1.5rem apart. Where the browser can animate to an automatic height, the content opens and closes in 240ms; elsewhere it appears at once.
+- **Phones (600px and below):** 0.75rem side padding and 2.75rem kept free for the plus, so titles wrap less.
+- Links and other controls go in the opened content, never inside the `<summary>`.
+
 ### Links and Focus
 Links in text are green, underlined 1px offset 0.18em, 2px and deep green on hover. Every focusable element shows a 3px solid green outline offset 2px on keyboard focus.
 
 ### Motion
-Only what is touched moves: tick border and fill (150ms), check stroke (240ms), page-link fill (150ms), index row fill (160ms), all on cubic-bezier(0.16, 1, 0.3, 1). Nothing animates on load. Reduced motion removes these transitions.
+Only what is touched moves: tick border and fill (150ms), check stroke (240ms), page-link fill (150ms), index row fill (160ms), fold-box title fill (150ms), a fold box opening and its plus turning into a minus (240ms), all on cubic-bezier(0.16, 1, 0.3, 1). Nothing animates on load. Reduced motion removes these transitions.
 
 ## Do's and Don'ts
 
@@ -344,6 +369,7 @@ Only what is touched moves: tick border and fill (150ms), check stroke (240ms), 
 - **Do** keep paragraphs to 68ch, the root at 18px and tap targets at least the tick box's padded area.
 - **Do** stack the page links at 600px and below (previous left, next right on the row below) and keep them on one row above that.
 - **Do** use inline SVG line icons (24px box, round caps, stroke 1.75) coloured by currentColor.
+- **Do** put optional tips in fold boxes: a native `<details>` whose `<summary>` is the title, with links and other controls in the opened content, not in the summary.
 
 ### Don't:
 - **Don't** use the faculty green #74A740 as a colour on the page, or FSU gold #887440 as text.
@@ -355,3 +381,4 @@ Only what is touched moves: tick border and fill (150ms), check stroke (240ms), 
 - **Don't** put shadows on anything but taped prints (and the transient locale dropdown), and don't round corners beyond 2px.
 - **Don't** put small labels or eyebrows above headings, prefix entry titles with their section ("How to start >"), or use emoji or text glyphs as icons.
 - **Don't** animate anything on load; motion answers a touch.
+- **Don't** build collapsible content with the Docusaurus Details component or its tinted, rounded alert styling.

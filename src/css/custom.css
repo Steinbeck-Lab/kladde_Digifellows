@@ -573,6 +573,123 @@ blockquote .kl-print {
   margin-bottom: 0;
 }
 
+/* ── Folding boxes: tips that open in place ─────────────────────────────── */
+
+/*
+ * <details> with a <summary> title. A <strong> title followed by text makes that text a teaser,
+ * visible while the box is closed. Neighbouring boxes share their rules, like the condition line.
+ */
+.markdown details {
+  max-width: var(--kl-measure);
+  margin: 1.25rem 0 1.5rem;
+  padding: 0 1rem;
+  border: 1px solid var(--kl-rule-strong);
+  background-color: var(--kl-paper);
+  font-size: 1rem;
+  interpolate-size: allow-keywords;
+}
+
+.markdown details:has(+ details) {
+  margin-bottom: 0;
+}
+
+.markdown details + details {
+  margin-top: -1px;
+}
+
+.markdown summary {
+  --kl-fold-stroke: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  position: relative;
+  display: block;
+  margin: 0 -1rem;
+  padding: 0.8rem 3.3rem 0.8rem 1rem;
+  color: var(--kl-ink);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: background-color 150ms var(--kl-ease);
+}
+
+.markdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.markdown summary:hover {
+  background-color: rgb(0 35 80 / 0.045);
+}
+
+.markdown details[open] > summary {
+  border-bottom: 1px solid var(--kl-rule);
+}
+
+.markdown summary:has(> strong) {
+  color: var(--kl-ink-soft);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.markdown summary > strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--kl-ink);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* A plus in the corner; its upright stroke turns flat into a minus while the box is open. */
+.markdown summary::before,
+.markdown summary::after {
+  content: '';
+  position: absolute;
+  top: 0.87rem;
+  right: 1rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  background-color: var(--kl-green);
+  -webkit-mask: var(--kl-fold-stroke) center / contain no-repeat;
+  mask: var(--kl-fold-stroke) center / contain no-repeat;
+  transition: transform 240ms var(--kl-ease), background-color 150ms var(--kl-ease);
+}
+
+.markdown summary::after {
+  transform: rotate(90deg);
+}
+
+.markdown details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.markdown summary:hover::before,
+.markdown summary:hover::after {
+  background-color: var(--kl-green-deep);
+}
+
+.markdown details::details-content {
+  display: flow-root;
+  block-size: 0;
+  overflow-y: clip;
+  transition: block-size 240ms var(--kl-ease), content-visibility 240ms allow-discrete;
+}
+
+.markdown details[open]::details-content {
+  block-size: auto;
+}
+
+.markdown details > summary + * {
+  margin-top: 0.9rem;
+}
+
+.markdown details .kl-print {
+  margin: 1.5rem 0 0;
+}
+
+.markdown details > :not(summary):last-child {
+  margin-bottom: 1rem;
+}
+
 /* ── Inline code: keys and field names as typed ─────────────────────────── */
 
 .markdown code {
@@ -729,6 +846,21 @@ blockquote .kl-print {
     font-size: 1.18rem;
   }
 
+  .markdown details {
+    padding: 0 0.75rem;
+  }
+
+  .markdown summary {
+    margin: 0 -0.75rem;
+    padding: 0.75rem 2.75rem 0.75rem 0.75rem;
+  }
+
+  .markdown summary::before,
+  .markdown summary::after {
+    top: 0.82rem;
+    right: 0.7rem;
+  }
+
   .pagination-nav {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -747,7 +879,11 @@ blockquote .kl-print {
   .kl-tick,
   .kl-tick svg,
   .pagination-nav__link,
-  .navbar-sidebar {
+  .navbar-sidebar,
+  .markdown summary,
+  .markdown summary::before,
+  .markdown summary::after,
+  .markdown details::details-content {
     transition: none;
   }
 }

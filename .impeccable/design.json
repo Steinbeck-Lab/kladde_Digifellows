@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-10T12:00:00Z",
+  "generatedAt": "2026-09-15T12:00:00Z",
   "title": "Design System: Kladde",
   "extensions": {
     "colorMeta": {
@@ -23,6 +23,7 @@
       "entry-number": { "displayName": "Entry Number", "purpose": "The two-digit number before a workflow entry's title, in green, baseline-aligned." },
       "title": { "displayName": "Title", "purpose": "h2 and numbered steps." },
       "subtitle": { "displayName": "Subtitle", "purpose": "h3." },
+      "fold-title": { "displayName": "Fold Title", "purpose": "The title of a fold box; a teaser under it is Atkinson 400 at 1rem, line-height 1.5, in faded ink." },
       "lead": { "displayName": "Lead", "purpose": "The home opening line; 52ch; 1.18rem at 600px and below." },
       "body": { "displayName": "Body", "purpose": "Running text at an 18px root, 68ch measure." },
       "page-link": { "displayName": "Page Link", "purpose": "Previous and next links at the end of an entry." },
@@ -37,14 +38,15 @@
     ],
     "motion": [
       { "name": "ease-notebook", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Every state transition." },
-      { "name": "duration-touch", "value": "150ms", "purpose": "Tick box border and fill, page-link hover fill." },
+      { "name": "duration-touch", "value": "150ms", "purpose": "Tick box border and fill, page-link and fold-box title hover fill." },
       { "name": "duration-row", "value": "160ms", "purpose": "Home index row hover fill." },
       { "name": "duration-tick-draw", "value": "240ms", "purpose": "The check stroke drawing in when a step is ticked." },
+      { "name": "duration-fold", "value": "240ms", "purpose": "A fold box opening or closing, and its plus turning into a minus." },
       { "name": "focus-ring", "value": "outline: 3px solid #4e7f0a; outline-offset: 2px", "purpose": "Keyboard focus on every focusable element." },
-      { "name": "reduced-motion", "value": "transition: none", "purpose": "Applied to tick box, check, page links and the mobile drawer under prefers-reduced-motion." }
+      { "name": "reduced-motion", "value": "transition: none", "purpose": "Applied to tick box, check, page links, fold boxes and the mobile drawer under prefers-reduced-motion." }
     ],
     "breakpoints": [
-      { "name": "phone", "value": "600px", "purpose": "max-width: condition line stacks, index re-shelves, page links stack, percentage-width prints go full width." },
+      { "name": "phone", "value": "600px", "purpose": "max-width: condition line stacks, index re-shelves, page links stack, percentage-width prints go full width, fold boxes tighten their side padding to 0.75rem." },
       { "name": "desktop", "value": "997px", "purpose": "min-width: persistent sidebar and table of contents, margin column widens to 3.5rem." }
     ]
   },
@@ -114,6 +116,14 @@
       "css": ".ds-note { max-width: 68ch; margin: 0 0 1rem; padding: 0.75rem 1rem; border: 1px dashed var(--kl-rule-strong, rgb(0 35 80 / 0.45)); background: var(--kl-paper, #fcfdfe); color: var(--kl-ink, #002350); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1rem; } .ds-note p { margin: 0; } .ds-notice { max-width: 68ch; margin: 0; padding: 0.7rem 1rem; border: 1px solid var(--kl-gold, #887440); background: var(--kl-paper, #fcfdfe); color: var(--kl-ink, #002350); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1rem; line-height: 1.45; }"
     },
     {
+      "name": "Fold Box",
+      "kind": "custom",
+      "refersTo": "fold-box",
+      "description": "Tips that open in place: a native details element in a ruled paper box, a pressable title row with an optional teaser, and a green plus that turns into a minus. Neighbouring boxes share their rules.",
+      "html": "<details class=\"ds-fold\"><summary>Enter a chemical symbol to change the atom</summary><p><a class=\"ds-fold-link\" href=\"#\">Jump to 01:08</a></p></details><details class=\"ds-fold\" open><summary><strong>Coordinate covalent bond</strong> It can be useful to denote special bond types between metals and ligands in metal complexes. Our editor can handle that.</summary><p>The chemical structure editor (<em>OpenChemLib</em>) allows drawing coordinative covalent bonds.</p></details>",
+      "css": ".ds-fold { max-width: 68ch; margin: 0; padding: 0 1rem; border: 1px solid var(--kl-rule-strong, rgb(0 35 80 / 0.45)); background: var(--kl-paper, #fcfdfe); color: var(--kl-ink, #002350); font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1rem; line-height: 1.6; interpolate-size: allow-keywords; } .ds-fold + .ds-fold { margin-top: -1px; } .ds-fold p { margin: 0; } .ds-fold summary { --ds-fold-stroke: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12h14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E\"); position: relative; display: block; margin: 0 -1rem; padding: 0.8rem 3.3rem 0.8rem 1rem; font-size: 1.1rem; font-weight: 700; line-height: 1.35; cursor: pointer; transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-fold summary::-webkit-details-marker { display: none; } .ds-fold summary:hover { background: rgb(0 35 80 / 0.045); } .ds-fold summary:focus-visible { outline: 3px solid var(--kl-green, #4e7f0a); outline-offset: 2px; } .ds-fold[open] > summary { border-bottom: 1px solid var(--kl-rule, rgb(0 35 80 / 0.22)); } .ds-fold summary:has(> strong) { color: var(--kl-ink-soft, #3a5f91); font-size: 1rem; font-weight: 400; line-height: 1.5; } .ds-fold summary > strong { display: block; margin-bottom: 0.15rem; color: var(--kl-ink, #002350); font-size: 1.1rem; font-weight: 700; line-height: 1.35; } .ds-fold summary::before, .ds-fold summary::after { content: ''; position: absolute; top: 0.87rem; right: 1rem; width: 1.35rem; height: 1.35rem; background: var(--kl-green, #4e7f0a); -webkit-mask: var(--ds-fold-stroke) center / contain no-repeat; mask: var(--ds-fold-stroke) center / contain no-repeat; transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-fold summary::after { transform: rotate(90deg); } .ds-fold[open] > summary::after { transform: rotate(180deg); } .ds-fold summary:hover::before, .ds-fold summary:hover::after { background: var(--kl-green-deep, #3d6d00); } .ds-fold::details-content { display: flow-root; block-size: 0; overflow-y: clip; transition: block-size 240ms cubic-bezier(0.16, 1, 0.3, 1), content-visibility 240ms allow-discrete; } .ds-fold[open]::details-content { block-size: auto; } .ds-fold > summary + * { margin-top: 0.9rem; } .ds-fold > :not(summary):last-child { margin-bottom: 1rem; } .ds-fold-link { color: var(--kl-green, #4e7f0a); font-weight: 650; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; } @media (max-width: 600px) { .ds-fold { padding: 0 0.75rem; } .ds-fold summary { margin: 0 -0.75rem; padding: 0.75rem 2.75rem 0.75rem 0.75rem; } .ds-fold summary::before, .ds-fold summary::after { top: 0.82rem; right: 0.7rem; } } @media (prefers-reduced-motion: reduce) { .ds-fold summary, .ds-fold summary::before, .ds-fold summary::after, .ds-fold::details-content { transition: none; } }"
+    },
+    {
       "name": "Ruled Table",
       "kind": "custom",
       "refersTo": "table-cell",
@@ -153,7 +163,8 @@
       "Do separate content with 1px rules (rgb(0 35 80 / 0.22) inside content, rgb(0 35 80 / 0.45) for structure) and whitespace.",
       "Do keep paragraphs to 68ch, the root at 18px and tap targets at least the tick box's padded area.",
       "Do stack the page links at 600px and below (previous left, next right on the row below) and keep them on one row above that.",
-      "Do use inline SVG line icons (24px box, round caps, stroke 1.75) coloured by currentColor."
+      "Do use inline SVG line icons (24px box, round caps, stroke 1.75) coloured by currentColor.",
+      "Do put optional tips in fold boxes: a native <details> whose <summary> is the title, with links and other controls in the opened content, not in the summary."
     ],
     "donts": [
       "Don't use the faculty green #74A740 as a colour on the page, or FSU gold #887440 as text.",
@@ -164,7 +175,8 @@
       "Don't flag notes with a coloured side bar; box them in dashes.",
       "Don't put shadows on anything but taped prints (and the transient locale dropdown), and don't round corners beyond 2px.",
       "Don't put small labels or eyebrows above headings, prefix entry titles with their section (\"How to start >\"), or use emoji or text glyphs as icons.",
-      "Don't animate anything on load; motion answers a touch."
+      "Don't animate anything on load; motion answers a touch.",
+      "Don't build collapsible content with the Docusaurus Details component or its tinted, rounded alert styling."
     ]
   }
 }

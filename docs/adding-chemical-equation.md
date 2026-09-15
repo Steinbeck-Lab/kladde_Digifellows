@@ -44,5 +44,19 @@ The following instructions target users who are unfamiliar with _OpenChemLib_ ch
 
 ## Tips and Tricks
 
-### Type the chemical symbol directly to change the atom.
+<details>
+<summary>Enter a chemical symbol to change the atom</summary>
+
 <a href="#sandmeyer" data-video="sandmeyer" data-time="68" class="kl-timestamp">Jump to 01:08</a>
+
+</details>
+
+<details>
+<summary><strong>Coordinate covalent bond</strong> It can be useful to denote special bond types between metals and ligands in metal complexes. Our editor can handle that.</summary>
+
+The chemical structure editor (*OpenChemLib*) allows drawing coordinative covalent bonds. In order to draw a 'zero order' bond you need to first draw a single bond between an atom and a metal. With the single bond drawing tool selected you can then click on the bond a couple of times in order to get the dotted bond.
+
+<img alt="Ruthenium complex drawn in the editor: nitrogen and phosphorus of both ligands joined to Ru by dotted zero-order bonds" src="../assets/images/img-adding-chemical-equation-complex.png">
+<img alt="Molecular formula field of the editor showing 2C10H16NP . Cl2Ru" src="../assets/images/img-adding-chemical-equation-mf.png">
+
+</details>
