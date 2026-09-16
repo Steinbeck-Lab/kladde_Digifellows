@@ -29,8 +29,10 @@
   --kl-font-label: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
   --kl-font-code: ui-monospace, 'SFMono-Regular', 'Cascadia Mono', Menlo, Consolas, monospace;
 
+  --kl-box-lift: 3px 3px 7px -3px rgb(0 35 80 / 0.28); /* text boxes, shadowed bottom and right */
+
   --kl-cell: 20px; /* 5 mm squares */
-  --kl-margin: 2.6rem; /* notebook margin column: tick boxes, gold rule */
+  --kl-margin: 1.5rem; /* notebook margin column: the gold rule */
   --kl-measure: 68ch;
   --kl-ease: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -101,7 +103,7 @@
 
 @media (min-width: 997px) {
   :root {
-    --kl-margin: 3.5rem;
+    --kl-margin: 2rem;
   }
 }
 
@@ -259,8 +261,8 @@ textarea {
   font-weight: 500;
 }
 
-.menu__list-item-collapsible > .menu__link--sublist,
-.theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link {
+.menu__list-item:not(.kl-entry) > .menu__list-item-collapsible > .menu__link--sublist,
+.theme-doc-sidebar-item-category:not(.kl-entry) > .menu__list-item-collapsible > .menu__link {
   font-family: var(--kl-font-label);
   font-weight: 600;
   font-size: 1.08rem;
@@ -274,12 +276,14 @@ textarea {
   padding-left: var(--ifm-menu-link-padding-horizontal);
 }
 
-.kl-entry > .menu__link {
+.kl-entry > .menu__link,
+.kl-entry > .menu__list-item-collapsible > .menu__link {
   display: flex;
   align-items: baseline;
 }
 
-.kl-entry > .menu__link::before {
+.kl-entry > .menu__link::before,
+.kl-entry > .menu__list-item-collapsible > .menu__link::before {
   content: counter(kl-entry, decimal-leading-zero);
   flex-shrink: 0;
   min-width: 1.7rem;
@@ -294,8 +298,20 @@ textarea {
   font-weight: 700;
 }
 
-.kl-entry > .menu__link--active::before {
+.kl-entry > .menu__link--active::before,
+.kl-entry > .menu__list-item-collapsible > .menu__link--active::before {
   color: var(--kl-green-deep);
+}
+
+/* Pages held by an entry: indented to the entry title, gathered by a hairline. */
+.kl-entry > .menu__list {
+  margin: 0.15rem 0 0.35rem 1.5rem;
+  padding-left: 0.6rem;
+  border-left: 1px solid var(--kl-rule);
+}
+
+.kl-entry > .menu__list .menu__link {
+  font-size: 0.95rem;
 }
 
 /* ── The page: margin rule, condition line, entry number ────────────────── */
@@ -374,6 +390,20 @@ article:has(> .kl-page)::before {
   margin: 2rem 0 0.6rem;
 }
 
+/* Portrait pages print their description under the name, in the text face. */
+.markdown > header:has(.kl-subtitle) h1 {
+  margin-bottom: 0.35rem;
+}
+
+.markdown .kl-subtitle {
+  margin: 0 0 1.5rem;
+  max-width: var(--kl-measure);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.22;
+}
+
 .markdown p,
 .markdown ul,
 .markdown ol,
@@ -397,61 +427,6 @@ article:has(> .kl-page)::before {
 
 .hash-link {
   color: var(--kl-gold-ink);
-}
-
-/* ── Numbered steps: tick boxes in the margin ───────────────────────────── */
-
-.kl-step {
-  position: relative;
-  margin-top: 2.75rem;
-}
-
-.markdown .kl-step > h2 {
-  margin-top: 0;
-}
-
-.kl-tick {
-  position: absolute;
-  top: 0.1rem;
-  left: calc(-1 * var(--kl-margin));
-  display: grid;
-  place-items: center;
-  width: 1.65rem;
-  height: 1.65rem;
-  padding: 0;
-  border: 1.5px solid var(--kl-ink-soft);
-  border-radius: 2px;
-  background-color: var(--kl-white);
-  color: var(--kl-green-deep);
-  cursor: pointer;
-  transition: border-color 150ms var(--kl-ease), background-color 150ms var(--kl-ease);
-}
-
-.kl-tick::after {
-  content: '';
-  position: absolute;
-  inset: -0.55rem;
-}
-
-.kl-tick:hover {
-  border-color: var(--kl-green);
-}
-
-.kl-tick svg {
-  width: 1.2rem;
-  height: 1.2rem;
-  stroke-dasharray: 24;
-  stroke-dashoffset: 24;
-  transition: stroke-dashoffset 240ms var(--kl-ease);
-}
-
-.kl-tick[aria-checked='true'] {
-  border-color: var(--kl-green);
-  background-color: var(--kl-green-wash);
-}
-
-.kl-tick[aria-checked='true'] svg {
-  stroke-dashoffset: 0;
 }
 
 /* ── Taped-in prints: screenshots, portraits, recordings ────────────────── */
@@ -566,6 +541,7 @@ blockquote .kl-print {
   border: 1px dashed var(--kl-rule-strong);
   background-color: var(--kl-paper);
   color: var(--kl-ink);
+  box-shadow: var(--kl-box-lift);
   font-size: 1rem;
 }
 
@@ -585,6 +561,7 @@ blockquote .kl-print {
   padding: 0 1rem;
   border: 1px solid var(--kl-rule-strong);
   background-color: var(--kl-paper);
+  box-shadow: var(--kl-box-lift);
   font-size: 1rem;
   interpolate-size: allow-keywords;
 }
@@ -688,6 +665,105 @@ blockquote .kl-print {
 
 .markdown details > :not(summary):last-child {
   margin-bottom: 1rem;
+}
+
+/* ── Glosses: a word that explains itself ───────────────────────────────── */
+
+/*
+ * <gloss note="…">word</gloss> marks the word with a dashed underline and opens the note above it
+ * on hover or keyboard focus. The note stays in the page for screen readers (aria-describedby),
+ * so the explanation never depends on a pointer.
+ */
+.kl-gloss {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  cursor: help;
+  transition: color 150ms var(--kl-ease);
+}
+
+.kl-gloss:hover,
+.kl-gloss:focus {
+  color: var(--kl-green);
+}
+
+.kl-gloss-note {
+  position: absolute;
+  bottom: calc(100% + 0.55rem);
+  left: 50%;
+  z-index: 3;
+  width: max-content;
+  max-width: min(26rem, 72vw);
+  padding: 0.6rem 0.8rem;
+  border: 1px dashed var(--kl-rule-strong);
+  background-color: var(--kl-paper);
+  box-shadow: var(--kl-box-lift);
+  color: var(--kl-ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+  transition: opacity 150ms var(--kl-ease);
+}
+
+/* :focus, not :focus-visible — a tap has no hover to fall back on. */
+.kl-gloss:hover .kl-gloss-note,
+.kl-gloss:focus .kl-gloss-note {
+  opacity: 1;
+}
+
+/* ── Footnotes: small print at the foot of the entry ────────────────────── */
+
+/* The list prints its own "^1:" marks; the "Footnotes" heading is left to screen readers. */
+.markdown .footnotes {
+  max-width: var(--kl-measure);
+  margin-top: 2.5rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--kl-rule);
+  color: var(--kl-ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.markdown .footnotes > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.markdown .footnotes ol {
+  counter-reset: kl-footnote;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.markdown .footnotes li {
+  counter-increment: kl-footnote;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.markdown .footnotes li + li {
+  margin-top: 0.3rem;
+}
+
+.markdown .footnotes li::before {
+  content: '^' counter(kl-footnote) ':';
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.markdown .footnotes p {
+  margin: 0;
+  max-width: none;
 }
 
 /* ── Inline code: keys and field names as typed ─────────────────────────── */
@@ -846,6 +922,24 @@ blockquote .kl-print {
     font-size: 1.18rem;
   }
 
+  /* No room to centre a note over one word: it opens above the paragraph instead. */
+  .kl-gloss {
+    position: static;
+  }
+
+  .markdown p:has(.kl-gloss) {
+    position: relative;
+  }
+
+  .kl-gloss-note {
+    right: 0;
+    bottom: calc(100% + 0.4rem);
+    left: 0;
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
+
   .markdown details {
     padding: 0 0.75rem;
   }
@@ -876,10 +970,10 @@ blockquote .kl-print {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .kl-tick,
-  .kl-tick svg,
   .pagination-nav__link,
   .navbar-sidebar,
+  .kl-gloss,
+  .kl-gloss-note,
   .markdown summary,
   .markdown summary::before,
   .markdown summary::after,

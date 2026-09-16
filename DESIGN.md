@@ -89,8 +89,8 @@ rounded:
 spacing:
   cell: "20px"
   print-mat: "6px"
-  margin-column: "2.6rem"
-  margin-column-wide: "3.5rem"
+  margin-column: "1.5rem"
+  margin-column-wide: "2rem"
   measure: "68ch"
   step-gap: "2.75rem"
   print-gap: "2.25rem"
@@ -133,16 +133,20 @@ components:
     padding: "0.3rem 0.65rem 0.25rem"
   language-switch-hover:
     textColor: "{colors.green-deep}"
-  tick-box:
+  entry-label:
     backgroundColor: "{colors.white}"
-    textColor: "{colors.green-deep}"
-    rounded: "{rounded.hairline}"
-    size: "1.65rem"
-  tick-box-checked:
-    backgroundColor: "{colors.green-wash}"
-    textColor: "{colors.green-deep}"
-    rounded: "{rounded.hairline}"
-    size: "1.65rem"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "0.5rem 1.1rem 0.55rem"
+  entry-label-hover:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.ink}"
+    scale: "1.03"
+  gloss-note:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "0.6rem 0.8rem"
   print-frame:
     backgroundColor: "{colors.white}"
     rounded: "{rounded.none}"
@@ -198,17 +202,17 @@ components:
 
 **Creative North Star: "The Laborkladde"**
 
-The documentation is the squared-paper lab notebook that Kladde replaces. Every page is a notebook entry: white paper with a faint 5 mm grid under everything, FSU-blue ink for type, faculty green for whatever can be followed or done, a thin gold margin rule, and screenshots and recordings taped in with strips of masking tape. Guides are numbered entries (00 for the home page, 01 to 08 for the workflow) and open with a condition line of ruled boxes: entry number, last update, translation state, and a link to the other language.
+The documentation is the squared-paper lab notebook that Kladde replaces. Every page is a notebook entry: white paper with a faint 5 mm grid under everything, FSU-blue ink for type, faculty green for whatever can be followed or done, a thin gold margin rule, and screenshots and recordings taped in with strips of masking tape. Guides are numbered entries (00 for the home page, 01 to 05 for the workflow) and open with a condition line of ruled boxes: entry number, last update, translation state, and a link to the other language.
 
-The reading scene is a phone or tablet on the lab bench under bright light, so the world is light only, high in contrast and generous in size (an 18px root, a 68ch measure, tick boxes with a padded tap area). Density stays calm: one heading, one print, one paragraph at a time, separated by ruled lines and whitespace rather than cards. The notebook's own devices carry the identity (ruled boxes, tabular figures, the margin column, tape); decoration that a notebook would not have stays out.
+The reading scene is a phone or tablet on the lab bench under bright light, so the world is light only, high in contrast and generous in size (an 18px root, a 68ch measure, generous tap areas). Density stays calm: one heading, one print, one paragraph at a time, separated by ruled lines and whitespace rather than cards. The notebook's own devices carry the identity (ruled boxes, tabular figures, the margin column, tape); decoration that a notebook would not have stays out.
 
 Colours harmonize with Friedrich Schiller University Jena without following its corporate design, and the university logo is not used. The site refuses the stock docs arrangement of a blue hero, a "Get started" button and three icon cards. Nothing moves on load; only what the reader touches responds.
 
 **Key Characteristics:**
 - Squared paper (20px grid) under every page; content surfaces are white or paper, never tinted panels.
-- FSU-blue ink for all type; green only for links, the current entry, entry numbers and ticks; gold only as a line.
+- FSU-blue ink for all type; green only for links, the current entry and entry numbers; gold only as a line.
 - A condensed label face for what a notebook would print (cover label, entry numbers, condition line, section names, table heads); a hyperlegible text face for everything read.
-- A margin column with a gold rule, holding tick boxes beside numbered steps.
+- A margin column with a gold rule down every entry.
 - Screenshots and recordings as taped prints: white mat, hairline border, soft lift, two tilted tape strips.
 - Square or 2px corners throughout; ruled lines instead of cards.
 
@@ -218,12 +222,12 @@ A cool, near-monochrome notebook page in FSU blue, with one green for action and
 
 ### Primary
 - **FSU Ballpoint Ink** (#002350): all type, headings and the navbar (the notebook cover). The same value is kept as the cover colour for the navbar and the mobile sidebar brand bar. White on ink reads at about 15:1.
-- **Faded Ink** (#3a5f91): secondary text only: condition-box labels, index descriptions, table-of-contents links, footer copyright, search placeholder, fold-box teasers, the tick-box border.
+- **Faded Ink** (#3a5f91): secondary text only: condition-box labels, index descriptions, entry-label descriptions, table-of-contents links, footer copyright, search placeholder, fold-box teasers.
 
 ### Secondary
-- **Faculty Green, text grade** (#4e7f0a): links, the language switch, page links, the fold-box plus, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
-- **Deep Green** (#3d6d00): hover state of every green link and of the fold-box plus, the active table-of-contents link, the active sidebar entry number, the tick mark, the index progress count.
-- **Green Wash** (#dcf0cd): the fill of the current sidebar entry, a ticked box, text selection, highlighted code lines and dropdown hover; at 60% opacity, the hover fill of index rows. Text on it stays ink or deep green.
+- **Faculty Green, text grade** (#4e7f0a): links, the language switch, page links, the fold-box plus, a glossed word under the pointer, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
+- **Deep Green** (#3d6d00): hover state of every green link and of the fold-box plus, the active table-of-contents link, the active sidebar entry number.
+- **Green Wash** (#dcf0cd): the fill of the current sidebar entry, an entry label under the pointer, text selection, highlighted code lines and dropdown hover; at 60% opacity, the hover fill of index rows. Text on it stays ink or deep green.
 
 ### Tertiary
 - **FSU Gold** (#887440): a line, never text: the 1px margin rule down each entry and the border of the untranslated-page notice.
@@ -231,13 +235,13 @@ A cool, near-monochrome notebook page in FSU blue, with one green for action and
 
 ### Neutral
 - **Notebook Paper** (#fcfdfe): the page background beneath the grid, and the fill of condition boxes, notes, fold boxes, the notice, the search field, the mobile table of contents and dropdowns.
-- **Print White** (#ffffff): things laid onto the paper: print mats, tables, tick boxes, inline code, the home cover label.
+- **Print White** (#ffffff): things laid onto the paper: print mats, tables, entry labels, inline code, the home cover label.
 - **Grid Line** (rgb(0 35 80 / 0.075)): the 20px squares drawn on the html element, two 1px linear gradients.
 - **Rule** (rgb(0 35 80 / 0.22)): hairlines inside content: table cells, print borders, inline code, horizontal rules, the line under an open fold-box title, the sidebar and table-of-contents dividers.
 - **Strong Rule** (rgb(0 35 80 / 0.45)): structural lines: condition boxes, fold boxes, index row dividers, the page-links rule, the footer rule, dashed note borders, dropdown and mobile table-of-contents borders, scrollbar thumb.
 
 ### Named Rules
-**The Ink-and-Green Rule.** Type is ink. Green marks only what can be followed or done: a link, the current entry, an entry number, a tick. If it is green and cannot be pressed or is not a number, it is wrong.
+**The Ink-and-Green Rule.** Type is ink. Green marks only what can be followed or done: a link, the current entry, an entry number. If it is green and cannot be pressed or is not a number, it is wrong.
 
 **The Readable Green Rule.** The faculty green #74A740 is never used as a colour on the page; it fails text contrast on white (2.86:1). Text and marks use the text-grade green or deep green.
 
@@ -271,7 +275,7 @@ The root is 112.5% (18px at default settings), so every rem below is 18px.
 ### Named Rules
 **The Printed Label Rule.** Barlow Semi Condensed sets only what a notebook would print: the cover label, page titles, entry numbers, box labels, section names, table heads. Anything read as a sentence, including h2 and h3, is Atkinson.
 
-**The Figures-as-Data Rule.** Entry numbers, dates, table figures, step counts and timestamps use tabular figures; entry numbers are always two digits with a leading zero (00 to 08).
+**The Figures-as-Data Rule.** Entry numbers, dates, table figures, step counts and timestamps use tabular figures; entry numbers are always two digits with a leading zero (00 to 05).
 
 **The Printed-Not-Written Rule.** No handwriting or script faces anywhere; the ink metaphor lives in colour, not in letterforms.
 
@@ -280,7 +284,7 @@ The root is 112.5% (18px at default settings), so every rem below is 18px.
 Docusaurus's three-column docs layout on squared paper: sidebar index, the entry, and the table of contents, collapsing below 997px to a single column with the menu in a drawer and the table of contents in a bordered box at the top of the entry.
 
 - **Grid:** 20px (5 mm) squares on the html element; nothing aligns to it strictly, it is paper, not a layout grid.
-- **Margin column:** each doc page is indented by the margin column (2.6rem; 3.5rem from 997px). A 1px gold rule runs the full height of the article 0.8rem left of the text. Numbered steps place their tick box at the outer edge of this column. The page links align with the text, not the margin.
+- **Margin column:** each doc page is indented by the margin column (1.5rem; 2rem from 997px). A 1px gold rule runs the full height of the article 0.8rem left of the text. The page links align with the text, not the margin.
 - **Measure:** paragraphs, lists, notes, fold boxes and the notice stop at 68ch; the home lead at 52ch; the home index at 48rem.
 - **Rhythm:** h2 and steps 2.75rem above, h3 2rem, prints 2.25rem above and 2rem below (1.75rem above portraits, 1.25rem inside notes), notes 1.5rem, fold boxes 1.25rem above and 1.5rem below (neighbours share a rule), page links 3rem above a strong rule with 1.1rem padding.
 - **Condition line:** the first thing in every page, above the mobile table of contents. On wider screens its boxes sit in one right-aligned row sharing borders; at 600px and below they stack into a full-width column, label left and value right.
@@ -290,22 +294,23 @@ Docusaurus's three-column docs layout on squared paper: sidebar index, the entry
 - **Breakpoints:** 600px (phone) and 997px (desktop sidebar, wide margin column).
 
 ### Named Rules
-**The Margin Column Rule.** Every entry has a margin column with a gold rule, and only tick boxes live in it. Content never enters the margin; the margin never holds decoration.
+**The Margin Column Rule.** Every entry has a margin column with a gold rule. Content never enters the margin, and the margin holds nothing else.
 
 ## Elevation & Depth
 
-Flat paper. Depth comes from ruled lines and from white things laid onto paper; the only resting shadow belongs to the taped print, which is a physical object stuck onto the page. The navbar carries no shadow (a 1px dark bottom line instead), and the progress bar's glow is removed. The locale dropdown, a transient overlay, keeps a small shadow.
+Flat paper. Depth comes from ruled lines and from white things laid onto paper. Two resting shadows only: the taped print, a physical object stuck onto the page, and a soft lift to the bottom and right of a box of text, which sets it apart from the paragraphs around it. The navbar carries no shadow (a 1px dark bottom line instead), and the progress bar's glow is removed. The locale dropdown, a transient overlay, keeps a small shadow.
 
 ### Shadow Vocabulary
 - **Taped print lift** (`box-shadow: 0 1px 2px rgb(0 35 80 / 0.1), 0 3px 6px -3px rgb(0 35 80 / 0.16)`): screenshots, portraits and recordings in their white mat.
+- **Text box lift** (`box-shadow: 3px 3px 7px -3px rgb(0 35 80 / 0.28)`): boxes of text — notes, fold boxes, gloss notes and the untranslated notice — blurred to the bottom and the right.
 - **Overlay** (`box-shadow: 0 2px 4px rgb(0 0 0 / 0.2)`): the locale dropdown menu only.
 
 ### Named Rules
-**The Taped Print Rule.** A shadow means "this is stuck onto the paper". Prints get it; cards, boxes, buttons and headers do not.
+**The Taped Print Rule.** A shadow means "this sits above the paper": the print lift for taped media, the text box lift for a box of text. Labels, buttons, headers and the entry labels on the index stay flat.
 
 ## Shapes
 
-Square paper geometry. Corners are square (condition boxes, prints, notes, fold boxes, the notice, index rows, tables) or a 2px hairline radius where Infima draws a control (menu links, page links, tick boxes, inline code, search field, dropdown, mobile table of contents, the navbar label). Borders are 1px rules; the tick box is 1.5px; the home cover label is a 2px ink border with a 1px ink outline 5px outside it, and the navbar label is a 1px ink outline inset 4px, both reading as a label stuck on a notebook cover. Notes use a 1px dashed border. Tape strips are the only irregular silhouettes: rendered PNG strips (440 by 128) with torn ends, placed 13px above the print's top edge, width clamp(54px, 17%, 96px), tilted between -3deg and 3deg. Icons are inline SVG line drawings on a 24px box: round caps and joins, stroke 1.75 (arrows), 2 (the fold-box plus, drawn as a CSS mask) or 2.4 (check).
+Square paper geometry. Corners are square (condition boxes, prints, notes, fold boxes, the notice, index rows, tables) or a 2px hairline radius where Infima draws a control (menu links, page links, inline code, search field, dropdown, mobile table of contents, the navbar label). Borders are 1px rules; the home cover label and the entry labels on the index are a 2px ink border with a 1px ink outline 5px outside them, and the navbar label is a 1px ink outline inset 4px, all reading as a label stuck on a notebook cover. Notes use a 1px dashed border. Tape strips are the only irregular silhouettes: rendered PNG strips (440 by 128) with torn ends, placed 13px above the print's top edge, width clamp(54px, 17%, 96px), tilted between -3deg and 3deg. Icons are inline SVG line drawings on a 24px box: round caps and joins, stroke 1.75 (arrows) or 2 (the fold-box plus, drawn as a CSS mask).
 
 ### Named Rules
 **The Hairline Corner Rule.** Nothing is rounded beyond 2px. No pills, no rounded cards.
@@ -313,31 +318,38 @@ Square paper geometry. Corners are square (condition boxes, prints, notes, fold 
 ## Components
 
 ### Buttons
-The site has no filled buttons. Actions are green underlined links, and the pressable controls of its own are the tick box and the fold-box title.
+The site has no filled buttons. Actions are green underlined links; the controls of its own are the fold-box title and the entry labels on the home index.
 
 ### Navigation
 - **Navbar (the cover):** ink background, 3.75rem tall, a 1px rgb(0 0 0 / 0.25) bottom line, no shadow. The title "Kladde" is a paper label with an inset ink outline in the label face. Links are white Atkinson 600; hover and active turn green wash, hover adds a 1px underline, the active section a 2px underline offset 0.35em. The search field is a paper box with a 2px radius. The mobile drawer is paper with an ink brand bar.
 - **Sidebar index:** a ruled right edge; category names in the label face; workflow entries numbered by a CSS counter, two digits in gold ink before the title. Links have no underline until hover. The current entry has a green-wash fill, bold title and deep green number. The sidebar does not animate.
 - **Table of contents:** 0.92rem, faded ink links, the active heading in deep green at 650.
+- **Search:** Ctrl+F (⌘F on a Mac) puts the cursor in the search field, in place of the browser's find-on-page.
+- **Navbar items:** each names the page it opens — How to start, Sample Analysis, About (Erste Schritte, Analytik, Über Kladde).
 - **Footer:** transparent over the grid, a strong top rule, label-face titles, faded ink copyright.
 
 ### Condition Line (signature)
 The entry-header strip: a row of ruled paper boxes that share borders (1px strong rule, overlapping by 1px), each a label in faded ink (500) and a value in ink (600): Entry (00 on home), Updated (a localized short date), and German or Language (translation state). The last box is the language link: green label-face text with an SVG arrow, deep green and underlined on hover. On German pages still showing English, a notice follows: paper fill, 1px gold border, 1rem ink text, max 68ch.
 
-### Margin Tick Box (signature)
-Every numbered step heading ("1. ...") gets a 1.65rem square checkbox in the margin column: white fill, 1.5px faded ink border, 2px radius, a transparent tap area extended 0.55rem on all sides. Hover turns the border green. Checked: green border, green-wash fill, and a deep green check that draws its stroke in 240ms. The state is stored on the device, and the home index shows "n of m steps ticked" in deep green under that entry.
+### Entry Labels (signature)
+An entry that holds pages of its own (Sample Analysis holds IR, NMR and MS) lists them on the line below it in the home index, 0.6rem clear of the row's hover fill and aligned with the entry title: white labels side by side, each a 2px ink border with a 1px ink outline 5px outside it, 0.5rem by 1.1rem of padding, the page name in the sidebar's face (Atkinson 500, 1rem) over its description in faded ink at 0.9rem, both set top-left. The whole label is the link; it is the one thing that answers a touch by growing, 3% in 160ms, and its paper stays white. Below 600px they stack to one column. In the sidebar the same pages sit under the entry, indented to its title along a 1px rule, at 0.95rem and without numbers of their own.
+
+### Gloss (signature)
+A word that explains itself: `<gloss note="…">word</gloss>` marks the word with a 1px dashed underline offset 0.18em and opens its note above the word on hover, tap or keyboard focus — paper fill, 1px dashed strong rule, the text box lift, 0.6rem by 0.8rem of padding, 0.95rem text, at most 26rem wide, fading in over 150ms. At 600px and below there is no room to centre it over one word, so it opens above the paragraph instead. The word turns green while open. The note also sits in the page as the word's `aria-describedby`, so a screen reader reads it without a pointer. Footnotes stay available for sources; a glossed word is for a term the reader needs right there.
 
 ### Taped Print (signature)
 Every content image without an inline style and every video is wrapped in a print: white mat with 6px padding, 1px rule border, the print lift shadow, width fitted to the media up to 100%. Two tape strips sit over the top edge, cycling through three arrangements of the three tape PNGs per page so neighbouring prints differ. Portraits are min(15rem, 70%) wide. Inline toolbar icons (images with an inline style) stay untaped in the text. The print itself is never rotated; only the tape tilts.
 
 ### Home Index (signature)
-An ordered list of the workflow entries between strong rules, one full-width row each, min 4.25rem tall: a large green number, the title in Atkinson 700 at 1.15rem, the section name in gold ink, the description in faded ink. The whole row is the link; it has no underline, and hover lays a 60% green-wash fill over it in 160ms.
+An ordered list of the workflow entries between strong rules, one full-width row each, min 4.25rem tall: a large green number, the title in Atkinson 700 at 1.15rem, the section name in gold ink, the description in faded ink. The whole row is the link; it has no underline, and hover lays a 60% green-wash fill over it in 160ms. An entry that holds pages carries its entry labels on the line below.
 
 ### Page Links
 Previous and next at the end of each entry, under a strong rule: green Atkinson 650 at 1.12rem, underlined 1px (2px and deep green on hover) with a faint ink hover fill (rgb(0 35 80 / 0.045)), an SVG arrow before the previous title and after the next title. Labels come from the target page title or from `pagination_prev_label` / `pagination_next_label` in front matter. The "Previous" and "Next" sublabels are visually hidden but still read by screen readers.
 
-### Notes and Tables
-- **Notes (blockquotes):** a 1px dashed strong-rule box on paper, 0.75rem by 1rem padding, 1rem ink text. There is no coloured side bar.
+### Page Links, Notes and Tables
+- **Notes (blockquotes):** a 1px dashed strong-rule box on paper with the text box lift, 0.75rem by 1rem padding, 1rem ink text. There is no coloured side bar.
+- **Footnotes:** small print at the foot of the entry under a 1px rule, 0.85rem in faded ink, each line marked "^1:" by the list itself; the "Footnotes" heading is left to screen readers.
+- **Page links:** pages outside the workflow (everything under About) carry none.
 - **Tables:** white, collapsed 1px rule borders on every cell, 0.55rem by 0.75rem padding, top-aligned, tabular figures, label-face heads with a faint ink tint (rgb(0 35 80 / 0.04)), no stripes.
 - **Inline code:** white, 1px rule border, 2px radius, ink text.
 - **Timestamp links:** green Atkinson 650 with tabular figures, led by a play-in-circle SVG mask in the current colour; they seek the recording on the page.
@@ -345,7 +357,7 @@ Previous and next at the end of each entry, under a strong rule: green Atkinson 
 ### Fold Boxes
 Tips that open in place, such as the Tips and Tricks in entry 02. Authors write a native `<details>` in Markdown: the `<summary>` is the title, and a `<strong>` title followed by text turns that text into a teaser that stays visible while the box is closed. `src/theme/MDXComponents.js` renders `details` as the browser's own element, not the theme's Details component, which stops click events (timestamp links inside it would no longer seek) and brings Infima's tinted, rounded alert styling.
 
-- **Box:** paper fill, a 1px strong-rule border, square corners, no shadow; 1rem side padding, 1rem text, max 68ch; 1.25rem above and 1.5rem below. Neighbouring boxes overlap by 1px and share their rules, like the condition line.
+- **Box:** paper fill, a 1px strong-rule border, square corners, the text box lift; 1rem side padding, 1rem text, max 68ch; 1.25rem above and 1.5rem below. Neighbouring boxes overlap by 1px and share their rules, like the condition line.
 - **Title row:** the whole row is the control. Atkinson 700 at 1.1rem (line-height 1.35) in ink, padded 0.8rem by 1rem with 3.3rem kept free on the right for the plus. Hover lays the faint ink fill (rgb(0 35 80 / 0.045)) over it in 150ms; keyboard focus shows the green outline. A teaser under the title is Atkinson 400 at 1rem, line-height 1.5, in faded ink.
 - **Plus:** a 1.35rem green line mark (stroke 2, round caps, drawn as a CSS mask) in the top right corner, deep green on hover. While the box is open its upright stroke lies flat, so the plus reads as a minus; the stroke turns in 240ms.
 - **Open:** a 1px rule under the title row; the content starts 0.9rem below it and ends 1rem above the bottom border. Screenshots inside are taped prints, 1.5rem apart. Where the browser can animate to an automatic height, the content opens and closes in 240ms; elsewhere it appears at once.
@@ -356,20 +368,21 @@ Tips that open in place, such as the Tips and Tricks in entry 02. Authors write 
 Links in text are green, underlined 1px offset 0.18em, 2px and deep green on hover. Every focusable element shows a 3px solid green outline offset 2px on keyboard focus.
 
 ### Motion
-Only what is touched moves: tick border and fill (150ms), check stroke (240ms), page-link fill (150ms), index row fill (160ms), fold-box title fill (150ms), a fold box opening and its plus turning into a minus (240ms), all on cubic-bezier(0.16, 1, 0.3, 1). Nothing animates on load. Reduced motion removes these transitions.
+Only what is touched moves: page-link fill (150ms), index row fill (160ms), an entry label growing (160ms), fold-box title fill (150ms), a fold box opening and its plus turning into a minus (240ms), a gloss note fading in (150ms), all on cubic-bezier(0.16, 1, 0.3, 1). Nothing animates on load. Reduced motion removes these transitions.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** set every page on paper (#fcfdfe) with the 20px grid (rgb(0 35 80 / 0.075)), and lay white (#ffffff) only under things stuck onto it: prints, tables, tick boxes, code.
-- **Do** keep type in ink (#002350) and reserve text-grade green (#4e7f0a) for links, entry numbers, the current entry and ticks, with deep green (#3d6d00) on hover.
+- **Do** set every page on paper (#fcfdfe) with the 20px grid (rgb(0 35 80 / 0.075)), and lay white (#ffffff) only under things stuck onto it: prints, tables, entry labels, code.
+- **Do** keep type in ink (#002350) and reserve text-grade green (#4e7f0a) for links, entry numbers and the current entry, with deep green (#3d6d00) on hover.
 - **Do** open every doc page with the condition line, and give each workflow entry a two-digit number in tabular figures.
 - **Do** wrap screenshots and recordings as taped prints (6px white mat, 1px rule, print lift, two tilted tape strips) and keep the print itself square to the page.
 - **Do** separate content with 1px rules (rgb(0 35 80 / 0.22) inside content, rgb(0 35 80 / 0.45) for structure) and whitespace.
-- **Do** keep paragraphs to 68ch, the root at 18px and tap targets at least the tick box's padded area.
+- **Do** keep paragraphs to 68ch, the root at 18px and tap targets at least 2.75rem tall.
 - **Do** stack the page links at 600px and below (previous left, next right on the row below) and keep them on one row above that.
 - **Do** use inline SVG line icons (24px box, round caps, stroke 1.75) coloured by currentColor.
 - **Do** put optional tips in fold boxes: a native `<details>` whose `<summary>` is the title, with links and other controls in the opened content, not in the summary.
+- **Do** explain a term where the reader meets it, with `<gloss note="…">`, and keep the note in the page for screen readers.
 
 ### Don't:
 - **Don't** use the faculty green #74A740 as a colour on the page, or FSU gold #887440 as text.
@@ -378,7 +391,7 @@ Only what is touched moves: tick border and fill (150ms), check stroke (240ms), 
 - **Don't** build the stock docs arrangement of a blue hero, a "Get started" button and three icon cards.
 - **Don't** use handwriting or script faces.
 - **Don't** flag notes with a coloured side bar; box them in dashes.
-- **Don't** put shadows on anything but taped prints (and the transient locale dropdown), and don't round corners beyond 2px.
+- **Don't** put shadows on anything but taped prints, boxes of text (and the transient locale dropdown), and don't round corners beyond 2px.
 - **Don't** put small labels or eyebrows above headings, prefix entry titles with their section ("How to start >"), or use emoji or text glyphs as icons.
 - **Don't** animate anything on load; motion answers a touch.
 - **Don't** build collapsible content with the Docusaurus Details component or its tinted, rounded alert styling.

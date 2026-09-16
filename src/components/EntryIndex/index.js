@@ -1,20 +1,30 @@
 /**
  * The notebook index: every numbered workflow entry as a full-width label
- * (number, title, section, description), with ticked steps once a reader has used the margin boxes.
+ * (number, title, section, description).
+ * An entry that holds pages of its own shows them as labels on the line below it, sharing its number.
  */
 import React from 'react';
 import Link from '@docusaurus/Link';
-import Translate, {translate} from '@docusaurus/Translate';
+import {translate} from '@docusaurus/Translate';
 import {useDocById} from '@docusaurus/plugin-content-docs/client';
 import {useEntries} from '@site/src/lib/entries';
-import {useTickState} from '@site/src/lib/ticks';
 import styles from './styles.module.css';
 
-function Entry({entry, ticks}) {
+function Page({page}) {
+  const doc = useDocById(page.docId);
+
+  return (
+    <li>
+      <Link to={page.href} className={styles.page}>
+        <span className={styles.pageTitle}>{page.label}</span>
+        {doc?.description && <span className={styles.pageDescription}>{doc.description}</span>}
+      </Link>
+    </li>
+  );
+}
+
+function Entry({entry}) {
   const doc = useDocById(entry.docId);
-  const progress = ticks[entry.docId];
-  const total = progress?.steps.length ?? 0;
-  const done = progress ? progress.done.filter((id) => progress.steps.includes(id)).length : 0;
 
   return (
     <li className={styles.item}>
@@ -25,24 +35,20 @@ function Entry({entry, ticks}) {
         <span className={styles.title}>{entry.label}</span>
         {entry.section && <span className={styles.section}>{entry.section}</span>}
         {doc?.description && <span className={styles.description}>{doc.description}</span>}
-        {done > 0 && (
-          <span className={styles.progress}>
-            <Translate
-              id="kladde.index.progress"
-              description="How many numbered steps of an entry the reader has ticked"
-              values={{done, total}}>
-              {'{done} of {total} steps ticked'}
-            </Translate>
-          </span>
-        )}
       </Link>
+      {entry.pages.length > 0 && (
+        <ul className={styles.pages}>
+          {entry.pages.map((page) => (
+            <Page key={page.href} page={page} />
+          ))}
+        </ul>
+      )}
     </li>
   );
 }
 
 export default function EntryIndex() {
   const entries = useEntries();
-  const ticks = useTickState();
   return (
     <ol
       className={styles.index}
@@ -52,7 +58,7 @@ export default function EntryIndex() {
         description: 'Accessible name of the numbered entry index on the home page',
       })}>
       {entries.map((entry) => (
-        <Entry key={entry.docId} entry={entry} ticks={ticks} />
+        <Entry key={entry.docId} entry={entry} />
       ))}
     </ol>
   );

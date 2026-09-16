@@ -29,11 +29,3 @@ export function ArrowRight(props) {
     </svg>
   );
 }
-
-export function Check(props) {
-  return (
-    <svg {...base} strokeWidth={2.4} {...props}>
-      <path d="M4.5 12.5l4.5 4.5L19.5 6.5" />
-    </svg>
-  );
-}

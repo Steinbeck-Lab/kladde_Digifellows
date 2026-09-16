@@ -61,6 +61,7 @@
   padding: 0.7rem 1rem;
   border: 1px solid var(--kl-gold);
   background-color: var(--kl-paper);
+  box-shadow: var(--kl-box-lift);
   color: var(--kl-ink);
   font-size: 1rem;
   line-height: 1.45;

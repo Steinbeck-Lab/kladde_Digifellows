@@ -2,20 +2,43 @@
  * Every page opens like a notebook entry: a condition line (entry number, last update, translation
  * state, a link to the same page in the other language) and, for a German page still showing
  * English, a notice saying so.
+ *
+ * The markdown container repeats @theme-original/DocItem/Content, so that a portrait page can
+ * print its description under the name as a subtitle, inside the same title header.
  */
 import React from 'react';
 import clsx from 'clsx';
-import Content from '@theme-original/DocItem/Content';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {usePluginData} from '@docusaurus/useGlobalData';
 import {useAlternatePageUtils} from '@docusaurus/theme-common/internal';
+import {ThemeClassNames} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import Heading from '@theme/Heading';
+import MDXContent from '@theme/MDXContent';
 import {ArrowRight} from '@site/src/components/Icons';
-import {useEntries} from '@site/src/lib/entries';
+import {TEAM_CLASS, useDocClasses, useEntries} from '@site/src/lib/entries';
 import styles from './styles.module.css';
 
 const HOME_ENTRY_NUMBER = '00';
+
+function Markdown({children, subtitle}) {
+  const {metadata, frontMatter, contentTitle} = useDoc();
+  // The theme's rule: show the front-matter title unless the page opens with its own h1.
+  const title = !frontMatter.hide_title && contentTitle === undefined ? metadata.title : null;
+
+  return (
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
+      {title && (
+        <header>
+          <Heading as="h1">{title}</Heading>
+          {subtitle && <p className="kl-subtitle">{subtitle}</p>}
+        </header>
+      )}
+      <MDXContent>{children}</MDXContent>
+    </div>
+  );
+}
 
 function formatDate(timestamp, locale) {
   return new Intl.DateTimeFormat(locale, {day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC'}).format(
@@ -47,7 +70,7 @@ function LanguageState({isDefaultLocale, translated}) {
 }
 
 export default function ContentWrapper(props) {
-  const {metadata} = useDoc();
+  const {metadata, frontMatter} = useDoc();
   const {i18n} = useDocusaurusContext();
   const {translatedDocIds} = usePluginData('kladde-translation-status');
   const {createUrl} = useAlternatePageUtils();
@@ -58,6 +81,7 @@ export default function ContentWrapper(props) {
   const showingFallback = !isDefaultLocale && metadata.source.startsWith('@site/docs/');
   const translated = !showingFallback && (translatedDocIds.de ?? []).includes(metadata.id);
   const otherLocale = i18n.locales.find((locale) => locale !== i18n.currentLocale);
+  const isProfile = useDocClasses(metadata.id).includes(TEAM_CLASS);
 
   return (
     <div
@@ -121,7 +145,7 @@ export default function ContentWrapper(props) {
           </Translate>
         </p>
       )}
-      <Content {...props} />
+      <Markdown subtitle={isProfile ? frontMatter.description : undefined}>{props.children}</Markdown>
     </div>
   );
 }
