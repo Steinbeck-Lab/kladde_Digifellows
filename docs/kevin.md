@@ -1,5 +1,7 @@
-# Dr. Kevin Maik Jablonka
-## Research Group Leader of lamalab
+---
+title: Dr. Kevin Maik Jablonka
+description: Research Group Leader of lamalab
+---
 
 <img src="../assets/images/kevin-jablonka.jpg" alt="Dr. Kevin Maik Jablonka" class="kl-portrait"/>
 

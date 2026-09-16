@@ -1,5 +1,7 @@
-# Prof. Dr. Christoph Steinbeck
-## Professor for Analytical Chemistry, Cheminformatics and Chemometrics (Institute for Inorganic and Analytical Chemistry)
+---
+title: Prof. Dr. Christoph Steinbeck
+description: Professor for Analytical Chemistry, Cheminformatics and Chemometrics (Institute for Inorganic and Analytical Chemistry)
+---
 
 <img src="../assets/images/christoph-steinbeck.jpg" alt="Prof. Dr. Christoph Steinbeck" class="kl-portrait"/>
 

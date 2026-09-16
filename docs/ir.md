@@ -1,5 +1,6 @@
 ---
 title: IR
-description: Learn to use different available tools to analyse your products.
+description: Tools for IR spectra simulation and analysis.
 ---
+
 brewing in progress... ☕

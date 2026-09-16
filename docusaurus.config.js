@@ -61,6 +61,7 @@ const config = {
         // Pages renamed in September 2026 keep their old addresses.
         redirects: [
           {from: '/how-to-start', to: '/new-entry/'},
+          {from: '/eln', to: '/what-is-eln/'},
           {from: '/chemicaleditor', to: '/adding-chemical-equation/'},
           {from: '/scheme', to: '/snippets/'},
         ],
@@ -79,6 +80,9 @@ const config = {
         indexBlog: false,
         indexPages: false,
         explicitSearchResultPath: true,
+        // Ctrl+F focuses the search field (Cmd+F on a Mac); the browser's own find-on-page is
+        // given up for it.
+        searchBarShortcutKeymap: 'mod+f',
         highlightSearchTermsOnTargetPage: false,
       },
     ],
@@ -96,8 +100,8 @@ const config = {
           // Plain links with their own active pattern: doc items would all light up,
           // because every page shares one sidebar.
           {to: '/new-entry/', label: 'How to start', position: 'left', activeBaseRegex: '/(new-entry|adding-chemical-equation|snippets)/$'},
-          {to: '/sample-analysis/', label: 'Analysis', position: 'left', activeBaseRegex: '/(sample-analysis|ir|nmr|ms)/$'},
-          {to: '/eln/', label: 'About', position: 'left', activeBaseRegex: '/(eln|christoph|kevin|kohulan|soyee|license)/$'},
+          {to: '/sample-analysis/', label: 'Sample Analysis', position: 'left', activeBaseRegex: '/(sample-analysis|ir|nmr|ms)/$'},
+          {to: '/what-is-eln/', label: 'About', position: 'left', activeBaseRegex: '/(what-is-eln|christoph|kevin|kohulan|soyee|license)/$'},
           {type: 'localeDropdown', position: 'right'},
         ],
       },
@@ -107,7 +111,7 @@ const config = {
           {
             title: 'Kladde',
             items: [
-              {label: 'What is ELN?', to: '/eln/'},
+              {label: 'What is ELN?', to: '/what-is-eln/'},
               {label: 'Meet our team', to: '/christoph/'},
               {label: 'License', to: '/license/'},
             ],

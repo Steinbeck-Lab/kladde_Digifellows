@@ -1,11 +1,7 @@
 ---
-sidebar_label: New Entry
-pagination_label: New Entry
+title: New Entry
 description: Start your entry and prepare for the synthesis.
-pagination_next: snippets
-pagination_next_label: Use snippets to describe your scheme
 ---
-# New Entry
 
 ## 1.  Open your ELN Entry
 

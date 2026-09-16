@@ -1,11 +1,7 @@
 ---
-sidebar_label: Snippets
-pagination_label: Snippets
+title: Snippets
 description: Use of shortcuts in your descriptions.
-pagination_prev: new-entry
-pagination_next: sample-analysis
 ---
-# Snippets
 
 > Before you lose your patience, please just allow us to show you the following feature:
 > <video autoplay loop muted playinline width="100%" alt="demonstration of snippet insertion"> <source src="../assets/videos/snippets-1.mp4" type="video/mp4"></video>

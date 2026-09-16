@@ -1,5 +1,6 @@
 ---
 title: NMR
-description: Learn to use different available tools to analyse your products.
+description: Tools for NMR spectra simulation and analysis, powered by NMRium.
 ---
+
 brewing in progress... ☕

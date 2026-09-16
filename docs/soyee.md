@@ -1,4 +1,6 @@
-# Soyee Chan
-## Student Assistent
+---
+title: Soyee Chan
+description: Student Assistant
+---
 
 brewing in progress... ☕

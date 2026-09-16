@@ -1,5 +1,7 @@
-# Dr. Kohulan Rajan
-## Visiting scientist
+---
+title: Dr. Kohulan Rajan
+description: Visiting scientist
+---
 
 <img src="../assets/images/kohulan-rajan.jpg" alt="Dr. Kohulan Rajan" class="kl-portrait"/>
 

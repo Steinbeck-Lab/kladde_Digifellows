@@ -1,9 +1,8 @@
 ---
-sidebar_label: Adding chemical equation
-pagination_label: Adding chemical equation
+title: Adding chemical equation
 description: Quick look at the descriptions of the buttons in the chemical editor.
 ---
-# Adding chemical equation
+
 The following instructions target users who are unfamiliar with _OpenChemLib_ chemical editor. Feel free to check the Help <img alt="Top right 4th Key" style="width:1.5em; vertical-align:top;" src="../assets/images/img_chemicaleditor_tr_4.png"> in the editor first for detailed explanations.
 
 > For those who just need a Copy & Paste: <br>
