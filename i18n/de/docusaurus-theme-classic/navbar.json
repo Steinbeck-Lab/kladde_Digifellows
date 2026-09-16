@@ -7,12 +7,12 @@
     "message": "Erste Schritte",
     "description": "Navbar item with label How to start"
   },
-  "item.label.Analysis": {
-    "message": "Analytik",
-    "description": "Navbar item with label Analysis"
-  },
   "item.label.About": {
     "message": "Über Kladde",
     "description": "Navbar item with label About"
+  },
+  "item.label.Sample Analysis": {
+    "message": "Analytik",
+    "description": "Navbar item with label Sample Analysis"
   }
 }

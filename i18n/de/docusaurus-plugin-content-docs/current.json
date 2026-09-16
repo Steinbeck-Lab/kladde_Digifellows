@@ -7,10 +7,6 @@
     "message": "Erste Schritte",
     "description": "The label for category 'How to start' in sidebar 'kladde'"
   },
-  "sidebar.kladde.category.Analysis": {
-    "message": "Analytik",
-    "description": "The label for category 'Analysis' in sidebar 'kladde'"
-  },
   "sidebar.kladde.category.About": {
     "message": "Über Kladde",
     "description": "The label for category 'About' in sidebar 'kladde'"
@@ -18,5 +14,9 @@
   "sidebar.kladde.category.Meet our team": {
     "message": "Unser Team",
     "description": "The label for category 'Meet our team' in sidebar 'kladde'"
+  },
+  "sidebar.kladde.category.Sample Analysis": {
+    "message": "Analytik",
+    "description": "The label for category 'Sample Analysis' in sidebar 'kladde'"
   }
 }

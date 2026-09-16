@@ -1,15 +1,7 @@
 {
-  "kladde.index.progress": {
-    "message": "{done} von {total} Schritten abgehakt",
-    "description": "How many numbered steps of an entry the reader has ticked"
-  },
   "kladde.index.label": {
     "message": "Einträge des Kladde-Arbeitsablaufs",
     "description": "Accessible name of the numbered entry index on the home page"
-  },
-  "kladde.step.tick": {
-    "message": "Erledigt: {step}",
-    "description": "Accessible label of the margin tick box next to a numbered step"
   },
   "kladde.condition.german.available": {
     "message": "übersetzt",
