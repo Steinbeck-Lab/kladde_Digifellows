@@ -133,6 +133,11 @@ components:
     padding: "0.3rem 0.65rem 0.25rem"
   language-switch-hover:
     textColor: "{colors.green-deep}"
+  open-kladde:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.green-deep}"
+    rounded: "{rounded.none}"
+    padding: "0.5rem 1.1rem 0.55rem"
   entry-label:
     backgroundColor: "{colors.white}"
     textColor: "{colors.ink}"
@@ -225,7 +230,7 @@ A cool, near-monochrome notebook page in FSU blue, with one green for action and
 - **Faded Ink** (#3a5f91): secondary text only: condition-box labels, index descriptions, entry-label descriptions, table-of-contents links, footer copyright, search placeholder, fold-box teasers.
 
 ### Secondary
-- **Faculty Green, text grade** (#4e7f0a): links, the language switch, page links, the fold-box plus, a glossed word under the pointer, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
+- **Faculty Green, text grade** (#4e7f0a): links, the language switch, Open Kladde, page links, the fold-box plus, a glossed word under the pointer, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
 - **Deep Green** (#3d6d00): hover state of every green link and of the fold-box plus, the active table-of-contents link, the active sidebar entry number.
 - **Green Wash** (#dcf0cd): the fill of the current sidebar entry, an entry label under the pointer, text selection, highlighted code lines and dropdown hover; at 60% opacity, the hover fill of index rows. Text on it stays ink or deep green.
 
@@ -302,15 +307,15 @@ Flat paper. Depth comes from ruled lines and from white things laid onto paper. 
 
 ### Shadow Vocabulary
 - **Taped print lift** (`box-shadow: 0 1px 2px rgb(0 35 80 / 0.1), 0 3px 6px -3px rgb(0 35 80 / 0.16)`): screenshots, portraits and recordings in their white mat.
-- **Text box lift** (`box-shadow: 3px 3px 7px -3px rgb(0 35 80 / 0.28)`): boxes of text — notes, fold boxes, gloss notes and the untranslated notice — blurred to the bottom and the right.
+- **Text box lift** (`box-shadow: 3px 3px 7px -3px rgb(0 35 80 / 0.28)`): boxes of text — notes, fold boxes, gloss notes, the untranslated notice — and the two labels that are pressed, Open Kladde and the entry labels, blurred to the bottom and the right. A label keeps its shadow while it grows.
 - **Overlay** (`box-shadow: 0 2px 4px rgb(0 0 0 / 0.2)`): the locale dropdown menu only.
 
 ### Named Rules
-**The Taped Print Rule.** A shadow means "this sits above the paper": the print lift for taped media, the text box lift for a box of text. Labels, buttons, headers and the entry labels on the index stay flat.
+**The Taped Print Rule.** A shadow means "this sits above the paper": the print lift for taped media, the text box lift for a box of text and for a label that can be pressed. Headers, the condition line and the navbar stay flat.
 
 ## Shapes
 
-Square paper geometry. Corners are square (condition boxes, prints, notes, fold boxes, the notice, index rows, tables) or a 2px hairline radius where Infima draws a control (menu links, page links, inline code, search field, dropdown, mobile table of contents, the navbar label). Borders are 1px rules; the home cover label and the entry labels on the index are a 2px ink border with a 1px ink outline 5px outside them, and the navbar label is a 1px ink outline inset 4px, all reading as a label stuck on a notebook cover. Notes use a 1px dashed border. Tape strips are the only irregular silhouettes: rendered PNG strips (440 by 128) with torn ends, placed 13px above the print's top edge, width clamp(54px, 17%, 96px), tilted between -3deg and 3deg. Icons are inline SVG line drawings on a 24px box: round caps and joins, stroke 1.75 (arrows) or 2 (the fold-box plus, drawn as a CSS mask).
+Square paper geometry. Corners are square (condition boxes, prints, notes, fold boxes, the notice, index rows, tables) or a 2px hairline radius where Infima draws a control (menu links, page links, inline code, search field, dropdown, mobile table of contents, the navbar label). Borders are 1px rules; the home cover label and the entry labels on the index are a 2px ink border with a 1px ink outline 5px outside them, and the navbar label is a 1px ink outline inset 4px, all reading as a label stuck on a notebook cover. Notes use a 1px dashed border. Tape strips are the only irregular silhouettes: rendered PNG strips (440 by 128) with torn ends, placed 13px above the print's top edge, width clamp(54px, 17%, 96px), tilted between -3deg and 3deg. Icons are inline SVG line drawings on a 24px box: round caps and joins, stroke 1.75 (arrows, the leaving-the-site arrow included) or 2 (the fold-box plus, drawn as a CSS mask).
 
 ### Named Rules
 **The Hairline Corner Rule.** Nothing is rounded beyond 2px. No pills, no rounded cards.
@@ -318,21 +323,24 @@ Square paper geometry. Corners are square (condition boxes, prints, notes, fold 
 ## Components
 
 ### Buttons
-The site has no filled buttons. Actions are green underlined links; the controls of its own are the fold-box title and the entry labels on the home index.
+The site has no filled buttons. Actions are green underlined links; the controls of its own are Open Kladde, the entry labels on the home index and the fold-box title.
 
 ### Navigation
 - **Navbar (the cover):** ink background, 3.75rem tall, a 1px rgb(0 0 0 / 0.25) bottom line, no shadow. The title "Kladde" is a paper label with an inset ink outline in the label face. Links are white Atkinson 600; hover and active turn green wash, hover adds a 1px underline, the active section a 2px underline offset 0.35em. The search field is a paper box with a 2px radius. The mobile drawer is paper with an ink brand bar.
 - **Sidebar index:** a ruled right edge; category names in the label face; workflow entries numbered by a CSS counter, two digits in gold ink before the title. Links have no underline until hover. The current entry has a green-wash fill, bold title and deep green number. The sidebar does not animate.
 - **Table of contents:** 0.92rem, faded ink links, the active heading in deep green at 650.
 - **Search:** Ctrl+F (⌘F on a Mac) puts the cursor in the search field, in place of the browser's find-on-page.
-- **Navbar items:** each names the page it opens — How to start, Sample Analysis, About (Erste Schritte, Analytik, Über Kladde).
+- **Navbar items:** each names the page it opens — How to start, Sample Analysis, About (Erste Schritte, Analytik, Über Kladde) — and Open Kladde sits at the right as a paper label.
 - **Footer:** transparent over the grid, a strong top rule, label-face titles, faded ink copyright.
 
 ### Condition Line (signature)
 The entry-header strip: a row of ruled paper boxes that share borders (1px strong rule, overlapping by 1px), each a label in faded ink (500) and a value in ink (600): Entry (00 on home), Updated (a localized short date), and German or Language (translation state). The last box is the language link: green label-face text with an SVG arrow, deep green and underlined on hover. On German pages still showing English, a notice follows: paper fill, 1px gold border, 1rem ink text, max 68ch.
 
+### Open Kladde (signature)
+The one action on the site, and the only thing on it that is not documentation: a white label in the cover label's shape, bordered 2px in text-grade green with a 1px green outline 5px outside it, the text box lift, 0.5rem by 1.1rem of padding, "Open Kladde" in Atkinson 700 at 1.15rem in deep green, followed by the line arrow that marks a link leaving the site. Touched, it grows 3% in 160ms and keeps its shadow. It stands under the welcome lead with one line of faded ink under it — "Logging in from off campus? Connect to the Uni Jena VPN first." — and is pinned to the navbar as a paper label with an inset ink outline, green wash on hover, before the language switch. Its address starts the university login directly (`/roc/auth/login/oidc`), so nobody has to click through the SciPeaks page first; it lives once in `docusaurus.config.js`, where both places read it.
+
 ### Entry Labels (signature)
-An entry that holds pages of its own (Sample Analysis holds IR, NMR and MS) lists them on the line below it in the home index, 0.6rem clear of the row's hover fill and aligned with the entry title: white labels side by side, each a 2px ink border with a 1px ink outline 5px outside it, 0.5rem by 1.1rem of padding, the page name in the sidebar's face (Atkinson 500, 1rem) over its description in faded ink at 0.9rem, both set top-left. The whole label is the link; it is the one thing that answers a touch by growing, 3% in 160ms, and its paper stays white. Below 600px they stack to one column. In the sidebar the same pages sit under the entry, indented to its title along a 1px rule, at 0.95rem and without numbers of their own.
+An entry that holds pages of its own (Sample Analysis holds IR, NMR and MS) lists them on the line below it in the home index, 0.6rem clear of the row's hover fill and aligned with the entry title: white labels side by side, each a 2px ink border with a 1px ink outline 5px outside it, 0.5rem by 1.1rem of padding, the page name in the sidebar's face (Atkinson 500, 1rem) over its description in faded ink at 0.9rem, both set top-left. The whole label is the link; like Open Kladde it answers a touch by growing, 3% in 160ms, keeping its white paper and its text box lift. Below 600px they stack to one column. In the sidebar the same pages sit under the entry, indented to its title along a 1px rule, at 0.95rem and without numbers of their own.
 
 ### Gloss (signature)
 A word that explains itself: `<gloss note="…">word</gloss>` marks the word with a 1px dashed underline offset 0.18em and opens its note above the word on hover, tap or keyboard focus — paper fill, 1px dashed strong rule, the text box lift, 0.6rem by 0.8rem of padding, 0.95rem text, at most 26rem wide, fading in over 150ms. At 600px and below there is no room to centre it over one word, so it opens above the paragraph instead. The word turns green while open. The note also sits in the page as the word's `aria-describedby`, so a screen reader reads it without a pointer. Footnotes stay available for sources; a glossed word is for a term the reader needs right there.

@@ -201,6 +201,49 @@ textarea {
   text-underline-offset: 0.35em;
 }
 
+/* Pinned to the cover: the link into Kladde itself, a paper label among the white links. */
+.navbar__link.kl-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.4rem;
+  padding: 0.3rem 0.7rem 0.25rem;
+  border-radius: 2px;
+  background-color: var(--kl-paper);
+  color: var(--kl-ink);
+  outline: 1px solid var(--kl-ink);
+  outline-offset: -4px;
+  transition: background-color 150ms var(--kl-ease);
+}
+
+.navbar__link.kl-open:hover {
+  background-color: var(--kl-green-wash);
+  color: var(--kl-ink);
+  text-decoration: none;
+}
+
+/* The theme's own external glyph is filled; this is the site's line arrow instead. */
+.navbar__link.kl-open svg {
+  display: none;
+}
+
+.navbar__link.kl-open::after {
+  content: '';
+  width: 0.85em;
+  height: 0.85em;
+  background-color: currentColor;
+  opacity: 0.8;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7'/%3E%3Cpath d='M8.5 7H17v8.5'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7'/%3E%3Cpath d='M8.5 7H17v8.5'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.navbar-sidebar .navbar__link.kl-open {
+  display: inline-flex;
+  margin: 0.45rem 0 0.45rem 0.6rem;
+}
+
 .navbar__toggle {
   color: #ffffff;
 }
@@ -974,6 +1017,7 @@ blockquote .kl-print {
   .navbar-sidebar,
   .kl-gloss,
   .kl-gloss-note,
+  .navbar__link.kl-open,
   .markdown summary,
   .markdown summary::before,
   .markdown summary::after,

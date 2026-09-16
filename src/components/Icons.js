@@ -21,6 +21,15 @@ export function ArrowLeft(props) {
   );
 }
 
+export function ArrowUpRight(props) {
+  return (
+    <svg {...base} strokeWidth={1.75} {...props}>
+      <path d="M7 17L17 7" />
+      <path d="M8.5 7H17v8.5" />
+    </svg>
+  );
+}
+
 export function ArrowRight(props) {
   return (
     <svg {...base} strokeWidth={1.75} {...props}>

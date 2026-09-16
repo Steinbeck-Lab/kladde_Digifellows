@@ -400,5 +400,13 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "kladde.open.label": {
+    "message": "Kladde öffnen",
+    "description": "Label of the link that opens the ELN"
+  },
+  "kladde.open.vpn": {
+    "message": "Sie melden sich außerhalb des Uni-Netzes an? Verbinden Sie sich zuerst mit dem VPN der Uni Jena.",
+    "description": "Reminder to use the university VPN when logging in from outside"
   }
 }

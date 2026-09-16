@@ -1,6 +1,10 @@
 // @ts-check
 import rehypeTapedMedia from './src/plugins/rehypeTapedMedia.js';
 
+// Kladde itself. /roc/auth/login/oidc starts the university login at once; the plain /praktikum/
+// address stops at a SciPeaks page whose only content is the link to that login.
+const ELN_URL = 'https://scipeaks.uni-jena.de/roc/auth/login/oidc?continue=https%3A%2F%2Fscipeaks.uni-jena.de%2Fpraktikum%2F';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Kladde',
@@ -13,6 +17,8 @@ const config = {
   organizationName: 'Steinbeck-Lab',
   projectName: 'kladde_Digifellows',
   deploymentBranch: 'gh-pages',
+
+  customFields: {elnUrl: ELN_URL},
 
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'warn',
@@ -102,6 +108,7 @@ const config = {
           {to: '/new-entry/', label: 'How to start', position: 'left', activeBaseRegex: '/(new-entry|adding-chemical-equation|snippets)/$'},
           {to: '/sample-analysis/', label: 'Sample Analysis', position: 'left', activeBaseRegex: '/(sample-analysis|ir|nmr|ms)/$'},
           {to: '/what-is-eln/', label: 'About', position: 'left', activeBaseRegex: '/(what-is-eln|christoph|kevin|kohulan|soyee|license)/$'},
+          {href: ELN_URL, label: 'Open Kladde', position: 'right', className: 'kl-open'},
           {type: 'localeDropdown', position: 'right'},
         ],
       },

@@ -14,5 +14,9 @@
   "item.label.Sample Analysis": {
     "message": "Analytik",
     "description": "Navbar item with label Sample Analysis"
+  },
+  "item.label.Open Kladde": {
+    "message": "Kladde öffnen",
+    "description": "Navbar item with label Open Kladde"
   }
 }
