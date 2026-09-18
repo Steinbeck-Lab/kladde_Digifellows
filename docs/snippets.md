@@ -10,7 +10,7 @@ description: Use of shortcuts in your descriptions.
 *<font color="red">German translation of reagents in development</font>*
 
 ## Configuration of shortcut keys (snippets)
-<img alt="check the box for Autoupdate snippets" src="../assets/images/img_scheme_prefs.png">
+<img alt="check the box for Autoupdate snippets" src="../assets/images/img_snippets_prefs.png">
 Go to 'Prefs' and check the box in 'Autoupdate snippets'. Click 'Save preferences'.
 
 Stay on this page. Here we do all the configuration.
@@ -30,7 +30,7 @@ Stay on this page. Here we do all the configuration.
 ### Meta information `_metainfo`
 This is meant for storing information of reaction conditions such as temperature and reaction time. Any other sorts of customization is also possible.
 
-1. Click <img alt="add meta" style="width:1.5em; vertical-align:top;" src="../assets/images/img_scheme_addmeta.png"> on the right and customize your own key *in lower case*.
+1. Click <img alt="add meta" style="width:1.5em; vertical-align:top;" src="../assets/images/img_snippets_addmeta.png"> on the right and customize your own key *in lower case*.
 2. Enter your customized value or text inside the slot on the right of the key. Don't forget your unit (e.g. °C)!
 3. To use your key from Meta information: type `_` and your key then hit 'Space'/'Tab'/'Enter' inside the main text box.
 

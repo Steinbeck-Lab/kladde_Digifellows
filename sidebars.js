@@ -33,7 +33,7 @@ const sidebars = {
       type: 'category',
       label: 'How to start',
       collapsible: false,
-      items: [entry('new-entry'), entry('adding-chemical-equation'), entry('snippets')],
+      items: [entry('new-entry'), entry('reaction-scheme'), entry('snippets')],
     },
     entryWithPages('sample-analysis', 'Sample Analysis', ['ir', 'nmr', 'ms']),
     entry('report'),

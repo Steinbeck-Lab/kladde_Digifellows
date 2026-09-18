@@ -46,15 +46,15 @@ system.
 
 - Content: 15 pages. Welcome; About (What is ELN?, team pages for Prof. Dr. Christoph Steinbeck,
   Dr. Kevin Maik Jablonka, Dr. Kohulan Rajan and Soyee Chan, License); How to start (New Entry,
-  Adding chemical equation, Snippets); Sample Analysis, which holds IR, NMR and MS; Report. Sample
+  Reaction Scheme, Snippets); Sample Analysis, which holds IR, NMR and MS; Report. Sample
   Analysis, IR, NMR, MS, Report and the Soyee Chan bio are placeholders ("brewing in progress... ☕").
   The numbered workflow runs 01 to 05: the pages under Sample Analysis are not steps of their own.
 - Media carries the instructions: screenshots and toolbar icons, screen recordings (MP4) with poster
   images, and timestamp links that jump a recording to a moment.
 - Hosting: static site on GitHub Pages (repository Steinbeck-Lab/kladde_Digifellows) with the custom
   domain kladde.uni-jena.de.
-- URLs: existing URLs keep working, including /new-entry/, /adding-chemical-equation/, /snippets/
-  and the redirects from /how-to-start/, /chemicaleditor/, /scheme/ and /eln/ (now /what-is-eln/).
+- URLs: existing URLs keep working, including /new-entry/, /reaction-scheme/ and /snippets/, with
+  redirects from /how-to-start/, /chemicaleditor/, /adding-chemical-equation/, /scheme/ and /eln/.
 - Languages: English and German, every page in both. German text does not exist yet: the site gets
   the bilingual structure and a German interface, and German pages show the English content with a
   notice until the team translates them.

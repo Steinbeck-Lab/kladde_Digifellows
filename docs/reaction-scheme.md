@@ -1,5 +1,5 @@
 ---
-title: Adding chemical equation
+title: Reaction Scheme
 description: Quick look at the descriptions of the buttons in the chemical editor.
 ---
 
@@ -11,8 +11,8 @@ The following instructions target users who are unfamiliar with _OpenChemLib_ ch
 > Or use the Lasso Pointer Tool <img alt="Left 5th Key" style="width:1.5em; vertical-align:top;" src="../assets/images/img_chemicaleditor_left_5.png"> to select the target molecule, hold 'Shift' and drag the molecule to create a copy <br>
 
 ## Walkthrough
-<video id="sandmeyer" controls muted width="100%" poster="../assets/videos/thumbnail_adding-chemical-equation_sandmeyer.png">
-  <source src="../assets/videos/adding-chemical-equation.mp4" type="video/mp4">
+<video id="sandmeyer" controls muted width="100%" poster="../assets/videos/thumbnail_reaction-scheme_sandmeyer.png">
+  <source src="../assets/videos/reaction-scheme.mp4" type="video/mp4">
 </video>
 
 ## Explanation of tools
@@ -55,7 +55,7 @@ The following instructions target users who are unfamiliar with _OpenChemLib_ ch
 
 The chemical structure editor (*OpenChemLib*) allows drawing coordinative covalent bonds. In order to draw a 'zero order' bond you need to first draw a single bond between an atom and a metal. With the single bond drawing tool selected you can then click on the bond a couple of times in order to get the dotted bond.
 
-<img alt="Ruthenium complex drawn in the editor: nitrogen and phosphorus of both ligands joined to Ru by dotted zero-order bonds" src="../assets/images/img-adding-chemical-equation-complex.png">
-<img alt="Molecular formula field of the editor showing 2C10H16NP . Cl2Ru" src="../assets/images/img-adding-chemical-equation-mf.png">
+<img alt="Ruthenium complex drawn in the editor: nitrogen and phosphorus of both ligands joined to Ru by dotted zero-order bonds" src="../assets/images/img-reaction-scheme-complex.png">
+<img alt="Molecular formula field of the editor showing 2C10H16NP . Cl2Ru" src="../assets/images/img-reaction-scheme-mf.png">
 
 </details>

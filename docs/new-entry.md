@@ -12,8 +12,8 @@ description: Start your entry and prepare for the synthesis.
 Click <img alt="Electronic Notebook" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_rbf.png"> to open the ELN tab. Click <img alt="Create" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_plus.png"> and customize a reaction code to create a new entry. Beware that once entry is created it cannot be deleted and the reaction code cannot be modified. To hide the unwanted entries on the overview of ELN simply click <img alt="The Icon with an eye" style="height: 1.5em; width: auto; vertical-align: top;" src="../assets/images/img1_Hide-eye.png"> in `Hide` column on the right. 
 
 ## 2.  Customize name of entry in 'Title'
-<img class="screenshot" width="70%" alt="screenshot of customized title Sandmeyer Reaktion" src="../assets/images/img_title1.png"/>
-<img class="screenshot" width="70%" alt="screenshot of title on the overview page" src="../assets/images/img_title2.png"/>
+<img class="screenshot" width="70%" alt="screenshot of customized title Sandmeyer Reaktion" src="../assets/images/img_new-entry-title1.png"/>
+<img class="screenshot" width="70%" alt="screenshot of title on the overview page" src="../assets/images/img_new-entry-title2.png"/>
 
 On the page of the ELN entry enter a title of your choice for the reaction and click <img alt="Save Data" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_savedata.png">. From now on your entry would be automatically saved regularly. But it is still strongly recommended to save manually after each ammendment!
 
@@ -35,7 +35,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 4. Use the Cleanup Button <img alt="Clean Up Tool" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_cleanup.png"> to clean up the equation. 
 
 ### Method 2: First chemical equation then data entry
-[Click here](adding-chemical-equation.md) for more information about the *OpenChemLib* chemical editor.
+[Click here](reaction-scheme.md) for more information about the *OpenChemLib* chemical editor.
 
 > For those who are just looking for a Copy & Paste: <br>
 > <img alt="5th Key" style="width:1.5em; vertical-align:top;" src="../assets/images/img_chemicaleditor_tr_5.png"> then <img alt="2nd Key" style="width:1.5em; vertical-align:top;" src="../assets/images/img_chemicaleditor_tr_2.png"> (left: reactant; right: product): across **different** entries.<br>

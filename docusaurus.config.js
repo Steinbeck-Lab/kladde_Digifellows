@@ -68,7 +68,8 @@ const config = {
         redirects: [
           {from: '/how-to-start', to: '/new-entry/'},
           {from: '/eln', to: '/what-is-eln/'},
-          {from: '/chemicaleditor', to: '/adding-chemical-equation/'},
+          {from: '/chemicaleditor', to: '/reaction-scheme/'},
+          {from: '/adding-chemical-equation', to: '/reaction-scheme/'},
           {from: '/scheme', to: '/snippets/'},
         ],
       },
@@ -105,7 +106,7 @@ const config = {
         items: [
           // Plain links with their own active pattern: doc items would all light up,
           // because every page shares one sidebar.
-          {to: '/new-entry/', label: 'How to start', position: 'left', activeBaseRegex: '/(new-entry|adding-chemical-equation|snippets)/$'},
+          {to: '/new-entry/', label: 'How to start', position: 'left', activeBaseRegex: '/(new-entry|reaction-scheme|snippets)/$'},
           {to: '/sample-analysis/', label: 'Sample Analysis', position: 'left', activeBaseRegex: '/(sample-analysis|ir|nmr|ms)/$'},
           {to: '/what-is-eln/', label: 'About', position: 'left', activeBaseRegex: '/(what-is-eln|christoph|kevin|kohulan|soyee|license)/$'},
           {href: ELN_URL, label: 'Open Kladde', position: 'right', className: 'kl-open'},

@@ -20,19 +20,20 @@ Its visual design, the *Laborkladde* theme, is documented in [DESIGN.md](DESIGN.
 |---|---|---|
 | Welcome | `docs/index.mdx` | What Kladde is, then the numbered index of the workflow, and credits |
 | How to start › 01 New Entry | `docs/new-entry.md` | The main walkthrough in six steps: open an entry, title it, add reagents and the reaction, calculate amounts (*Ansatzberechnung*), look up GHS hazard data, set the status |
-| How to start › 02 Adding chemical equation | `docs/adding-chemical-equation.md` | Toolbar reference for the *OpenChemLib* structure editor |
+| How to start › 02 Reaction Scheme | `docs/reaction-scheme.md` | Toolbar reference for the *OpenChemLib* structure editor |
 | How to start › 03 Snippets | `docs/snippets.md` | Shortcuts for the reaction description: predefined sentences, `_metainfo` keys, reagent references |
-| Analysis › 04 Sample Analysis | `docs/sample-analysis.md` | Not written yet |
-| Analysis › 05 IR, 06 NMR, 07 MS | `docs/ir.md`, `docs/nmr.md`, `docs/ms.md` | Not written yet |
-| 08 Report | `docs/report.md` | Not written yet |
-| About › What is ELN? | `docs/eln.md` | ELNs, the FAIR principles, what Kladde is |
+| 04 Sample Analysis | `docs/sample-analysis.md` | Not written yet |
+| Sample Analysis › IR, NMR, MS | `docs/ir.md`, `docs/nmr.md`, `docs/ms.md` | Not written yet; pages of entry 04, not numbered steps |
+| 05 Report | `docs/report.md` | Not written yet |
+| About › What is ELN? | `docs/what-is-eln.md` | ELNs, the FAIR principles, what Kladde is |
 | About › Meet our team | `docs/christoph.md`, `docs/kevin.md`, `docs/kohulan.md`, `docs/soyee.md` | One page per team member: role, photo, bio |
 | About › License | `docs/license.md` | The licensing terms in plain language |
 
 The numbered entries and their order come from `sidebars.js`. Pages that are not written yet,
 including the Soyee Chan bio, show the line `brewing in progress... ☕`. Old URLs from the MkDocs
-site redirect: `/how-to-start/` → `/new-entry/`, `/chemicaleditor/` →
-`/adding-chemical-equation/`, `/scheme/` → `/snippets/`.
+site redirect: `/how-to-start/` → `/new-entry/`, `/chemicaleditor/` and
+`/adding-chemical-equation/` → `/reaction-scheme/`, `/scheme/` → `/snippets/`, `/eln/` →
+`/what-is-eln/`.
 
 ## Local development
 
@@ -84,8 +85,8 @@ static/
 i18n/de/                 German interface strings, and German page translations once they exist
 src/css/custom.css       The Laborkladde theme: tokens and styles
 src/theme/               Docusaurus theme overrides (see Theme and components)
-src/components/          EntryIndex, StepHeading, MdxVideo, Icons
-src/lib/                 Numbered entries from the sidebar; tick storage
+src/components/          EntryIndex, Gloss, MdxVideo, OpenKladde, Icons
+src/lib/                 Numbered entries and sidebar classes, read from the sidebar
 src/plugins/             rehypeTapedMedia, translationStatus
 src/clientModules/       Self-hosted fonts; timestamp links into videos
 DESIGN.md                The design system
@@ -101,33 +102,31 @@ React component, as the home page does for its index.
 
 **A new page**
 
-1. Create `docs/<kebab-case-name>.md` with a single `#` title.
+1. Create `docs/<kebab-case-name>.md` with `title` and `description` in the front matter; the home
+   index shows the description under the entry.
 2. Add it to `sidebars.js`. Use `entry('<name>')` if it is a numbered step of the workflow; the
    numbers in the sidebar, on the home index and on the page follow that order.
-3. Give it a `description` in the front matter; the home index shows it under the entry.
-4. Run `npm run build` to check the links.
+3. Run `npm run build` to check the links.
 
 **Front matter used on this site**
 
 ```yaml
 ---
-sidebar_label: New Entry            # label in the sidebar
-pagination_label: New Entry         # label when another page links here at its end
-description: Start your entry and prepare for the synthesis.
-pagination_next: snippets           # target of the link at the end of the page (a doc id)
-pagination_next_label: Use snippets to describe your scheme   # its label on this page only
-pagination_prev: new-entry          # and the link back
+title: New Entry                    # the page title, the sidebar label and the link labels
+description: Start your entry and prepare for the synthesis.   # shown on the home index
 ---
 ```
 
-`pagination_next_label` and `pagination_prev_label` are specific to this site
-(`src/theme/DocItem/Paginator`).
+Every page carries those two keys and nothing else. The previous and next links follow the sidebar
+order; a page ends the chain with `pagination_next: null` (Report does), and pages under About have
+no links at all. `pagination_next_label` and `pagination_prev_label` relabel a link and are specific
+to this site (`src/theme/DocItem/Paginator`).
 
 **Screenshots and recordings:** put the file in `static/assets/images/` or
 `static/assets/videos/` and reference it relative to the page, as the guides do:
 
 ```html
-<img class="screenshot" width="70%" alt="Customized entry title" src="../assets/images/img_title1.png"/>
+<img class="screenshot" width="70%" alt="Customized entry title" src="../assets/images/img_new-entry-title1.png"/>
 
 <video controls muted width="100%" poster="../assets/videos/thumbnail_how-to-start-3-4.png">
   <source src="../assets/videos/how-to-start-3-4.mp4" type="video/mp4">
@@ -140,8 +139,11 @@ text keep `style="width:1.5em; vertical-align:top;"` and stay inline. Team photo
 `class="kl-portrait"` and the person's name as `alt`. Short silent clips use
 `autoplay muted loop playsinline` instead of `controls`.
 
-**Numbered steps:** a heading written as `## 1. Open your ELN Entry` gets a tick box in the page
-margin automatically. Ticks are stored in the reader's browser only.
+**A tip that opens in place:** a plain `<details>` with a `<summary>` title becomes a fold box. A
+`<strong>` title followed by text makes that text a teaser, visible while the box is closed.
+
+**A word that explains itself:** `<gloss note="…">word</gloss>` marks the word and opens the note
+above it on hover, focus or tap; screen readers get the note through `aria-describedby`.
 
 **A link to a moment in a video:** give the `<video>` an `id`; the link names the video and the
 time in seconds, and still jumps to the video without JavaScript:
@@ -152,7 +154,7 @@ time in seconds, and still jumps to the video without JavaScript:
 
 **House style**
 
-- One `#` title per page, `##` for numbered steps, `###` for alternatives.
+- The title lives in the front matter, `##` for numbered steps, `###` for alternatives.
 - Imperative voice: "Click", "Enter", "Add".
 - UI labels in single quotes ('Prefs', 'Save Data'); column names, fields and typed keys in
   backticks (`mmoles`, `r1`, `_metainfo`).
@@ -182,7 +184,7 @@ of `src/css/custom.css`.
 | Token | Value | Source and use |
 |---|---|---|
 | `--kl-ink` | `#002350` | FSU blue; text (15.5:1 on white) and the navbar |
-| `--kl-green` | `#4E7F0A` | Faculty green #74A740 darkened for text (4.8:1); links, entry numbers, ticks |
+| `--kl-green` | `#4E7F0A` | Faculty green #74A740 darkened for text (4.8:1); links, entry numbers, Open Kladde |
 | `--kl-gold` | `#887440` | FSU gold (4.55:1); margin rule, sidebar numbers, section labels |
 | `--kl-ink-soft` | `#3A5F91` | Secondary text (6.5:1) |
 | `--kl-paper` | `#FCFDFE` | Page ground with a faint 5 mm grid |
@@ -192,8 +194,8 @@ Semi Condensed for titles, labels and numbers.
 
 Customized parts of Docusaurus:
 
-- `src/theme/MDXComponents.js` extends the Markdown components (step headings, video anchors), the
-  extension point the Docusaurus docs describe.
+- `src/theme/MDXComponents.js` extends the Markdown components (native `<details>`, `<gloss>`,
+  video anchors), the extension point the Docusaurus docs describe.
 - `src/theme/DocItem/Content`, `src/theme/DocItem/Paginator` and `src/theme/PaginatorNavLink` are
   not on Docusaurus's list of components that are safe to customize, and the language link in
   `DocItem/Content` uses `useAlternatePageUtils` from `@docusaurus/theme-common/internal`.
@@ -223,9 +225,8 @@ Customized parts of Docusaurus:
   3024×3024 photo shown at portrait size. The three autoplay clips have no poster.
 - **Unused files:** `static/assets/images/img_chemicaleditor_topright.png` and
   `static/assets/images/img_hexagon.png`.
-- **Copy and markup:** typos on several pages (for example "ammendment", "Ansatztberechnung",
-  "Assistent"); `playinline` instead of `playsinline` and a `<font>` tag in `snippets.md`; an
-  invalid `background-color: b8b8b8` in `new-entry.md`; `eln.md` has two `#` titles.
+- **Copy and markup:** "ammendment" in `new-entry.md`; `playinline` instead of `playsinline` and a
+  `<font>` tag in `snippets.md`; an invalid `background-color: b8b8b8` in `new-entry.md`.
 - **License attribution:** `LICENSE` still names the work "ELN Documentation".
 
 ## License
