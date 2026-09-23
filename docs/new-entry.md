@@ -5,15 +5,15 @@ description: Start your entry and prepare for the synthesis.
 
 ## 1.  Open your ELN Entry
 
-<video autoplay muted loop playsinline width="60%" alt="screen recording of opening an ELN entry">
+<video autoplay muted loop playsinline alt="screen recording of opening an ELN entry">
 	<source src="../assets/videos/how-to-start-1.mp4" type="video/mp4">
 </video>
 
 Click <img alt="Electronic Notebook" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_rbf.png"> to open the ELN tab. Click <img alt="Create" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_plus.png"> and customize a reaction code to create a new entry. Beware that once entry is created it cannot be deleted and the reaction code cannot be modified. To hide the unwanted entries on the overview of ELN simply click <img alt="The Icon with an eye" style="height: 1.5em; width: auto; vertical-align: top;" src="../assets/images/img1_Hide-eye.png"> in `Hide` column on the right. 
 
 ## 2.  Customize name of entry in 'Title'
-<img class="screenshot" width="70%" alt="screenshot of customized title Sandmeyer Reaktion" src="../assets/images/img_new-entry-title1.png"/>
-<img class="screenshot" width="70%" alt="screenshot of title on the overview page" src="../assets/images/img_new-entry-title2.png"/>
+<img class="screenshot" alt="screenshot of customized title Sandmeyer Reaktion" src="../assets/images/img_new-entry-title1.png"/>
+<img class="screenshot" alt="screenshot of title on the overview page" src="../assets/images/img_new-entry-title2.png"/>
 
 On the page of the ELN entry enter a title of your choice for the reaction and click <img alt="Save Data" style="height: 1.5em; width: auto; vertical-align: top" src="../assets/images/img_savedata.png">. From now on your entry would be automatically saved regularly. But it is still strongly recommended to save manually after each ammendment!
 
@@ -21,7 +21,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 ### Method 1 (recommended): First data entry then chemical equation
 > It saves your time from drawing chemical structures.
 
-<video controls muted width="100%" poster="../assets/videos/thumbnail_how-to-start-3-4.png">
+<video controls muted poster="../assets/videos/thumbnail_how-to-start-3-4.png">
 	<source src="../assets/videos/how-to-start-3-4.mp4" type="video/mp4">
 </video>
 
@@ -46,9 +46,9 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 2. Repeat Step 1 to 5 except 4 in [Method 1](#method-1-recommended-first-data-entry-then-chemical-equation)
 
 ## 4. Calculation of the amounts of reagents required (*Ansatzberechnung*)
-> *The following instructions are only based on OC2-Praktikum.*
+> *The following instructions targets only OC2-Praktikum.*
 
-<video controls muted width="100%" poster="../assets/videos/thumbnail_how-to-start-5.png">
+<video controls muted poster="../assets/videos/thumbnail_how-to-start-5.png">
 	<source src="../assets/videos/how-to-start-5.mp4" type="video/mp4">
 </video>
 
@@ -66,7 +66,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 
 ## 5. GHS Pictogramms, H- and P-statements 
 
-<video controls muted width="100%" poster="../assets/videos/thumbnail_how-to-start-8.png">
+<video controls muted poster="../assets/videos/thumbnail_how-to-start-8.png">
 	<source src="../assets/videos/how-to-start-8.mp4" type="video/mp4">
 </video>
 
@@ -77,7 +77,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 5. By clicking the information symbol i you may browse through the hazard and precaution statements (*H- & P-Sätze*) retrieved from PubChem. In the 'Experimental' tab you can find useful information of the chemical such as the boiling and meltling point.
 
 ## 6. Change status of the entry
-<video loop autoplay muted width="70%">
+<video loop autoplay muted>
 	<source src="../assets/videos/how-to-start-9.mp4" type="video/mp4">
 </video>
 

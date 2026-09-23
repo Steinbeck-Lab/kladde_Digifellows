@@ -12,10 +12,12 @@ function classesOf(node) {
   if (Array.isArray(value)) return value;
   return typeof value === 'string' ? value.split(/\s+/) : [];
 }
+const INLINE = 'function-icon'; // to disable the default image block setting and instead inline image for icons
 
 function isPrint(node) {
   if (node.type !== 'element') return false;
   if (node.tagName === 'video') return true;
+  if (classesOf(node).includes(INLINE)) return false; // additional condition
   return node.tagName === 'img' && !node.properties?.style;
 }
 

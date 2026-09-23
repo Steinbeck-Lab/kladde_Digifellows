@@ -478,7 +478,7 @@ article:has(> .kl-page)::before {
   position: relative;
   display: block;
   width: fit-content;
-  max-width: 100%;
+  max-width: var(--kl-measure);
   margin: 2.25rem 0 2rem;
   padding: 6px;
   border: 1px solid var(--kl-rule);
@@ -696,6 +696,7 @@ blockquote .kl-print {
 
 .markdown details[open]::details-content {
   block-size: auto;
+  padding: 1rem;
 }
 
 .markdown details > summary + * {
@@ -708,6 +709,19 @@ blockquote .kl-print {
 
 .markdown details > :not(summary):last-child {
   margin-bottom: 1rem;
+}
+
+/*
+ * A box in the stack with nothing to open: <details class="kl-static"> keeps the title row and
+ * drops the plus and the click. Give its summary tabindex="-1" to keep it out of the tab order.
+ */
+.markdown details.kl-static > summary {
+  pointer-events: none;
+}
+
+.markdown details.kl-static > summary::before,
+.markdown details.kl-static > summary::after {
+  content: none;
 }
 
 /* ── Glosses: a word that explains itself ───────────────────────────────── */
@@ -1024,4 +1038,11 @@ blockquote .kl-print {
   .markdown details::details-content {
     transition: none;
   }
+}
+
+/* customised setting */
+.function-icon {
+  height: 1.25em;
+  vertical-align: top;
+  margin: 0 0.05em 0 0;
 }

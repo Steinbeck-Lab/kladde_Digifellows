@@ -370,6 +370,7 @@ Tips that open in place, such as the Tips and Tricks in entry 02. Authors write 
 - **Plus:** a 1.35rem green line mark (stroke 2, round caps, drawn as a CSS mask) in the top right corner, deep green on hover. While the box is open its upright stroke lies flat, so the plus reads as a minus; the stroke turns in 240ms.
 - **Open:** a 1px rule under the title row; the content starts 0.9rem below it and ends 1rem above the bottom border. Screenshots inside are taped prints, 1.5rem apart. Where the browser can animate to an automatic height, the content opens and closes in 240ms; elsewhere it appears at once.
 - **Phones (600px and below):** 0.75rem side padding and 2.75rem kept free for the plus, so titles wrap less.
+- **Static:** a box with nothing to open, such as the Stock and Images tabs on Sample Analysis, is `<details class="kl-static">` with its text as the teaser in the `<summary>`, and `tabindex="-1"` on that summary. It keeps the title row, the frame and the shared rules, and drops the plus, the hover fill and the click, so a stack of fold boxes never offers a control that does nothing.
 - Links and other controls go in the opened content, never inside the `<summary>`.
 
 ### Links and Focus
