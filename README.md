@@ -46,6 +46,7 @@ npm start              # English preview at http://localhost:3000, reloads on ch
 npm run start:de       # German preview (the dev server serves one language at a time)
 npm run build          # production build of both languages into build/
 npm run serve          # serve build/ locally to check the result, including search
+npm run check-media    # every picture and recording a page points at still exists
 ```
 
 - The build stops on broken links between pages. Links to anchors only warn.
@@ -57,21 +58,27 @@ npm run serve          # serve build/ locally to check the result, including sea
 
 ## Deployment
 
-The live site is the `gh-pages` branch, served by GitHub Pages. Nothing deploys automatically;
-there is no CI. Deploy from a committed and pushed branch:
+Every push to `main` builds the site and publishes it to GitHub Pages; the workflow is
+`.github/workflows/deploy.yml`. Nothing built is committed — the build runs on GitHub's machine and
+is handed straight to Pages. The Actions tab shows each run and can start one by hand.
 
-```bash
-GIT_USER=<your-github-username> npm run deploy    # or: USE_SSH=true npm run deploy
-```
+The `gh-pages` branch is no longer used. It still holds the old MkDocs site and is kept as a record.
 
-`docusaurus deploy` builds both languages and pushes `build/` to `gh-pages` of
-`Steinbeck-Lab/kladde_Digifellows` (set in `docusaurus.config.js`).
+Three settings have to agree, under Settings → Pages:
 
-- `static/CNAME` holds the custom domain (`kladde.uni-jena.de`, one line, no trailing newline) and
-  is copied into every build, so a deploy keeps the domain file on `gh-pages`.
+- **Source: GitHub Actions.** With "Deploy from a branch", GitHub serves the repository files as
+  they are and shows `README.md` instead of the site, because `build/` is never committed.
+- **Custom domain: `kladde.uni-jena.de`.** It needs a DNS CNAME record pointing at
+  `steinbeck-lab.github.io`; `static/CNAME` (one line, no trailing newline) carries the domain into
+  every build. Once the domain is assigned,
+  <https://steinbeck-lab.github.io/kladde_Digifellows/> redirects to it.
+- **`url` and `baseUrl`** in `docusaurus.config.js` belong to the custom domain (`baseUrl: '/'`).
+  Serving from the project URL instead needs `baseUrl: '/kladde_Digifellows/'`, or the pages load
+  without their styles and scripts.
+
 - Renaming or deleting a page changes a public URL. Add a redirect for the old address to the
   `@docusaurus/plugin-client-redirects` entry in `docusaurus.config.js`.
-- After deploying, open the pages you changed on the live site.
+- After a deployment, open the pages you changed on the live site.
 
 ## Repository layout
 
@@ -216,12 +223,11 @@ Customized parts of Docusaurus:
 
 ## Known gaps
 
-- **Custom domain:** since the repository moved to Steinbeck-Lab, `kladde.uni-jena.de` is not
-  assigned in the repository's GitHub Pages settings and shows "Site not found". Its DNS record
-  still points at `soyeechan230126.github.io`. The site is reachable at the
-  [project URL](https://steinbeck-lab.github.io/kladde_Digifellows/) for now, but that URL only works
-  for the old MkDocs build: this Docusaurus build uses `baseUrl: '/'` and loads its styles and
-  scripts from the domain root, so restore the custom domain before deploying it. Clones made before the move
+- **Custom domain:** `kladde.uni-jena.de` is not assigned in the repository's GitHub Pages
+  settings, and its DNS record still points at `soyeechan230126.github.io`, the personal account the
+  repository came from. GitHub checks that record against the repository claiming the domain, so it
+  has to name `steinbeck-lab.github.io` first. Until then the site has no working public address:
+  `baseUrl` is `/`, which fits the custom domain only. Clones made before the move
   can update their remote with
   `git remote set-url origin https://github.com/Steinbeck-Lab/kladde_Digifellows.git`.
 - **German text:** no page is translated yet, and the German interface strings need review.

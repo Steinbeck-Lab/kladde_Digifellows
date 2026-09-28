@@ -11,8 +11,7 @@
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
     "check-media": "node scripts/check-media.mjs",
-    "write-translations": "docusaurus write-translations",
-    "deploy": "docusaurus deploy"
+    "write-translations": "docusaurus write-translations"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",

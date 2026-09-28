@@ -1,0 +1,49 @@
+# Builds the site and publishes it to GitHub Pages.
+#
+# Every push to main runs this, and the site is live a couple of minutes later. Nothing is
+# committed: the build happens on GitHub's machine and is handed straight to Pages, so the
+# gh-pages branch is no longer used.
+#
+# Set Settings → Pages → Build and deployment → Source to "GitHub Actions" once, or this
+# workflow has nothing to publish to.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # lets you start a deployment by hand from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; a newer push waits rather than cancelling the running one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
