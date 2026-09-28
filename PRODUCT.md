@@ -46,8 +46,8 @@ system.
 
 - Content: 15 pages. Welcome; About (What is ELN?, team pages for Prof. Dr. Christoph Steinbeck,
   Dr. Kevin Maik Jablonka, Dr. Kohulan Rajan and Soyee Chan, License); How to start (New Entry,
-  Reaction Scheme, Snippets); Sample Analysis, which holds IR, NMR and MS; Report. Sample
-  Analysis, IR, NMR, MS, Report and the Soyee Chan bio are placeholders ("brewing in progress... ☕").
+  Reaction Scheme, Snippets); Sample Analysis, which holds IR, NMR and MS; Report. NMR, MS,
+  Report and the Soyee Chan bio are placeholders ("brewing in progress... ☕").
   The numbered workflow runs 01 to 05: the pages under Sample Analysis are not steps of their own.
 - Media carries the instructions: screenshots and toolbar icons, screen recordings (MP4) with poster
   images, and timestamp links that jump a recording to a moment.
@@ -76,8 +76,9 @@ system.
 
 ## Evidence on Hand
 
-- Guides: docs/*.md. Screenshots, icons and team photos: docs/assets/images/. Recordings and poster
-  images: docs/assets/videos/.
+- Guides: docs/*.md. Media sits under static/assets/, one folder per page (static/assets/ir/ and
+  so on) holding that page's screenshots, recordings and posters; static/assets/chemical-editor/
+  holds the structure-editor icons two pages share, and static/assets/images/ the team photos.
 - License texts: LICENSE and docs/license.md.
 - University colour references, read from the live stylesheets of uni-jena.de and
   chemgeo.uni-jena.de on 2026-09-10: FSU blue #002350 (also the sites' theme colour), FSU gold

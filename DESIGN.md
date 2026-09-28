@@ -156,6 +156,8 @@ components:
     backgroundColor: "{colors.white}"
     rounded: "{rounded.none}"
     padding: "{spacing.print-mat}"
+  inline-icon:
+    size: "1.5em"
   index-entry:
     textColor: "{colors.ink}"
     rounded: "{rounded.none}"
@@ -346,7 +348,10 @@ An entry that holds pages of its own (Sample Analysis holds IR, NMR and MS) list
 A word that explains itself: `<gloss note="…">word</gloss>` marks the word with a 1px dashed underline offset 0.18em and opens its note above the word on hover, tap or keyboard focus — paper fill, 1px dashed strong rule, the text box lift, 0.6rem by 0.8rem of padding, 0.95rem text, at most 26rem wide, fading in over 150ms. At 600px and below there is no room to centre it over one word, so it opens above the paragraph instead. The word turns green while open. The note also sits in the page as the word's `aria-describedby`, so a screen reader reads it without a pointer. Footnotes stay available for sources; a glossed word is for a term the reader needs right there.
 
 ### Taped Print (signature)
-Every content image without an inline style and every video is wrapped in a print: white mat with 6px padding, 1px rule border, the print lift shadow, width fitted to the media up to 100%. Two tape strips sit over the top edge, cycling through three arrangements of the three tape PNGs per page so neighbouring prints differ. Portraits are min(15rem, 70%) wide. Inline toolbar icons (images with an inline style) stay untaped in the text. The print itself is never rotated; only the tape tilts.
+Every content image and every video is wrapped in a print: white mat with 6px padding, 1px rule border, the print lift shadow, width fitted to the media and never wider than the text measure, so a picture lines up with the paragraphs above it. Two tape strips sit over the top edge, cycling through three arrangements of the three tape PNGs per page so neighbouring prints differ. Portraits are min(15rem, 70%) wide. The print itself is never rotated; only the tape tilts.
+
+### Inline Icons
+A button or key of the ELN shown inside a sentence, at the size of the words around it: `class="function-icon"` on the image, 1.5em tall with a hair of space after it, aligned with the line of text and never framed as a print. `rehypeTapedMedia` leaves any image carrying that class alone, as it does an image with an inline style, so icons read as part of the sentence while every other picture is taped in.
 
 ### Home Index (signature)
 An ordered list of the workflow entries between strong rules, one full-width row each, min 4.25rem tall: a large green number, the title in Atkinson 700 at 1.15rem, the section name in gold ink, the description in faded ink. The whole row is the link; it has no underline, and hover lays a 60% green-wash fill over it in 160ms. An entry that holds pages carries its entry labels on the line below.
