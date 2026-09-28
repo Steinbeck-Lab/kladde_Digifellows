@@ -2,8 +2,7 @@
 title: IR
 description: Tools for IR spectra simulation and analysis.
 ---
-[With IR Spectra, not Sample: IR spectra]: #
-# Infrared Sepctroscopy (IR)
+# Infrared Spectroscopy (IR)
 ## 1. Export your IR-spectrum as `.txt`
 Please consult your lab supervisor about the export of your IR dataset. `.txt` is often recommended since most of the programmes (not limited to this ELN) can intepret it well.
 > Export in **wavenumber (cm<sup>-1</sup>)** and in transmittance mode **%T**.
@@ -14,7 +13,7 @@ Please consult your lab supervisor about the export of your IR dataset. `.txt` i
 2. In the pop-up window, keep the default extention `.jdx` in filename like it is. Adjust the x- and y-units if necessary.
 3. Click the filename in "Spectra" to view the spectrum below. Inside the "Auto peak picking" module on the right enter the desired range and `Execute auto peak picking`. If too many or too few peaks are picked, adjust the "Noise level" accordingly. Depending on the quality of the spectrum this might need a few tries.
   > **Manual peak picking**: alternatively press Alt + click to pick your peaks. Inside the table "IR peaks" you may view peaks that have been picked and delete the unnecessary ones. 
-4. Above the display module you may copy the values (either wavelengths and wavenumbers or just the wavenumbers) and use them for your lab report. Click <img class="function-icon" src="../assets/images/img_ir-svg.png"/> to export your spectrum as <gloss note="A scalable graphic format without losing any quality">SVG</gloss> or <img class="function-icon" src="../assets/images/img_ir-pdf.png"/> to save as PDF.
+4. Above the display module you may copy the values (either wavelengths and wavenumbers or just the wavenumbers) and use them for your lab report. Click <img class="function-icon" alt="expport as svg" src="../assets/ir/img_ir-svg.png"/> to export your spectrum as <gloss note="A scalable graphic format without losing any quality">SVG</gloss> or <img class="function-icon" alt="print" src="../assets/ir/img_ir-pdf.png"/> to save as PDF.
 
 ### If you start from Home page:
 1. Click your sample once to select, and select the tile "IR spectra".
@@ -22,7 +21,7 @@ Please consult your lab supervisor about the export of your IR dataset. `.txt` i
 3. Click the filename in the "List of IR files" to view your spectrum. 
 4. Inside the module "Preferences" on the right go directly to "Auto peak picking parameters" and enter the desired range and start `Auto peak picking` (we may ignore the settings above at the moment). If too many or too few peaks are picked, adjust the "Min max ratio" accordingly. Depending on the quality of the spectrum this might need a few tries.
   > **Manual peak picking**: alternatively press Alt + click to pick your peaks. Inside the table "IR peaks" you may view peaks that have been picked and delete the unnecessary ones. 
-5. Beneath the display module you may copy the values (either wavelengths and wavenumbers or just the wavenumbers) by clicking <img class="function-icon" src="../assets/images/img_ir-export.png"/> and use them for your lab report. Click <img class="function-icon" src="../assets/images/img_ir-svg.png"/> to export your spectrum as <gloss note="A scalable graphic format without losing any quality">SVG</gloss> or <img class="function-icon" src="../assets/images/img_ir-pdf.png"/> to save as PDF.
+5. Beneath the display module you may copy the values (either wavelengths and wavenumbers or just the wavenumbers) by clicking <img class="function-icon" alt="copy values" src="../assets/ir/img_ir-export.png"/> and use them for your lab report. Click <img class="function-icon" alt="export as svg" src="../assets/ir/img_ir-svg.png"/> to export your spectrum as <gloss note="A scalable graphic format without losing any quality">SVG</gloss> or <img class="function-icon" alt="print" src="../assets/ir/img_ir-pdf.png"/> to save as PDF.
 
 >[Click here](https://docs.c6h6.org/docs/eln/uuid/3fc7caa33b9b3eb50bb48920f4788725) to learn more about other functions in the IR analysis tool (e.g. advanced setup in "Preferences").
 

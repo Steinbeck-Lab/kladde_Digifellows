@@ -4,21 +4,21 @@ description: Use of shortcuts in your descriptions.
 ---
 
 > Before you lose your patience, please just allow us to show you the following feature:
-> <video autoplay loop muted playinline width="100%" alt="demonstration of snippet insertion"> <source src="../assets/videos/snippets-1.mp4" type="video/mp4"></video>
+> <video autoplay loop muted playinline width="100%" alt="demonstration of snippet insertion"> <source src="../assets/snippets/snippets-1.mp4" type="video/mp4"></video>
 > cool, right?
 
-*<font color="red">German translation of reagents in development</font>*
+[*<font color="red">German translation of reagents in development</font>*]: #
 
 ## Configuration of shortcut keys (snippets)
-<img alt="check the box for Autoupdate snippets" src="../assets/images/img_snippets_prefs.png">
+<img alt="check the box for Autoupdate snippets" src="../assets/snippets/img_snippets_prefs.png">
 Go to 'Prefs' and check the box in 'Autoupdate snippets'. Click 'Save preferences'.
 
 Stay on this page. Here we do all the configuration.
 
 ## Walkthrough
 
-<video id="snippets-preset" muted controls width="100%" poster="../assets/videos/thumbnail_snippets-preset.png">
-  <source src="../assets/videos/snippets-preset.mp4" type="video/mp4">
+<video id="snippets-preset" muted controls width="100%" poster="../assets/snippets/thumbnail_snippets-preset.png">
+  <source src="../assets/snippets/snippets-preset.mp4" type="video/mp4">
 </video>
 
 ### Predefined sentences
@@ -30,7 +30,7 @@ Stay on this page. Here we do all the configuration.
 ### Meta information `_metainfo`
 This is meant for storing information of reaction conditions such as temperature and reaction time. Any other sorts of customization is also possible.
 
-1. Click <img alt="add meta" style="width:1.5em; vertical-align:top;" src="../assets/images/img_snippets_addmeta.png"> on the right and customize your own key *in lower case*.
+1. Click <img alt="add meta" class="function-icon" src="../assets/snippets/img_snippets_addmeta.png"> on the right and customize your own key *in lower case*.
 2. Enter your customized value or text inside the slot on the right of the key. Don't forget your unit (e.g. °C)!
 3. To use your key from Meta information: type `_` and your key then hit 'Space'/'Tab'/'Enter' inside the main text box.
 
