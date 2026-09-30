@@ -724,6 +724,86 @@ blockquote .kl-print {
   content: none;
 }
 
+/* ── Tabs: alternatives that share one place on the page ────────────────── */
+
+/*
+ * <tabs> with a <tab label="…"> per panel: the index tabs of a notebook divider. The row of
+ * labels stands on the panel's top rule, and the open one joins the panel below it by painting
+ * over that rule. Labels are the printed label face, like the section names and table heads they
+ * resemble; a panel is a box of text, so it takes paper and the text box lift.
+ */
+.kl-tabs {
+  max-width: var(--kl-measure);
+  margin: 1.5rem 0 1.75rem;
+}
+
+.kl-tabs-row {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--kl-rule-strong);
+}
+
+.kl-tabs-label {
+  position: relative;
+  bottom: -1px;
+  margin: 0;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--kl-ink-soft);
+  font-family: var(--kl-font-label);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 150ms var(--kl-ease), color 150ms var(--kl-ease);
+}
+
+.kl-tabs-label:hover {
+  background-color: rgb(0 35 80 / 0.045);
+  color: var(--kl-ink);
+}
+
+.kl-tabs-label[aria-selected='true'] {
+  border-color: var(--kl-rule-strong);
+  background-color: var(--kl-paper);
+  color: var(--kl-ink);
+}
+
+/* The open label's bottom edge, laid over the row's rule so the tab reads as one with its panel. */
+.kl-tabs-label[aria-selected='true']::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background-color: var(--kl-paper);
+}
+
+.kl-tabs-panel {
+  padding: 1rem;
+  border: 1px solid var(--kl-rule-strong);
+  border-top: 0;
+  background-color: var(--kl-paper);
+  box-shadow: var(--kl-box-lift);
+  font-size: 1rem;
+}
+
+.kl-tabs-panel > :first-child {
+  margin-top: 0;
+}
+
+.kl-tabs-panel > :last-child {
+  margin-bottom: 0;
+}
+
+.kl-tabs-panel .kl-print {
+  margin: 1.5rem 0;
+}
+
 /* ── Glosses: a word that explains itself ───────────────────────────────── */
 
 /*
@@ -1035,7 +1115,8 @@ blockquote .kl-print {
   .markdown summary,
   .markdown summary::before,
   .markdown summary::after,
-  .markdown details::details-content {
+  .markdown details::details-content,
+  .kl-tabs-label {
     transition: none;
   }
 }

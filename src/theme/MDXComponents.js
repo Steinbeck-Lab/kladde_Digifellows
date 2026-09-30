@@ -1,6 +1,7 @@
 import MDXComponents from '@theme-original/MDXComponents';
 import Gloss from '@site/src/components/Gloss';
 import MdxVideo from '@site/src/components/MdxVideo';
+import Tabs, {Tab} from '@site/src/components/Tabs';
 
 export default {
   ...MDXComponents,
@@ -10,4 +11,7 @@ export default {
   // <gloss note="…">word</gloss>: an explanation that opens over the word.
   gloss: Gloss,
   video: MdxVideo,
+  // <tabs> with a <tab label="…"> per panel: alternatives that share a place on the page.
+  tabs: Tabs,
+  tab: Tab,
 };

@@ -69,6 +69,11 @@ typography:
     fontWeight: 600
     lineHeight: 1.2
     fontFeature: "tnum"
+  tab-label:
+    fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
+    fontSize: "1.02rem"
+    fontWeight: 600
+    lineHeight: 1.2
   cover-label:
     fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
     fontSize: "1.45rem"
@@ -187,6 +192,15 @@ components:
     textColor: "{colors.ink}"
     typography: "{typography.fold-title}"
     padding: "0.8rem 3.3rem 0.8rem 1rem"
+  tab-label:
+    textColor: "{colors.ink-soft}"
+    typography: "{typography.tab-label}"
+    padding: "0.5rem 1.1rem"
+  tab-panel:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "1rem"
   untranslated-notice:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
@@ -378,11 +392,20 @@ Tips that open in place, such as the Tips and Tricks in entry 02. Authors write 
 - **Static:** a box with nothing to open, such as the Stock and Images tabs on Sample Analysis, is `<details class="kl-static">` with its text as the teaser in the `<summary>`, and `tabindex="-1"` on that summary. It keeps the title row, the frame and the shared rules, and drops the plus, the hover fill and the click, so a stack of fold boxes never offers a control that does nothing.
 - Links and other controls go in the opened content, never inside the `<summary>`.
 
+### Tabs
+Alternatives that share one place on the page, such as the two routes to an NMR measurement request: the reader takes one of them, not both in turn. Where a fold box hides something optional, tabs hold several equal answers to the same question and show one. Authors write `<tabs>` with a `<tab label="…">` per panel; `src/theme/MDXComponents.js` maps both tags to `src/components/Tabs`, so a `.md` page writes them as plain HTML, as it writes `<video>`. Reach for a fold box when the content is optional, and for tabs only when the panels are parallel and one of them is always right.
+
+- **Label row:** index tabs on a notebook divider. The printed label face at 1.02rem 600, in faded ink, padded 0.5rem by 1.1rem, standing on the panel's 1px strong rule and wrapping onto a second line when the row runs out of width. Hover lays the faint ink fill (rgb(0 35 80 / 0.045)) over a label and lifts it to ink, in 150ms.
+- **Open label:** ink text on paper inside a 1px strong-rule border with no bottom edge, laid over the row's rule so the label and its panel read as one piece. No underline and no green: the row is a control, not a set of links.
+- **Panel:** a box of text — paper fill, 1px strong-rule border without a top edge, square corners, the text box lift, 1rem padding, 1rem text, max 68ch. Screenshots inside are taped prints, 1.5rem apart.
+- **Keyboard:** one stop in the tab order for the whole row; left and right walk it and wrap, Home and End jump to its ends, and the panel follows the focused label at once.
+- **Closed panels stay in the page,** hidden rather than dropped, so the site search still finds what is behind a label nobody pressed.
+
 ### Links and Focus
 Links in text are green, underlined 1px offset 0.18em, 2px and deep green on hover. Every focusable element shows a 3px solid green outline offset 2px on keyboard focus.
 
 ### Motion
-Only what is touched moves: page-link fill (150ms), index row fill (160ms), an entry label growing (160ms), fold-box title fill (150ms), a fold box opening and its plus turning into a minus (240ms), a gloss note fading in (150ms), all on cubic-bezier(0.16, 1, 0.3, 1). Nothing animates on load. Reduced motion removes these transitions.
+Only what is touched moves: page-link fill (150ms), index row fill (160ms), an entry label growing (160ms), fold-box title fill (150ms), a fold box opening and its plus turning into a minus (240ms), a tab label’s fill and ink (150ms), a gloss note fading in (150ms), all on cubic-bezier(0.16, 1, 0.3, 1). Nothing animates on load. Reduced motion removes these transitions.
 
 ## Do's and Don'ts
 
@@ -396,6 +419,7 @@ Only what is touched moves: page-link fill (150ms), index row fill (160ms), an e
 - **Do** stack the page links at 600px and below (previous left, next right on the row below) and keep them on one row above that.
 - **Do** use inline SVG line icons (24px box, round caps, stroke 1.75) coloured by currentColor.
 - **Do** put optional tips in fold boxes: a native `<details>` whose `<summary>` is the title, with links and other controls in the opened content, not in the summary.
+- **Do** use tabs (`<tabs>` with a `<tab label="…">` each) only for parallel alternatives the reader picks one of, and a fold box for anything merely optional.
 - **Do** explain a term where the reader meets it, with `<gloss note="…">`, and keep the note in the page for screen readers.
 
 ### Don't:
