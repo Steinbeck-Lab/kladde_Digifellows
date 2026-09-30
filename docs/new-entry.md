@@ -6,10 +6,14 @@ description: Start your entry and prepare for the synthesis.
 ## 1.  Open your ELN Entry
 
 <video autoplay muted loop playsinline alt="screen recording of opening an ELN entry">
-	<source src="../assets/new-entry/how-to-start-1.mp4" type="video/mp4">
+	<source src="../assets/new-entry/new-entry-1.mp4" type="video/mp4">
 </video>
 
-Click <img alt="Electronic Notebook" class="function-icon" src="../assets/new-entry/img_rbf.png"> to open the ELN tab. Click <img alt="Create" class="function-icon" src="../assets/new-entry/img_plus.png"> and customize a reaction code to create a new entry. Beware that once entry is created it cannot be deleted and the reaction code cannot be modified. To hide the unwanted entries on the overview of ELN simply click <img alt="The Icon with an eye" class="function-icon" src="../assets/new-entry/img1_Hide-eye.png"> in `Hide` column on the right. 
+1. Click <img alt="Electronic Notebook" class="function-icon" src="../assets/new-entry/img_rbf.png"> to open the ELN tab. Click <img alt="Create" class="function-icon" src="../assets/new-entry/img_plus.png">
+2. In "Reaction code" enter your initials and assign a customised number code to it (e.g. Max Mustermann first synthesis ="MM001" ). 
+> The **"Reaction code"** is equivalent to the **"Product code"** of your product/sample and to the **"Reference"** for your measurement request.
+
+Beware that once entry is created it cannot be deleted and the reaction code cannot be modified. To hide the unwanted entries on the overview of ELN simply click <img alt="The Icon with an eye" class="function-icon" src="../assets/new-entry/img1_Hide-eye.png"> in `Hide` column on the right. 
 
 ## 2.  Customize name of entry in 'Title'
 <img alt="screenshot of customized title Sandmeyer Reaktion" src="../assets/new-entry/img_new-entry-title1.png"/>
@@ -21,8 +25,8 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 ### Method 1 (recommended): First data entry then chemical equation
 > It saves your time from drawing chemical structures.
 
-<video controls muted poster="../assets/new-entry/thumbnail_how-to-start-3-4.png">
-	<source src="../assets/new-entry/how-to-start-3-4.mp4" type="video/mp4">
+<video controls muted poster="../assets/new-entry/thumbnail_new-entry-3-4.png">
+	<source src="../assets/new-entry/new-entry-3-4.mp4" type="video/mp4">
 </video>
 
 1. The `code` column itself has search function embedded. You may search with:
@@ -48,8 +52,8 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 ## 4. Calculation of the amounts of reagents required (*Ansatzberechnung*)
 > *The following instructions target only OC2-Praktikum.*
 
-<video controls muted poster="../assets/new-entry/thumbnail_how-to-start-5.png">
-	<source src="../assets/new-entry/how-to-start-5.mp4" type="video/mp4">
+<video controls muted poster="../assets/new-entry/thumbnail_new-entry-5.png">
+	<source src="../assets/new-entry/new-entry-5.mp4" type="video/mp4">
 </video>
 
 1. If necessary, amend the purity and density.
@@ -66,8 +70,8 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 
 ## 5. GHS Pictogramms, H- and P-statements 
 
-<video controls muted poster="../assets/new-entry/thumbnail_how-to-start-8.png">
-	<source src="../assets/new-entry/how-to-start-8.mp4" type="video/mp4">
+<video controls muted poster="../assets/new-entry/thumbnail_new-entry-8.png">
+	<source src="../assets/new-entry/new-entry-8.mp4" type="video/mp4">
 </video>
 
 1. Go to 'Prefs' at the top of the page.
@@ -78,7 +82,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
 
 ## 6. Change status of the entry
 <video loop autoplay muted>
-	<source src="../assets/new-entry/how-to-start-9.mp4" type="video/mp4">
+	<source src="../assets/new-entry/new-entry-9.mp4" type="video/mp4">
 </video>
 
 Change the status of your ELN entry by clicking one of the buttons or customize your own label. Click <img alt="Save Data" class="function-icon" src="../assets/new-entry/img_savedata.png"> afterwards. The history of changes cannot be modified.
