@@ -18,8 +18,8 @@ The [NMR Platform FSU Jena](https://www.nmr.uni-jena.de/de/index.php) has alread
           <li>Click "Create measurement request". The redirected ELN home page looks slightly different from Kladde.</li>
           <li>Go to the "NMR" tab, select a sample, click "NMR request" <img class="function-icon" alt="NMR request" src="../assets/nmr/img_nmr-NMR-request.png">.</li>
         </ol>
-      <li>From Kladde</li>
-        <description>Select a sample, and click "NMR request" <img class="function-icon" alt="NMR request" src="../assets/nmr/img_nmr-NMR-request2.png">.</description>
+      <li>From Kladde
+        <br>Select a sample, and click "NMR request" <img class="function-icon" alt="NMR request" src="../assets/nmr/img_nmr-NMR-request2.png">.</li>
     </ul>
     <p>Fill in the request form accordingly. Please consult your practical supervisor or your supervising assistant for details.</p>
   </tab>
@@ -31,6 +31,7 @@ The [NMR Platform FSU Jena](https://www.nmr.uni-jena.de/de/index.php) has alread
       <!--sepctrum preview is still stale -->
       <!--If a pop-up window is prompted, enter a customised name for the file with <code>.jdx</code> extension (e.g. <code>CSY001-SM-Fr1-13C.jdx</code>).  -->
     </ol>
+  </tab>
 </tabs>
 
 
