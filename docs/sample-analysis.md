@@ -7,15 +7,15 @@ description: Entry for information such as melting point, GC-result and IR-spect
 
 ## 1. Click `Add product`
 
-1. Enter your customised batch name. Personally I suggest using numbers only (e.g. "001"). 
-2. A pop-up window would prompt you to specify the molecule for this product, which is already standing in your scheme. Information of the molecule such as the molecular formula, molecular weight and the theoretical yield would be generated automatically. Your product has by default 100% purity. 
+1. Enter a customised batch name specific to the fraction of your sample (e.g. Sandmeyer, first fraction = "SM-Fr1").
+2. A pop-up window would prompt you to specify the molecule for this product, which is already standing in your scheme (chemical editor). Information about the molecule such as the molecular formula, molecular weight and the theoretical yield would be generated automatically. Your product has by default 100% purity. 
 3. You may now enter `g` and the yielding would be calculated automatically. If you have collected different fractions of products and side products, you may specify them in `kind` next to theoretical yield.
 
 ## 2. Click view <img alt="View this products's associated sample (create if it does not exist)" class="function-icon" style="height:.75em" src="../assets/sample-analysis/img_sample-analysis-view.png">
 
 Now you should land on the sample page. Alternatively you may access each specifc sample page through double clicking the sample on the Home page, or through selecting the sample and clicking the "Open/edit sample" tile.
 
-> The following information targets only *OC2-Praktikum*.
+> The following information mainly targets *OC2-Praktikum*.
 
 <details>
   <summary><strong>Overview</strong> Overview of general information of your sample</summary> 
