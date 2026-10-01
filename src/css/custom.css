@@ -1124,6 +1124,6 @@ blockquote .kl-print {
 /* customised setting */
 .function-icon {
   height: 1.5em;
-  vertical-align: middle;
+  vertical-align: top;
   margin: 0 0.05em 0 0;
 }
