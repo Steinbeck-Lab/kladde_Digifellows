@@ -54,7 +54,7 @@ Once the NMR data is ready or successfully uploaded, a tag(s) is shown next to t
 ## 3. Compare with predicted spectra
 1. If you would like to compare the predicted spectrum of your sample, click <img class="function-icon" alt="Predict spectra" src="../assets/nmr/img_nmr-predict-spectrum.png">, adjust the parameters if necessary (e.g. higher frequency) and select the type(s) of spectra. Then \"Predict spectrum".
 2. Inside the tab of the chosen type a new spectrum is generated. You may change the colour of it by clicking the square on the right or click <img class="function-icon" alt="Distinct spectra coloring" src="../assets/nmr/img_nmr-colour.png"> for automatic contrast coluoring.
-3. On the left toggle with <img class="function-icon" style="vertical-align: top;" alt="Stack spectra" src="../assets/nmr/img_nmr-stack-spectra.png"> to view the predicted and measured spectra in stacked mode or both aligned at the bottom.
+3. On the left toggle with <img class="function-icon" alt="Stack spectra" src="../assets/nmr/img_nmr-stack-spectra.png"> to view the predicted and measured spectra in stacked mode or both aligned at the bottom.
 
 ## Other NMR tools
 The rest of the tools powered by NMRium are excellent for prediction and also as learning tools.

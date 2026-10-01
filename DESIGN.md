@@ -163,6 +163,7 @@ components:
     padding: "{spacing.print-mat}"
   inline-icon:
     size: "1.5em"
+    verticalAlign: "top"
   index-entry:
     textColor: "{colors.ink}"
     rounded: "{rounded.none}"
@@ -365,7 +366,7 @@ A word that explains itself: `<gloss note="…">word</gloss>` marks the word wit
 Every content image and every video is wrapped in a print: white mat with 6px padding, 1px rule border, the print lift shadow, width fitted to the media and never wider than the text measure, so a picture lines up with the paragraphs above it. Two tape strips sit over the top edge, cycling through three arrangements of the three tape PNGs per page so neighbouring prints differ. Portraits are min(15rem, 70%) wide. The print itself is never rotated; only the tape tilts.
 
 ### Inline Icons
-A button or key of the ELN shown inside a sentence, at the size of the words around it: `class="function-icon"` on the image, 1.5em tall with a hair of space after it, aligned with the line of text and never framed as a print. `rehypeTapedMedia` leaves any image carrying that class alone, as it does an image with an inline style, so icons read as part of the sentence while every other picture is taped in.
+A button or key of the ELN shown inside a sentence, at the size of the words around it: `class="function-icon"` on the image, 1.5em tall with a hair of space after it, hung from the top of the line box so an image half again the height of the words sits level with their ascenders instead of dropping below the baseline, and never framed as a print. `rehypeTapedMedia` leaves any image carrying that class alone, as it does an image with an inline style, so icons read as part of the sentence while every other picture is taped in.
 
 ### Home Index (signature)
 An ordered list of the workflow entries between strong rules, one full-width row each, min 4.25rem tall: a large green number, the title in Atkinson 700 at 1.15rem, the section name in gold ink, the description in faded ink. The whole row is the link; it has no underline, and hover lays a 60% green-wash fill over it in 160ms. An entry that holds pages carries its entry labels on the line below.

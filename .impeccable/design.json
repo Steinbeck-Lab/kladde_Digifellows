@@ -87,9 +87,9 @@
       "name": "Inline Icon",
       "kind": "custom",
       "refersTo": "inline-icon",
-      "description": "A button or key of the ELN shown inside a sentence: class=\"function-icon\" on the image, at the size of the words around it, never framed as a taped print. rehypeTapedMedia leaves any image carrying the class alone.",
+      "description": "A button or key of the ELN shown inside a sentence: class=\"function-icon\" on the image, at the size of the words around it, hung from the top of the line box, never framed as a taped print. rehypeTapedMedia leaves any image carrying the class alone.",
       "html": "<p class=\"ds-icon-line\">Add your own measured value with <img class=\"ds-icon\" alt=\"add\" src=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1.75' y='1.75' width='20.5' height='20.5' rx='2' fill='%23ffffff' stroke='%23002350' stroke-width='1.5'/%3E%3Cpath d='M12 7.5v9M7.5 12h9' stroke='%23002350' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E\">, and take it out again with <img class=\"ds-icon\" alt=\"remove\" src=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1.75' y='1.75' width='20.5' height='20.5' rx='2' fill='%23ffffff' stroke='%23002350' stroke-width='1.5'/%3E%3Cpath d='M7.5 12h9' stroke='%23002350' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E\">.</p>",
-      "css": ".ds-icon-line { max-width: 68ch; margin: 0; font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1rem; line-height: 1.6; color: var(--kl-ink, #002350); } .ds-icon { height: 1.5em; vertical-align: middle; margin: 0 0.05em 0 0; }"
+      "css": ".ds-icon-line { max-width: 68ch; margin: 0; font-family: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif; font-size: 1rem; line-height: 1.6; color: var(--kl-ink, #002350); } .ds-icon { height: 1.5em; vertical-align: top; margin: 0 0.05em 0 0; }"
     },
     {
       "name": "Entry Label",
