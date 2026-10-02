@@ -139,6 +139,10 @@ textarea {
   outline-offset: 2px;
 }
 
+dt {
+  margin-top: 0.65rem;
+}
+
 .kl-sr-only,
 .pagination-nav__sublabel {
   position: absolute;
@@ -455,7 +459,7 @@ article:has(> .kl-page)::before {
   max-width: var(--kl-measure);
 }
 
-.markdown li + li, dt{
+.markdown li + li{
   margin-top: 0.65rem;
 }
 
