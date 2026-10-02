@@ -139,10 +139,6 @@ textarea {
   outline-offset: 2px;
 }
 
-dt {
-  margin-top: 0.65rem;
-}
-
 .kl-sr-only,
 .pagination-nav__sublabel {
   position: absolute;
@@ -460,6 +456,10 @@ article:has(> .kl-page)::before {
 }
 
 .markdown li + li{
+  margin-top: 0.65rem;
+}
+
+.markdown dd + dt {
   margin-top: 0.65rem;
 }
 
