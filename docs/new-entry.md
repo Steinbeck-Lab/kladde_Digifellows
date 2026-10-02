@@ -22,35 +22,42 @@ Beware that once entry is created it cannot be deleted and the reaction code can
 On the page of the ELN entry enter a title of your choice for the reaction and click <img alt="Save Data" class="function-icon" src="../assets/new-entry/img_savedata.png">. From now on your entry would be automatically saved regularly. But it is still strongly recommended to save manually after each ammendment!
 
 ## 3.  Add your reaction and reagents
-### Method 1 (recommended): First data entry then chemical equation
-> It saves your time from drawing chemical structures.
-
-<video controls muted poster="../assets/new-entry/thumbnail_new-entry-3-4.png">
-	<source src="../assets/new-entry/new-entry-3-4.mp4" type="video/mp4">
-</video>
-
-1. The `code` column itself has search function embedded. You may search with:
-    1. (the first few characters of) the trivial name (e.g. with 'anthran' or in full 'anthranilic acid')
-    2. the chemical formula (e.g. with 'KI', 'HCl').
-    3. the CAS number (look up either on [GESTIS](https://gestis.dguv.de/search) (in German) or on [CAS Sci Finder](https://scifinder-n.cas.org/) (in English, login with *name@uni-jena.de* required))
-    4. the product code of a product you synthesized before
-2. Hit 'Enter' to search. In the pop-up window click the chemical of choice once to select. Usually the fields in `Name`, `mf` (molecular formula), `mw` (molecular weight) and `density` are automatically filled up. Nevertheless for some molecules, of which relatively little literature are currently available, manual input might be required.
-3. Click the <svg role="img" aria-label="Hexagon icon on the right" style="margin: 0; width: 1.5em; height: 1.5em; vertical-align: top;" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><polygon points="150,10 280,85 280,215 150,290 20,215 20,85" fill="none" stroke="#000" stroke-width="10" stroke-linejoin="round"/></svg> to add the molecules into your chemical editor. Use the Lasso Pointer Tool <img alt="Left 5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_5.png"> in the toolbar (lasso as shown in video or hold 'Alt' and drag for retangular selection or double click a bond or an atom of the molecule) to rearrange the components in the chemical equation. Products stand on the right of the reaction arrow and are labeled with a e.g. 'P1' watermark.
-4. Use the Cleanup Button <img alt="Clean Up Tool" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_3.png"> to clean up the equation. 
-
-### Method 2: First chemical equation then data entry
-[Click here](reaction-scheme.md) for more information about the *OpenChemLib* chemical editor.
-
-> For those who are just looking for a Copy & Paste: <br>
-> <img alt="5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_5.png"> then <img alt="2nd Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_2.png"> (left: reactant; right: product): across **different** entries.<br>
-> <img alt="6th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_6.png">: **within the same** editor<br>
-> Or use the Lasso Pointer Tool <img alt="Left 5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_5.png"> to select the target molecule, hold 'Shift' and drag the molecule to create a copy <br>
-
-1. Draw each chemical structure you need inside the chemical editor, or paste your chemical equation from e.g. ChemDraw or ChemSketch (if nothing happens, try "copy as SMILES" :) )
-2. Repeat Step 1 to 5 except 4 in [Method 1](#method-1-recommended-first-data-entry-then-chemical-equation)
+<tabs>
+  <tab label="Method 1 (recommended)">
+    <p><strong>First data entry then chemical equation</strong>: It saves your time from drawing chemical structures.</p>
+    <video controls muted poster="../assets/new-entry/thumbnail_new-entry-3-4.png">
+      <source src="../assets/new-entry/new-entry-3-4.mp4" type="video/mp4">
+    </video>
+    <ol style="list-style-type: decimal;">
+      <li>The <code>code</code> column itself has search function embedded. You may search with:</li>
+        <ol style="list-style-type: upper-alpha;">
+          <li>(the first few characters of) the trivial name (e.g. with 'anthran' or in full 'anthranilic acid')</li>
+          <li>the chemical formula (e.g. with "KI", "HCl").</li>
+          <li>the CAS number, look up either on <a href="https://gestis.dguv.de/search">GESTIS</a> (in German) or on <a href="https://scifinder-n.cas.org/">CAS Sci Finder</a> (in English, login with <i>name@uni-jena.de</i> required).</li>
+          <li style="padding-bottom: 0.65rem">the product code of a product you synthesized before.</li>
+        </ol>
+        <li>Hit 'Enter' to search. In the pop-up window click the chemical of choice once to select. Usually the fields in <code>Name</code>, <code>mf</code> (molecular formula), <code>mw</code> (molecular weight) and <code>density</code> are automatically filled up. Nevertheless for some molecules, of which relatively little literature are currently available, manual input might be required.
+        <li>Click the <svg role="img" aria-label="Hexagon icon on the right" style="margin: 0; width: 1.5em; height: 1.5em; vertical-align: top;" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><polygon points="150,10 280,85 280,215 150,290 20,215 20,85" fill="none" stroke="#000" stroke-width="10" stroke-linejoin="round"/></svg> to add the molecules into your chemical editor. Use the Lasso Pointer Tool <img alt="Left 5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_5.png"> in the toolbar (lasso as shown in video or hold 'Alt' and drag for retangular selection or double click a bond or an atom of the molecule) to rearrange the components in the chemical equation. Products stand on the right of the reaction arrow and are labeled with a e.g. 'P1' watermark.</li>
+        <li>Use the Cleanup Button <img alt="Clean Up Tool" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_3.png"> to clean up the equation. </li>
+    </ol>
+  </tab>
+  <tab label="Method 2">
+    <p><strong>First chemical equation then data entry</strong>: <a href="../reaction-scheme">Click here</a> for more information about the <i>OpenChemLib</i> chemical editor.</p>
+    <blockquote>
+        For those who are just looking for a Copy & Paste: <br>
+        <img alt="5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_5.png"> then <img alt="2nd Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_2.png"> (left: reactant; right: product): across **different** entries.<br>
+        <img alt="6th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_6.png">: <strong>within the same editor</strong><br>
+        Or use the Lasso Pointer Tool <img alt="Left 5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_5.png"> to select the target molecule, hold 'Shift' and drag the molecule to create a copy <br>
+    </blockquote>
+    <ol style="list-style-type: decimal;">
+      <li>Draw each chemical structure you need inside the chemical editor, or paste your chemical equation from e.g. ChemDraw or ChemSketch (if nothing happens, try "copy as SMILES" :) )</li>
+      <li>Repeat Step 1 to 2 in <strong>Method 1</strong>.</li>
+    </ol>
+  </tab>
+</tabs>
 
 ## 4. Calculation of the amounts of reagents required (*Ansatzberechnung*)
-> *The following instructions target only OC2-Praktikum.*
+> *The following instructions mainly target OC2-Praktikum.*
 
 <video controls muted poster="../assets/new-entry/thumbnail_new-entry-5.png">
 	<source src="../assets/new-entry/new-entry-5.mp4" type="video/mp4">
