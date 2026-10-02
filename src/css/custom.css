@@ -455,8 +455,8 @@ article:has(> .kl-page)::before {
   max-width: var(--kl-measure);
 }
 
-.markdown li + li {
-  margin-top: 0.35rem;
+.markdown li + li, dt{
+  margin-top: 0.65rem;
 }
 
 .markdown a {
