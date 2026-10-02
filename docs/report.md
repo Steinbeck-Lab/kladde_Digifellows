@@ -9,7 +9,7 @@ pagination_next: null
 Return to your ELN entry. The easiest way is simplying clicking <img class="function-icon" alt="print report" src="../assets/report/img_report-print-report.png"> to save as PDF with the default template.
 
 <details>
-  <summary><strong>Adding images and diagrammes</strong></summary>
+  <summary><strong>Adding images and diagrams</strong></summary>
     You may drag and drop image files inside your ELN entry and add them to your main text box and your report by clicking "insert image".
     <img alt="insert image" src="../assets/report/img_report-insert-image.png">
     You might have to adjust the size of your image inside the text box to fit the PDF page of your report.
@@ -24,7 +24,7 @@ Return to your ELN entry. The easiest way is simplying clicking <img class="func
 
 <details class="kl-static">
   <summary><strong>Overview of reactions</strong>
-  A list of reaction schemes with the corresponding reagents and the yielding of each fraction (labeled with "batch" number).</summary>
+  A list of reaction schemes with the corresponding reagents and the yielding of each fraction (labelled with "batch" number).</summary>
 </details>
 <details class="kl-static">  
   <summary><strong>Report for parallel reactions</strong>
