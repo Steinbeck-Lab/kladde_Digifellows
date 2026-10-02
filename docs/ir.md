@@ -58,7 +58,7 @@ Nevertheless, if you do lack a reference spectrum for comparison, or you would l
     <ol style="list-style-type: lower-alpha;"> 
       <li>Pick a specific signal in the graph and click the highlighted bar above to view the animated vibration.</li>
       <li>Click onto a mode in the list of modes to view of signal in graph and the animated vibration</li>
-      <li>Hover at an atom in molecule shown at bottom right to see relevant vibration modes. Click a bond to the most relevant vibration.</li>
+      <li>Hover at an atom in molecule shown at bottom right to see relevant vibration modes. Click a bond to see the most relevant vibration.</li>
     </ol>
 
 > Do feel free to play around with it and come back here if you need learning tools to visualise the IR vibrations. [Click here](https://docs.c6h6.org/docs/eln/uuid/10b6a7229db7dd815afcc75e77c2d6cd#using-the-view) for further information about the simulator.

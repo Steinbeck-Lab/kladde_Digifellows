@@ -6,7 +6,7 @@ pagination_next: null
 
 ## Report of a single reaction
 
-Return to your ELN entry. The easiest way is simplying clicking <img class="function-icon" alt="print report" src="../assets/report/img_report-print-report.png"> to save as PDF with the default template.
+Return to your ELN entry. The easiest way is simply clicking <img class="function-icon" alt="print report" src="../assets/report/img_report-print-report.png"> to save as PDF with the default template.
 
 <details>
   <summary><strong>Adding images and diagrams</strong></summary>
