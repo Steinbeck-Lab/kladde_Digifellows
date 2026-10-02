@@ -29,14 +29,14 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
       <source src="../assets/new-entry/new-entry-3-4.mp4" type="video/mp4">
     </video>
     <ol style="list-style-type: decimal;">
-      <li>The <code>code</code> column itself has search function embedded. You may search with:</li>
+      <li>The <code>code</code> column itself has search function embedded. You may search with:
         <ol style="list-style-type: upper-alpha;">
           <li>(the first few characters of) the trivial name (e.g. with 'anthran' or in full 'anthranilic acid')</li>
           <li>the chemical formula (e.g. with "KI", "HCl").</li>
           <li>the CAS number, look up either on <a href="https://gestis.dguv.de/search">GESTIS</a> (in German) or on <a href="https://scifinder-n.cas.org/">CAS Sci Finder</a> (in English, login with <i>name@uni-jena.de</i> required).</li>
           <li style="padding-bottom: 0.65rem">the product code of a product you synthesized before.</li>
-        </ol>
-        <li>Hit 'Enter' to search. In the pop-up window click the chemical of choice once to select. Usually the fields in <code>Name</code>, <code>mf</code> (molecular formula), <code>mw</code> (molecular weight) and <code>density</code> are automatically filled up. Nevertheless for some molecules, of which relatively little literature are currently available, manual input might be required.
+        </ol></li>
+        <li>Hit 'Enter' to search. In the pop-up window click the chemical of choice once to select. Usually the fields in <code>Name</code>, <code>mf</code> (molecular formula), <code>mw</code> (molecular weight) and <code>density</code> are automatically filled up. Nevertheless for some molecules, of which relatively little literature are currently available, manual input might be required.</li>
         <li>Click the <svg role="img" aria-label="Hexagon icon on the right" style="margin: 0; width: 1.5em; height: 1.5em; vertical-align: top;" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><polygon points="150,10 280,85 280,215 150,290 20,215 20,85" fill="none" stroke="#000" stroke-width="10" stroke-linejoin="round"/></svg> to add the molecules into your chemical editor. Use the Lasso Pointer Tool <img alt="Left 5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_5.png"> in the toolbar (lasso as shown in video or hold 'Alt' and drag for retangular selection or double click a bond or an atom of the molecule) to rearrange the components in the chemical equation. Products stand on the right of the reaction arrow and are labeled with a e.g. 'P1' watermark.</li>
         <li>Use the Cleanup Button <img alt="Clean Up Tool" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_3.png"> to clean up the equation. </li>
     </ol>
@@ -45,7 +45,7 @@ On the page of the ELN entry enter a title of your choice for the reaction and c
     <p><strong>First chemical equation then data entry</strong>: <a href="../reaction-scheme">Click here</a> for more information about the <i>OpenChemLib</i> chemical editor.</p>
     <blockquote>
         For those who are just looking for a Copy & Paste: <br>
-        <img alt="5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_5.png"> then <img alt="2nd Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_2.png"> (left: reactant; right: product): across **different** entries.<br>
+        <img alt="5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_5.png"> then <img alt="2nd Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_2.png"> (left: reactant; right: product): across <strong>different</strong> entries.<br>
         <img alt="6th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_tr_6.png">: <strong>within the same editor</strong><br>
         Or use the Lasso Pointer Tool <img alt="Left 5th Key" class="function-icon" src="../assets/chemical-editor/img_chemicaleditor_left_5.png"> to select the target molecule, hold 'Shift' and drag the molecule to create a copy <br>
     </blockquote>

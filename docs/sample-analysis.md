@@ -79,7 +79,7 @@ Now you should land on the sample page. Alternatively you may access each specif
 </details>
 
 ## 3. Use your product in multi-step syntheses
-For a multi-step synthesis you may use the product code of your product in the previous synthesis in the next entry. You can find the product code on the top left corner on the sample page. See Option D in Method 1 on [New Entry](../new-entry#3-add-your-reaction-and-reagents).
+For a multi-step synthesis you may use the product code of your product in the previous synthesis in the next entry. You can find the product code on the top left corner on the sample page. See Option D in Method 1 on [New Entry](../new-entry#3--add-your-reaction-and-reagents).
 
 <img style="width: var(--kl-measure)" alt="product code on the top left corner of sample page" src="../assets/sample-analysis/img_sample-analysis-product-code.png"/>
 
