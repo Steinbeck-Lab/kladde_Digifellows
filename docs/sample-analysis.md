@@ -79,7 +79,7 @@ Now you should land on the sample page. Alternatively you may access each specif
 </details>
 
 ## 3. Use your product in multi-step syntheses
-For a multi-step synthesis you may use the product code of your product in the previous synthesis in the next entry. You can find the product code on the top left corner on the sample page.
+For a multi-step synthesis you may use the product code of your product in the previous synthesis in the next entry. You can find the product code on the top left corner on the sample page. See Option D in Method 1 on [New Entry](../new-entry#3-add-your-reaction-and-reagents).
 
 <img style="width: var(--kl-measure)" alt="product code on the top left corner of sample page" src="../assets/sample-analysis/img_sample-analysis-product-code.png"/>
 
@@ -90,6 +90,6 @@ For a multi-step synthesis you may use the product code of your product in the p
 
 ## `Add product` vs `Add empty sample`
 - `Add product` is designated for **the product of your synthesis** in this entry (thus you may specify if it is a crude or pure product). 
-- `Add sample` practically can be used e.g. for a specific reagent of a specific batch in your synthesis. Therefore you may specify the relation between your sample and our proposed synthesis by clicking <svg role="img" aria-label="Hexagon icon on the right" style="margin: 0; width: 1.5em; height: 1.5em; vertical-align: top;" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><polygon points="150,10 280,85 280,215 150,290 20,215 20,85" fill="none" stroke="#a207f0" stroke-width="10" stroke-linejoin="round"/></svg> and selecting the corresponding chemical.
+- `Add sample` practically can be used e.g. for a specific reagent of a specific batch in your synthesis. Therefore you may specify the relation between your sample and our proposed synthesis by clicking <svg role="img" aria-label="Hexagon icon on the right" style="margin: 0; width: 1.5em; height: 1.5em; vertical-align: top;" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><polygon points="150,10 280,85 280,215 150,290 20,215 20,85" fill="none" stroke="#a207f0" stroke-width="10" stroke-linejoin="round"/></svg> and selecting the corresponding chemical. The entry will then be shown in \"Related samples".
 
 > [Click here](https://docs.c6h6.org/docs/eln/uuid/15c9a2dcd55c963fdedf2c18a1471b03) to learn more about management of sample information on the ELN.

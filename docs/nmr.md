@@ -2,7 +2,8 @@
 title: NMR
 description: Tools for NMR spectra simulation and analysis, powered by NMRium.
 ---
-# Nuclear Magnetic Resonance (NMR)
+# <img class="function-icon" style="vertical-align: middle;" alt="Analyse NMR" src="../assets/nmr/img_nmr-analyse.png"> Nuclear Magnetic Resonance (NMR)
+
 The [NMR Platform FSU Jena](https://www.nmr.uni-jena.de/de/index.php) has already integrated the ELN SciPeaks for sample requests and analyses. For further information, you may visit the website or refer directly to the slides [here](https://www.nmr.uni-jena.de/downloads/lehre/NMR-Seminar1_vs100726_pdf.pdf) (log in with URZ credentials, e.g. ab12cde).
 
 ## 1. Attach your NMR data
@@ -68,5 +69,5 @@ The rest of the tools powered by NMRium are excellent for prediction and also as
 </details>
 <details>
   <summary><strong><img class="function-icon" style="height:3rem" alt="Multiplet simulator" src="../assets/nmr/img_nmr-multiplet-sim.png"> Multiplet simulator</strong></summary>
-  This tool demonstrates the shape of a signal in NMR 1H spectra (nuclear spin I = 1/2) the corresponding dendogram based on user-defined coupling constants and multiplicities. Secondary effects are neglected here.
+  This tool demonstrates the shape of a signal in NMR 1H spectra and the corresponding dendogram (nuclear spin I = 1/2) based on user-defined coupling constants and multiplicities. Secondary effects are neglected here.
 </details>
