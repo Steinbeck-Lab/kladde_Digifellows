@@ -7,8 +7,6 @@ description: Use of shortcuts in your descriptions.
 > <video autoplay loop muted playinline width="100%" alt="demonstration of snippet insertion"> <source src="../assets/snippets/snippets-1.mp4" type="video/mp4"></video>
 > cool, right?
 
-[*<font color="red">German translation of reagents in development</font>*]: #
-
 ## Configuration of shortcut keys (snippets)
 <img alt="check the box for Autoupdate snippets" src="../assets/snippets/img_snippets_prefs.png">
 Go to 'Prefs' and check the box in 'Autoupdate snippets'. Click 'Save preferences'.

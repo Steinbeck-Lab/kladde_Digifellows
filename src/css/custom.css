@@ -94,9 +94,6 @@
   --ifm-footer-link-hover-color: var(--kl-green-deep);
   --ifm-footer-title-color: var(--kl-ink);
   --ifm-pagination-nav-border-radius: 2px;
-  --ifm-dropdown-background-color: var(--kl-paper);
-  --ifm-dropdown-link-color: var(--kl-ink);
-  --ifm-dropdown-hover-background-color: var(--kl-green-wash);
   --docusaurus-highlighted-code-line-bg: var(--kl-green-wash);
   --docusaurus-progress-bar-color: var(--kl-green);
 }
@@ -186,16 +183,14 @@ textarea {
 .navbar__link,
 .menu__link,
 .table-of-contents__link,
-.footer__link-item,
-.dropdown__link {
+.footer__link-item {
   text-decoration: none;
 }
 
 .navbar__link:hover,
 .menu__link:hover,
 .table-of-contents__link:hover,
-.footer__link-item:hover,
-.dropdown__link:hover {
+.footer__link-item:hover {
   transform: scale(1.03);
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -286,12 +281,6 @@ textarea {
 .navbar-sidebar__back {
   background-color: rgb(0 35 80 / 0.05);
   color: var(--kl-ink);
-}
-
-.dropdown__menu {
-  border: 1px solid var(--kl-rule-strong);
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
 }
 
 .theme-doc-sidebar-container {
@@ -392,13 +381,12 @@ article:has(> .kl-page)::before {
   background-color: var(--kl-gold);
 }
 
-/* The page wrapper adds no box: its condition line and notice sit above the mobile table of contents. */
+/* The page wrapper adds no box: its condition line sits above the mobile table of contents. */
 .kl-page {
   display: contents;
 }
 
-.kl-condition,
-.kl-notice {
+.kl-condition {
   order: -1;
 }
 

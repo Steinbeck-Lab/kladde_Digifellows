@@ -11,8 +11,7 @@ guides, annotated screenshots and short screen recordings.
 - GitHub Pages project URL: <https://steinbeck-lab.github.io/kladde_Digifellows/>
 - Repository: <https://github.com/Steinbeck-Lab/kladde_Digifellows>
 
-The site is a static [Docusaurus 3](https://docusaurus.io/) (React) site, published in English; the
-German locale is switched off until its pages are translated (see [Translations](#translations)).
+The site is a static [Docusaurus 3](https://docusaurus.io/) (React) site, published in English.
 Its visual design, the *Laborkladde* theme, is documented in [DESIGN.md](DESIGN.md).
 
 ## Contents
@@ -44,8 +43,7 @@ Requires Node.js 20 or newer. Dependencies are pinned in `package.json` and `pac
 ```bash
 npm ci                 # install exactly the locked versions
 npm start              # English preview at http://localhost:3000, reloads on change
-npm run start:de       # German preview; warns that the locale is off, then serves it anyway
-npm run build          # production build into build/ (English only while German is off)
+npm run build          # production build into build/
 npm run serve          # serve build/ locally to check the result, including search
 npm run check-media    # every picture and recording a page points at still exists
 npm run wordmark       # cut the navbar copy of the wordmark from the drawn one
@@ -96,12 +94,11 @@ static/
   img/kladde_spec.svg    The wordmark as drawn; the home page cover label
   img/kladde_spec_navbar.svg  Thickened cut of it for the navbar; `npm run wordmark` writes it
   img/favicon_spec.svg   Site icon
-i18n/de/                 German interface strings, and German page translations once they exist
 src/css/custom.css       The Laborkladde theme: tokens and styles
 src/theme/               Docusaurus theme overrides (see Theme and components)
-src/components/          EntryIndex, Gloss, MdxVideo, OpenKladde, Icons
+src/components/          EntryIndex, Gloss, MdxVideo, OpenScipeaks, OpenTeaching, Icons
 src/lib/                 Numbered entries and sidebar classes, read from the sidebar
-src/plugins/             rehypeTapedMedia, translationStatus
+src/plugins/             rehypeTapedMedia
 src/clientModules/       Self-hosted fonts; timestamp links into videos
 DESIGN.md                The design system
 PRODUCT.md               Product facts behind the design
@@ -179,25 +176,6 @@ time in seconds, and still jumps to the video without JavaScript:
 - German lab terms (*Ansatzberechnung*, *Versuchsanleitung*, *H- & P-Sätze*) are intentional.
 - A page that isn't written yet contains only `brewing in progress... ☕`.
 
-## Translations
-
-- **Switched off for now.** `i18n.locales` in `docusaurus.config.js` lists `en` alone, so no `/de/`
-  site is built, the navbar has no language dropdown, and the condition line at the top of a page
-  drops its translation box and language link. Switching German back on is three edits in that
-  file: `'de'` into `i18n.locales`, `'de'` into the search theme's `language`, and
-  `{type: 'localeDropdown', position: 'right'}` back into the navbar items. Everything below then
-  applies again; nothing under `i18n/de/` was removed.
-- **Interface strings** (navigation, footer, notices, labels) live in `i18n/de/`. After adding or
-  changing a `<Translate>` string in `src/`, run `npm run write-translations -- --locale de` and
-  translate the new entries in `i18n/de/code.json`. The German interface strings were drafted
-  during the redesign and should be checked by a German speaker on the team.
-- **Pages:** copy `docs/<page>.md` to `i18n/de/docusaurus-plugin-content-docs/current/<page>.md`
-  and translate it, keeping the front matter keys. Until that file exists, the German page shows
-  the English text with a notice, and the condition line at the top of every page says whether
-  the German text exists yet (`src/plugins/translationStatus.js`).
-- Sidebar category labels are translated in
-  `i18n/de/docusaurus-plugin-content-docs/current.json`.
-
 ## Theme and components
 
 The *Laborkladde* theme treats the documentation as the squared-paper lab notebook Kladde replaces.
@@ -207,7 +185,7 @@ of `src/css/custom.css`.
 | Token | Value | Source and use |
 |---|---|---|
 | `--kl-ink` | `#002350` | FSU blue; text (15.5:1 on white) and the navbar |
-| `--kl-green` | `#4E7F0A` | Faculty green #74A740 darkened for text (4.8:1); links, entry numbers, Open Kladde |
+| `--kl-green` | `#4E7F0A` | Faculty green #74A740 darkened for text (4.8:1); links, entry numbers, Open Scipeaks |
 | `--kl-gold` | `#887440` | FSU gold (4.55:1); margin rule, sidebar numbers, section labels |
 | `--kl-ink-soft` | `#3A5F91` | Secondary text (6.5:1) |
 | `--kl-paper` | `#FCFDFE` | Page ground with a faint 5 mm grid |
@@ -220,14 +198,12 @@ Customized parts of Docusaurus:
 - `src/theme/MDXComponents.js` extends the Markdown components (native `<details>`, `<gloss>`,
   video anchors), the extension point the Docusaurus docs describe.
 - `src/theme/DocItem/Content`, `src/theme/DocItem/Paginator` and `src/theme/PaginatorNavLink` are
-  not on Docusaurus's list of components that are safe to customize, and the language link in
-  `DocItem/Content` uses `useAlternatePageUtils` from `@docusaurus/theme-common/internal`.
+  not on Docusaurus's list of components that are safe to customize.
   **Check them after every Docusaurus upgrade** against the new versions in
   `node_modules/@docusaurus/theme-classic/lib/theme/`.
 - `src/plugins/rehypeTapedMedia.js` adds the print frames at build time and picks one of three tape
   arrangements per print; the tape strips are rendered images, `static/img/tape-1.png` to
-  `tape-3.png`, with their origin embedded;
-  `src/plugins/translationStatus.js` records which pages are translated.
+  `tape-3.png`, with their origin embedded.
 - The search is `@easyops-cn/docusaurus-search-local`, pinned at 0.55.3. Its optional AI widget
   dependency is not installed.
 
@@ -240,11 +216,9 @@ Customized parts of Docusaurus:
   `baseUrl` is `/`, which fits the custom domain only. Clones made before the move
   can update their remote with
   `git remote set-url origin https://github.com/Steinbeck-Lab/kladde_Digifellows.git`.
-- **German text:** no page is translated yet and the German interface strings need review, so the
-  German locale is switched off; see [Translations](#translations).
 - **Unwritten pages:** NMR, MS, Report and the Soyee Chan bio.
 - **Media:** the largest videos are 27 MB (`snippets-preset.mp4`), 17 MB, 13 MB, 13 MB and 11 MB;
-  every file under `static/` is copied into each language build. `kevin-jablonka.jpg` is a
+  every file under `static/` is copied into the build. `kevin-jablonka.jpg` is a
   1.5 MB, 3024×3024 photo shown 240 px wide. The three autoplay clips have no poster.
 - **Unused files:** `static/assets/chemical-editor/img_chemicaleditor_topright.png`.
 - **Copy and markup:** "ammendment" in `new-entry.md`; `playinline` instead of `playsinline` in

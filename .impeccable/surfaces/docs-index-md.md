@@ -10,7 +10,7 @@ related_targets: ["docs/new-entry.md"]
 ## Scope
 
 The whole documentation site built with Docusaurus: home page, the How to start entries, About,
-Analysis and Report pages, in English and German. Visitor mode: Read.
+Analysis and Report pages, in English. Visitor mode: Read.
 
 ## Audience and task
 
@@ -20,8 +20,7 @@ step fast.
 
 ## Proof and content
 
-Existing guides, screenshots, screen recordings with timestamp links, German lab terms. No German
-text yet: German pages show English content with a notice.
+Existing guides, screenshots, screen recordings with timestamp links, German lab terms.
 
 ## Constraints
 
@@ -57,8 +56,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Raises kept from declined challengers
 
-- Expedition Ice Press: every page carries a condition line (entry number, last updated, German
-  text present or not).
+- Expedition Ice Press: every page carries a condition line (entry number, last updated).
 - Exposure Record: amounts, equivalents, H- and P-codes and entry numbers set as data in tabular
   figures and ruled columns.
 - Box Archive Wall: on phones the index re-shelves to one column of full-width entry labels.
@@ -69,4 +67,4 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 ## Unresolved decisions
 
 - Accessibility target (PRODUCT.md open decision).
-- Search: a local search plugin replaces the MkDocs search, if one supports Docusaurus 3.10 and German.
+- Search: a local search plugin replaces the MkDocs search, if one supports Docusaurus 3.10.

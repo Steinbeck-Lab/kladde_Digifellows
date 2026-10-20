@@ -6,13 +6,11 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "start:de": "docusaurus start --locale de",
     "build": "docusaurus build",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
     "check-media": "node scripts/check-media.mjs",
-    "wordmark": "node scripts/thicken-wordmark.mjs",
-    "write-translations": "docusaurus write-translations"
+    "wordmark": "node scripts/thicken-wordmark.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",

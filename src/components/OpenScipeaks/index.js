@@ -8,7 +8,6 @@
  */
 import React from 'react';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {ArrowUpRight} from '@site/src/components/Icons';
 import styles from './styles.module.css';
@@ -19,15 +18,11 @@ export default function OpenScipeaks() {
   return (
     <>
       <Link className="kl-action" to={siteConfig.customFields.elnUrl}>
-        <Translate id="kladde.open.label" description="Label of the link that opens the ELN">
-          Open Scipeaks
-        </Translate>
+        Open Scipeaks
         <ArrowUpRight />
       </Link>
       <p className={styles.note}>
-        <Translate id="kladde.open.vpn" description="Reminder to use the university VPN when logging in from outside">
-          Logging in from off campus? Connect to the Uni Jena VPN first.
-        </Translate>
+        Logging in from off campus? Connect to the Uni Jena VPN first.
       </p>
     </>
   );

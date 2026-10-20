@@ -1,22 +1,17 @@
 /**
- * Every page opens like a notebook entry: a condition line (entry number, last update and, while a
- * second language is switched on, translation state and a link to the same page in the other
- * language) and, for a German page still showing English, a notice saying so.
+ * Every page opens like a notebook entry, above a condition line of ruled boxes: the entry number
+ * and the date of the last update.
  *
  * The markdown container repeats @theme-original/DocItem/Content, so that a portrait page can
  * print its description under the name as a subtitle, inside the same title header.
  */
 import React from 'react';
 import clsx from 'clsx';
-import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {usePluginData} from '@docusaurus/useGlobalData';
-import {useAlternatePageUtils} from '@docusaurus/theme-common/internal';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
-import {ArrowRight} from '@site/src/components/Icons';
 import {TEAM_CLASS, useDocClasses, useEntries} from '@site/src/lib/entries';
 import styles from './styles.module.css';
 
@@ -46,41 +41,12 @@ function formatDate(timestamp, locale) {
   );
 }
 
-function LanguageState({isDefaultLocale, translated}) {
-  if (isDefaultLocale) {
-    return translated ? (
-      <Translate id="kladde.condition.german.available" description="German translation of this page exists">
-        translated
-      </Translate>
-    ) : (
-      <Translate id="kladde.condition.german.pending" description="German translation of this page does not exist yet">
-        not yet translated
-      </Translate>
-    );
-  }
-  return translated ? (
-    <Translate id="kladde.condition.language.translated" description="The page is shown in the current language">
-      German
-    </Translate>
-  ) : (
-    <Translate id="kladde.condition.language.fallback" description="The page falls back to English">
-      English, not yet translated
-    </Translate>
-  );
-}
-
 export default function ContentWrapper(props) {
   const {metadata, frontMatter} = useDoc();
   const {i18n} = useDocusaurusContext();
-  const {translatedDocIds} = usePluginData('kladde-translation-status');
-  const {createUrl} = useAlternatePageUtils();
   const entry = useEntries().find((item) => item.docId === metadata.id);
   const isHome = metadata.id === 'index';
   const number = entry?.number ?? (isHome ? HOME_ENTRY_NUMBER : undefined);
-  const isDefaultLocale = i18n.currentLocale === i18n.defaultLocale;
-  const showingFallback = !isDefaultLocale && metadata.source.startsWith('@site/docs/');
-  const translated = !showingFallback && (translatedDocIds.de ?? []).includes(metadata.id);
-  const otherLocale = i18n.locales.find((locale) => locale !== i18n.currentLocale);
   const isProfile = useDocClasses(metadata.id).includes(TEAM_CLASS);
 
   return (
@@ -91,63 +57,18 @@ export default function ContentWrapper(props) {
         <dl className={styles.condition}>
           {number && (
             <div>
-              <dt>
-                <Translate id="kladde.condition.entry" description="Label of the entry number box">
-                  Entry
-                </Translate>
-              </dt>
+              <dt>Entry</dt>
               <dd>{number}</dd>
             </div>
           )}
           {metadata.lastUpdatedAt && (
             <div>
-              <dt>
-                <Translate id="kladde.condition.updated" description="Label of the last-updated box">
-                  Updated
-                </Translate>
-              </dt>
+              <dt>Updated</dt>
               <dd>{formatDate(metadata.lastUpdatedAt, i18n.currentLocale)}</dd>
             </div>
           )}
-          {/* Translation state is worth a box only while there is a second language to go to. */}
-          {otherLocale && (
-            <div>
-              <dt>
-                {isDefaultLocale ? (
-                  <Translate id="kladde.condition.german" description="Label of the German-translation box on English pages">
-                    German
-                  </Translate>
-                ) : (
-                  <Translate id="kladde.condition.language" description="Label of the language box on translated locales">
-                    Language
-                  </Translate>
-                )}
-              </dt>
-              <dd>
-                <LanguageState isDefaultLocale={isDefaultLocale} translated={translated} />
-              </dd>
-            </div>
-          )}
         </dl>
-        {otherLocale && (
-          <a
-            className={styles.switch}
-            href={createUrl({locale: otherLocale, fullyQualified: false})}
-            hrefLang={otherLocale}
-            lang={otherLocale}
-            target="_self">
-            <span>{i18n.localeConfigs[otherLocale]?.label ?? otherLocale}</span>
-            <ArrowRight />
-          </a>
-        )}
       </div>
-      {showingFallback && (
-        <p className={clsx(styles.notice, 'kl-notice')} role="note">
-          <Translate id="kladde.notice.untranslated" description="Notice on a translated locale when the page still shows English">
-            This page is not translated yet, so it is shown in English.
-          </Translate>
-        </p>
-      )}
       <Markdown subtitle={isProfile ? frontMatter.description : undefined}>{props.children}</Markdown>
     </div>
   );

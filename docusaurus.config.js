@@ -55,7 +55,6 @@ const config = {
   ],
 
   plugins: [
-    './src/plugins/translationStatus.js',
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -75,7 +74,7 @@ const config = {
     [
       '@easyops-cn/docusaurus-search-local',
       {
-        // Local search index; no external service. German rejoins the list with its locale.
+        // Local search index; no external service.
         hashed: true,
         language: ['en'],
         docsRouteBasePath: '/',

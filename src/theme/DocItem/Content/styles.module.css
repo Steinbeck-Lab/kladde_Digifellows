@@ -14,8 +14,7 @@
   display: contents;
 }
 
-.condition > div,
-.switch {
+.condition > div {
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
@@ -36,45 +35,13 @@
   color: var(--kl-ink);
 }
 
-.switch {
-  align-items: center;
-  font-weight: 600;
-  color: var(--kl-green);
-  text-decoration: none;
-}
-
-.switch:hover {
-  color: var(--kl-green-deep);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
-.switch svg {
-  width: 1.1em;
-  height: 1.1em;
-  flex-shrink: 0;
-}
-
-.notice {
-  max-width: var(--kl-measure);
-  margin: 0 0 1.75rem;
-  padding: 0.7rem 1rem;
-  border: 1px solid var(--kl-gold);
-  background-color: var(--kl-paper);
-  box-shadow: var(--kl-box-lift);
-  color: var(--kl-ink);
-  font-size: 1rem;
-  line-height: 1.45;
-}
-
 @media (max-width: 600px) {
   .strip {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .condition > div,
-  .switch {
+  .condition > div {
     justify-content: space-between;
   }
 }

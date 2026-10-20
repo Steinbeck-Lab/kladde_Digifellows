@@ -129,17 +129,14 @@ components:
     typography: "{typography.label}"
     rounded: "{rounded.none}"
     padding: "0.3rem 0.65rem 0.25rem"
-  language-switch:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.green}"
-    typography: "{typography.label}"
-    rounded: "{rounded.none}"
-    padding: "0.3rem 0.65rem 0.25rem"
-  language-switch-hover:
-    textColor: "{colors.green-deep}"
-  open-kladde:
+  open-scipeaks:
     backgroundColor: "{colors.white}"
     textColor: "{colors.green-deep}"
+    rounded: "{rounded.none}"
+    padding: "0.5rem 1.1rem 0.55rem"
+  open-exercises:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.ink-soft}"
     rounded: "{rounded.none}"
     padding: "0.5rem 1.1rem 0.55rem"
   entry-label:
@@ -201,11 +198,6 @@ components:
     textColor: "{colors.ink}"
     rounded: "{rounded.none}"
     padding: "1rem"
-  untranslated-notice:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.none}"
-    padding: "0.7rem 1rem"
   table-cell:
     backgroundColor: "{colors.white}"
     textColor: "{colors.ink}"
@@ -223,7 +215,7 @@ components:
 
 **Creative North Star: "The Laborkladde"**
 
-The documentation is the squared-paper lab notebook that Kladde replaces. Every page is a notebook entry: white paper with a faint 5 mm grid under everything, FSU-blue ink for type, faculty green for whatever can be followed or done, a thin gold margin rule, and screenshots and recordings taped in with strips of masking tape. Guides are numbered entries (00 for the home page, 01 to 05 for the workflow) and open with a condition line of ruled boxes: entry number, last update and, while a second language is switched on, translation state and a link to the other language.
+The documentation is the squared-paper lab notebook that Kladde replaces. Every page is a notebook entry: white paper with a faint 5 mm grid under everything, FSU-blue ink for type, faculty green for whatever can be followed or done, a thin gold margin rule, and screenshots and recordings taped in with strips of masking tape. Guides are numbered entries (00 for the home page, 01 to 05 for the workflow) and open with a condition line of ruled boxes: entry number and last update.
 
 The reading scene is a phone or tablet on the lab bench under bright light, so the world is light only, high in contrast and generous in size (an 18px root, a 68ch measure, generous tap areas). Density stays calm: one heading, one print, one paragraph at a time, separated by ruled lines and whitespace rather than cards. The notebook's own devices carry the identity (ruled boxes, tabular figures, the margin column, tape); decoration that a notebook would not have stays out.
 
@@ -247,12 +239,12 @@ A cool, near-monochrome notebook page in FSU blue, with one green for action and
 - **Faded Ink** (#3a5f91): secondary text only: condition-box labels, index descriptions, entry-label descriptions, table-of-contents links, footer copyright, search placeholder, fold-box teasers.
 
 ### Secondary
-- **Faculty Green, text grade** (#4e7f0a): links, the language switch, Open Kladde, page links, the fold-box plus, a glossed word under the pointer, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
+- **Faculty Green, text grade** (#4e7f0a): links, Open Scipeaks, page links, the fold-box plus, a glossed word under the pointer, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
 - **Deep Green** (#3d6d00): hover state of every green link and of the fold-box plus, the active table-of-contents link, the active sidebar entry number.
 - **Green Wash** (#dcf0cd): the fill of the current sidebar entry, an entry label under the pointer, text selection, highlighted code lines and dropdown hover; at 60% opacity, the hover fill of index rows. Text on it stays ink or deep green.
 
 ### Tertiary
-- **FSU Gold** (#887440): a line, never text: the 1px margin rule down each entry and the border of the untranslated-page notice.
+- **FSU Gold** (#887440): a line, never text: the 1px margin rule down each entry.
 - **Gold Ink** (#6f5b27): gold when it has to be read: sidebar entry numbers, index section names, heading anchor links (about 6.4:1 on paper, 5.6:1 where a glyph crosses a grid line).
 
 ### Neutral
@@ -288,7 +280,7 @@ The root is 112.5% (18px at default settings), so every rem below is 18px.
 - **Fold title** (Atkinson 700, 1.1rem, line-height 1.35): the title of a fold box. A teaser under it is Atkinson 400 at 1rem, line-height 1.5, in faded ink; the text inside the box is 1rem, like notes.
 - **Lead** (Atkinson 400, 1.3rem, line-height 1.5, max 52ch; 1.18rem at 600px and below): the home page opening line, "Welcome to Kladde, your electronic lab notebook!".
 - **Body** (Atkinson 400, 18px, line-height 1.6, max 68ch): paragraphs, lists (0.35rem between items), notes at 1rem.
-- **Label** (Barlow Semi Condensed 600, 0.95rem, line-height 1.2, tabular figures): condition-line values and the language switch; box labels at 500 in faded ink. The same face at 600 sets sidebar section names (1.08rem), table heads (1.02rem), footer titles (1.05rem) and sidebar entry numbers; index section names at 500.
+- **Label** (Barlow Semi Condensed 600, 0.95rem, line-height 1.2, tabular figures): condition-line values; box labels at 500 in faded ink. The same face at 600 sets sidebar section names (1.08rem), table heads (1.02rem), footer titles (1.05rem) and sidebar entry numbers; index section names at 500.
 - **Index number** (Barlow Semi Condensed 600, 2.25rem, line-height 0.95, tabular; 1.9rem on phones): entry numbers in the home index.
 - **Emphasised links** (Atkinson 650): page links at 1.12rem, timestamp links, the active table-of-contents link. Navbar links are Atkinson 600 at 1rem.
 - **Code** (ui-monospace stack, 88%): inline keys and field names as typed.
@@ -319,12 +311,11 @@ Docusaurus's three-column docs layout on squared paper: sidebar index, the entry
 
 ## Elevation & Depth
 
-Flat paper. Depth comes from ruled lines and from white things laid onto paper. Two resting shadows only: the taped print, a physical object stuck onto the page, and a soft lift to the bottom and right of a box of text, which sets it apart from the paragraphs around it. The navbar carries no shadow (a 1px dark bottom line instead), and the progress bar's glow is removed. The locale dropdown, a transient overlay, keeps a small shadow.
+Flat paper. Depth comes from ruled lines and from white things laid onto paper. Two resting shadows only: the taped print, a physical object stuck onto the page, and a soft lift to the bottom and right of a box of text, which sets it apart from the paragraphs around it. The navbar carries no shadow (a 1px dark bottom line instead), and the progress bar's glow is removed.
 
 ### Shadow Vocabulary
 - **Taped print lift** (`box-shadow: 0 1px 2px rgb(0 35 80 / 0.1), 0 3px 6px -3px rgb(0 35 80 / 0.16)`): screenshots, portraits and recordings in their white mat.
-- **Text box lift** (`box-shadow: 3px 3px 7px -3px rgb(0 35 80 / 0.28)`): boxes of text — notes, fold boxes, gloss notes, the untranslated notice — and the two labels that are pressed, Open Kladde and the entry labels, blurred to the bottom and the right. A label keeps its shadow while it grows.
-- **Overlay** (`box-shadow: 0 2px 4px rgb(0 0 0 / 0.2)`): the locale dropdown menu only.
+- **Text box lift** (`box-shadow: 3px 3px 7px -3px rgb(0 35 80 / 0.28)`): boxes of text — notes, fold boxes, gloss notes — and the labels that are pressed, the two actions and the entry labels, blurred to the bottom and the right. A label keeps its shadow while it grows.
 
 ### Named Rules
 **The Taped Print Rule.** A shadow means "this sits above the paper": the print lift for taped media, the text box lift for a box of text and for a label that can be pressed. Headers, the condition line and the navbar stay flat.
@@ -339,14 +330,14 @@ Square paper geometry. Corners are square (condition boxes, prints, notes, fold 
 ## Components
 
 ### Buttons
-The site has no filled buttons. Actions are green underlined links; the controls of its own are Open Kladde, the entry labels on the home index and the fold-box title.
+The site has no filled buttons. Actions are green underlined links; the controls of its own are Open Scipeaks and Open Exercises, the entry labels on the home index and the fold-box title.
 
 ### Navigation
 - **Navbar (the cover):** ink background, 3.75rem tall, a 1px rgb(0 0 0 / 0.25) bottom line, no shadow. The brand is the wordmark on a paper label with an inset ink outline. Links are white Atkinson 600; hover and active turn green wash, hover adds a 1px underline, the active section a 2px underline offset 0.35em. The search field is a paper box with a 2px radius. The mobile drawer is paper with an ink brand bar.
 - **Sidebar index:** a ruled right edge; category names in the label face; workflow entries numbered by a CSS counter, two digits in gold ink before the title. Links have no underline until hover. The current entry has a green-wash fill, bold title and deep green number. The sidebar does not animate.
 - **Table of contents:** 0.92rem, faded ink links, the active heading in deep green at 650.
 - **Search:** Ctrl+F (⌘F on a Mac) puts the cursor in the search field, in place of the browser's find-on-page.
-- **Navbar items:** each names the page it opens — How to start, Sample Analysis, About (Erste Schritte, Analytik, Über Kladde) — and Open Kladde sits at the right as a paper label. The language dropdown is out while the German locale is switched off; it returns to the right of Open Kladde with it.
+- **Navbar items:** each names the page it opens — How to start, Sample Analysis, About — and Open Scipeaks and Open Exercises sit at the right as paper labels. Below 997px all five fold into the mobile drawer.
 - **Footer:** transparent over the grid, a strong top rule, label-face titles, faded ink copyright.
 
 ### Wordmark (signature)
@@ -357,15 +348,15 @@ Two cuts of one drawing. `kladde_spec.svg` is the drawing. `kladde_spec_navbar.s
 On the home page the drawing is the h1's background rather than an `<img>`, so the title stays in the page as text for the search index and for screen readers, hidden by `font-size: 0`; `background-origin: content-box` keeps the padding clear, which a background otherwise paints over. One consequence: the wordmark does not print, because browsers drop background images and the site sets no `@media print`.
 
 ### Condition Line (signature)
-The entry-header strip: a row of ruled paper boxes that share borders (1px strong rule, overlapping by 1px), each a label in faded ink (500) and a value in ink (600): Entry (00 on home), Updated (a localized short date), and German or Language (translation state). The last box is the language link: green label-face text with an SVG arrow, deep green and underlined on hover. On German pages still showing English, a notice follows: paper fill, 1px gold border, 1rem ink text, max 68ch.
+The entry-header strip: a row of ruled paper boxes that share borders (1px strong rule, overlapping by 1px), each a label in faded ink (500) and a value in ink (600): Entry (00 on home) and Updated (a short date).
 
-The German locale is switched off (`locales: ['en']` in `docusaurus.config.js`), so a page currently shows Entry and Updated only: the translation box, the language link and the notice depend on a second language existing and come back with it.
+### Actions (signature)
+The two things on the site that are not documentation, both in the cover label's shape: a white label with a 2px border and a 1px outline 5px outside it, the text box lift, 0.5rem by 1.1rem of padding, the name in Atkinson 700 at 1.15rem, followed by the line arrow that marks a link leaving the site. Touched, each grows 3% in 160ms and keeps its shadow.
 
-### Open Kladde (signature)
-The one action on the site, and the only thing on it that is not documentation: a white label in the cover label's shape, bordered 2px in text-grade green with a 1px green outline 5px outside it, the text box lift, 0.5rem by 1.1rem of padding, "Open Kladde" in Atkinson 700 at 1.15rem in deep green, followed by the line arrow that marks a link leaving the site. Touched, it grows 3% in 160ms and keeps its shadow. It stands under the welcome lead with one line of faded ink under it — "Logging in from off campus? Connect to the Uni Jena VPN first." — and is pinned to the right end of the navbar as a paper label with an inset ink outline, green wash on hover, before the language switch when that is shown. Its address starts the university login directly (`/roc/auth/login/oidc`), so nobody has to click through the SciPeaks page first; it lives once in `docusaurus.config.js`, where both places read it.
+**Open Scipeaks** is bordered and set in text-grade green and opens the notebook itself. **Open Exercises** is the quieter of the two, bordered and set in faded ink, and opens the exercises for the practical. They stand side by side under the welcome lead, with one line of faded ink below both — "Logging in from off campus? Connect to the Uni Jena VPN first." — and both are pinned to the right end of the navbar as paper labels with an inset ink outline and a green wash on hover, folding into the mobile drawer below 997px. The Scipeaks address starts the university login directly (`/roc/auth/login/oidc`), so nobody has to click through the SciPeaks page first; both addresses live once in `docusaurus.config.js`, where the navbar items and the page labels read them.
 
 ### Entry Labels (signature)
-An entry that holds pages of its own (Sample Analysis holds IR, NMR and MS) lists them on the line below it in the home index, 0.6rem clear of the row's hover fill and aligned with the entry title: white labels side by side, each a 2px ink border with a 1px ink outline 5px outside it, 0.5rem by 1.1rem of padding, the page name in the sidebar's face (Atkinson 500, 1rem) over its description in faded ink at 0.9rem, both set top-left. The whole label is the link; like Open Kladde it answers a touch by growing, 3% in 160ms, keeping its white paper and its text box lift. Below 600px they stack to one column. In the sidebar the same pages sit under the entry, indented to its title along a 1px rule, at 0.95rem and without numbers of their own.
+An entry that holds pages of its own (Sample Analysis holds IR, NMR and MS) lists them on the line below it in the home index, 0.6rem clear of the row's hover fill and aligned with the entry title: white labels side by side, each a 2px ink border with a 1px ink outline 5px outside it, 0.5rem by 1.1rem of padding, the page name in the sidebar's face (Atkinson 500, 1rem) over its description in faded ink at 0.9rem, both set top-left. The whole label is the link; like the two actions it answers a touch by growing, 3% in 160ms, keeping its white paper and its text box lift. Below 600px they stack to one column. In the sidebar the same pages sit under the entry, indented to its title along a 1px rule, at 0.95rem and without numbers of their own.
 
 ### Gloss (signature)
 A word that explains itself: `<gloss note="…">word</gloss>` marks the word with a 1px dashed underline offset 0.18em and opens its note above the word on hover, tap or keyboard focus — paper fill, 1px dashed strong rule, the text box lift, 0.6rem by 0.8rem of padding, 0.95rem text, at most 26rem wide, fading in over 150ms. At 600px and below there is no room to centre it over one word, so it opens above the paragraph instead. The word turns green while open. The note also sits in the page as the word's `aria-describedby`, so a screen reader reads it without a pointer. Footnotes stay available for sources; a glossed word is for a term the reader needs right there.
@@ -438,7 +429,7 @@ Only what is touched moves: page-link fill (150ms), index row fill (160ms), an e
 - **Don't** build the stock docs arrangement of a blue hero, a "Get started" button and three icon cards.
 - **Don't** use handwriting or script faces.
 - **Don't** flag notes with a coloured side bar; box them in dashes.
-- **Don't** put shadows on anything but taped prints, boxes of text (and the transient locale dropdown), and don't round corners beyond 2px.
+- **Don't** put shadows on anything but taped prints, boxes of text, and don't round corners beyond 2px.
 - **Don't** put small labels or eyebrows above headings, prefix entry titles with their section ("How to start >"), or use emoji or text glyphs as icons.
 - **Don't** animate anything on load; motion answers a touch.
 - **Don't** build collapsible content with the Docusaurus Details component or its tinted, rounded alert styling.

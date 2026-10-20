@@ -55,9 +55,7 @@ system.
   domain kladde.uni-jena.de.
 - URLs: existing URLs keep working, including /new-entry/, /reaction-scheme/ and /snippets/, with
   redirects from /how-to-start/, /chemicaleditor/, /adding-chemical-equation/, /scheme/ and /eln/.
-- Languages: English and German, every page in both. German text does not exist yet: the site gets
-  the bilingual structure and a German interface, and German pages show the English content with a
-  notice until the team translates them.
+- Languages: English only.
 - Maintainers: developers comfortable editing React/JSX. Sustainable maintenance is a primary goal.
 - Terminology: German lab terms stay inline in English text (*Ansatzberechnung*,
   *Versuchsanleitung*, *H- & P-Sätze*); UI labels are quoted as they appear in Kladde.
@@ -84,7 +82,7 @@ system.
   chemgeo.uni-jena.de on 2026-09-10: FSU blue #002350 (also the sites' theme colour), FSU gold
   #887440, and the Chemisch-Geowissenschaftliche Fakultät colour #74A740. Both sites set type in
   Roboto / Roboto Flex.
-- Absent, not to be fabricated: German page text, content for the placeholder pages, a photo and bio
+- Absent, not to be fabricated: content for the placeholder pages, a photo and bio
   for Soyee Chan, testimonials or usage figures, and an official university logo.
 
 ## Product Principles
@@ -92,6 +90,4 @@ system.
 1. Maintainable first: content lives in Markdown/MDX, and framework defaults beat custom machinery.
 2. The workflow is the structure: pages follow the order students work through an entry.
 3. Show the real system: screenshots and recordings of Kladde carry the instructions.
-4. Two languages, one structure: English and German share navigation and media, and an untranslated
-   page falls back to English visibly rather than disappearing.
-5. At home at FSU Jena without copying it: related to the university, recognizably Kladde.
+4. At home at FSU Jena without copying it: related to the university, recognizably Kladde.

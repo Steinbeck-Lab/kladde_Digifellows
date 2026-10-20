@@ -5,7 +5,6 @@
  */
 import React from 'react';
 import Link from '@docusaurus/Link';
-import {translate} from '@docusaurus/Translate';
 import {useDocById} from '@docusaurus/plugin-content-docs/client';
 import {useEntries} from '@site/src/lib/entries';
 import styles from './styles.module.css';
@@ -52,11 +51,7 @@ export default function EntryIndex() {
   return (
     <ol
       className={styles.index}
-      aria-label={translate({
-        id: 'kladde.index.label',
-        message: 'Entries of the Kladde workflow',
-        description: 'Accessible name of the numbered entry index on the home page',
-      })}>
+      aria-label="Entries of the Kladde workflow">
       {entries.map((entry) => (
         <Entry key={entry.docId} entry={entry} />
       ))}
