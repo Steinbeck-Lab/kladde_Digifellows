@@ -31,7 +31,11 @@ const config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de'],
+    // German is switched off: no /de/ site is built, the navbar carries no language dropdown and
+    // the condition line drops its translation box. To bring it back, three edits in this file:
+    // put 'de' into locales, put 'de' back into the search theme's language list, and add
+    // {type: 'localeDropdown', position: 'right'} to the navbar items.
+    locales: ['en'],
     localeConfigs: {
       en: {label: 'English', htmlLang: 'en'},
       de: {label: 'Deutsch', htmlLang: 'de'},
@@ -80,9 +84,9 @@ const config = {
     [
       '@easyops-cn/docusaurus-search-local',
       {
-        // Local search index for both languages; no external service.
+        // Local search index; no external service. German rejoins the list with its locale.
         hashed: true,
-        language: ['en', 'de'],
+        language: ['en'],
         docsRouteBasePath: '/',
         indexBlog: false,
         indexPages: false,
@@ -110,7 +114,6 @@ const config = {
           {to: '/sample-analysis/', label: 'Sample Analysis', position: 'left', activeBaseRegex: '/(sample-analysis|ir|nmr|ms)/$'},
           {to: '/what-is-eln/', label: 'About', position: 'left', activeBaseRegex: '/(what-is-eln|christoph|kevin|kohulan|soyee|license)/$'},
           {href: ELN_URL, label: 'Open Kladde', position: 'right', className: 'kl-open'},
-          {type: 'localeDropdown', position: 'right'},
         ],
       },
       footer: {

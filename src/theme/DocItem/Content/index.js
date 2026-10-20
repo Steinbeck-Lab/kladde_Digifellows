@@ -1,7 +1,7 @@
 /**
- * Every page opens like a notebook entry: a condition line (entry number, last update, translation
- * state, a link to the same page in the other language) and, for a German page still showing
- * English, a notice saying so.
+ * Every page opens like a notebook entry: a condition line (entry number, last update and, while a
+ * second language is switched on, translation state and a link to the same page in the other
+ * language) and, for a German page still showing English, a notice saying so.
  *
  * The markdown container repeats @theme-original/DocItem/Content, so that a portrait page can
  * print its description under the name as a subtitle, inside the same title header.
@@ -109,22 +109,25 @@ export default function ContentWrapper(props) {
               <dd>{formatDate(metadata.lastUpdatedAt, i18n.currentLocale)}</dd>
             </div>
           )}
-          <div>
-            <dt>
-              {isDefaultLocale ? (
-                <Translate id="kladde.condition.german" description="Label of the German-translation box on English pages">
-                  German
-                </Translate>
-              ) : (
-                <Translate id="kladde.condition.language" description="Label of the language box on translated locales">
-                  Language
-                </Translate>
-              )}
-            </dt>
-            <dd>
-              <LanguageState isDefaultLocale={isDefaultLocale} translated={translated} />
-            </dd>
-          </div>
+          {/* Translation state is worth a box only while there is a second language to go to. */}
+          {otherLocale && (
+            <div>
+              <dt>
+                {isDefaultLocale ? (
+                  <Translate id="kladde.condition.german" description="Label of the German-translation box on English pages">
+                    German
+                  </Translate>
+                ) : (
+                  <Translate id="kladde.condition.language" description="Label of the language box on translated locales">
+                    Language
+                  </Translate>
+                )}
+              </dt>
+              <dd>
+                <LanguageState isDefaultLocale={isDefaultLocale} translated={translated} />
+              </dd>
+            </div>
+          )}
         </dl>
         {otherLocale && (
           <a

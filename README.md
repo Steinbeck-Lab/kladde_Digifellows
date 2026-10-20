@@ -11,7 +11,8 @@ guides, annotated screenshots and short screen recordings.
 - GitHub Pages project URL: <https://steinbeck-lab.github.io/kladde_Digifellows/>
 - Repository: <https://github.com/Steinbeck-Lab/kladde_Digifellows>
 
-The site is a static [Docusaurus 3](https://docusaurus.io/) (React) site in English and German.
+The site is a static [Docusaurus 3](https://docusaurus.io/) (React) site, published in English; the
+German locale is switched off until its pages are translated (see [Translations](#translations)).
 Its visual design, the *Laborkladde* theme, is documented in [DESIGN.md](DESIGN.md).
 
 ## Contents
@@ -43,8 +44,8 @@ Requires Node.js 20 or newer. Dependencies are pinned in `package.json` and `pac
 ```bash
 npm ci                 # install exactly the locked versions
 npm start              # English preview at http://localhost:3000, reloads on change
-npm run start:de       # German preview (the dev server serves one language at a time)
-npm run build          # production build of both languages into build/
+npm run start:de       # German preview; warns that the locale is off, then serves it anyway
+npm run build          # production build into build/ (English only while German is off)
 npm run serve          # serve build/ locally to check the result, including search
 npm run check-media    # every picture and recording a page points at still exists
 ```
@@ -177,6 +178,12 @@ time in seconds, and still jumps to the video without JavaScript:
 
 ## Translations
 
+- **Switched off for now.** `i18n.locales` in `docusaurus.config.js` lists `en` alone, so no `/de/`
+  site is built, the navbar has no language dropdown, and the condition line at the top of a page
+  drops its translation box and language link. Switching German back on is three edits in that
+  file: `'de'` into `i18n.locales`, `'de'` into the search theme's `language`, and
+  `{type: 'localeDropdown', position: 'right'}` back into the navbar items. Everything below then
+  applies again; nothing under `i18n/de/` was removed.
 - **Interface strings** (navigation, footer, notices, labels) live in `i18n/de/`. After adding or
   changing a `<Translate>` string in `src/`, run `npm run write-translations -- --locale de` and
   translate the new entries in `i18n/de/code.json`. The German interface strings were drafted
@@ -230,10 +237,11 @@ Customized parts of Docusaurus:
   `baseUrl` is `/`, which fits the custom domain only. Clones made before the move
   can update their remote with
   `git remote set-url origin https://github.com/Steinbeck-Lab/kladde_Digifellows.git`.
-- **German text:** no page is translated yet, and the German interface strings need review.
+- **German text:** no page is translated yet and the German interface strings need review, so the
+  German locale is switched off; see [Translations](#translations).
 - **Unwritten pages:** NMR, MS, Report and the Soyee Chan bio.
 - **Media:** the largest videos are 27 MB (`snippets-preset.mp4`), 17 MB, 13 MB, 13 MB and 11 MB;
-  every file under `static/` is copied into both language builds. `kevin-jablonka.jpg` is a
+  every file under `static/` is copied into each language build. `kevin-jablonka.jpg` is a
   1.5 MB, 3024×3024 photo shown 240 px wide. The three autoplay clips have no poster.
 - **Unused files:** `static/assets/chemical-editor/img_chemicaleditor_topright.png`.
 - **Copy and markup:** "ammendment" in `new-entry.md`; `playinline` instead of `playsinline` in
