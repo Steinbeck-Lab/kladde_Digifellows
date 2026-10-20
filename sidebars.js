@@ -43,7 +43,7 @@ const sidebars = {
       className: 'kl-about',
       items: [
         'what-is-eln',
-        {type: 'category', label: 'Meet our team', className: 'kl-team', items: ['christoph', 'kevin', 'kohulan', 'soyee']},
+        {type: 'category', label: 'Meet our team', className: 'kl-team', items: ['christoph', 'luc', 'kevin', 'kohulan', 'soyee']},
         'license',
       ],
     },
