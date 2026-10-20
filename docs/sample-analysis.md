@@ -37,13 +37,13 @@ Now you should land on the sample page. Alternatively you may access each specif
   <summary><strong>Physical</strong> Entries of the physical properties of your sample</summary> 
     <ul>
       <li><b>bp [°C]</b> , <b>mp [°C]</b>: boiling point and melting point. Add the corresponding DOI for literature values, and add your own experimental value by clicking <img class="function-icon" alt="add" src="../assets/sample-analysis/img_sample-analysis-phy-add.png">, remove with <img class="function-icon" alt="remove" src="../assets/sample-analysis/img_sample-analysis-phy-remove.png"></li>
-      <li><font color="red"> <!--review meaning --><b>nd</b>: refractive index</font></li>
-      <li><font color="red"><!---- review meaning ---><b>[&#945]</b>: optical activty / rotation </font></li>
-      <li><font color="red"><!---- review meaning of "low" and "high" --->
+      <li><b>nd</b>: refractive index</li>
+      <li><b>[&#945]</b>: Rotation of chiral molecule </li>
+      <li><!---- review meaning of "low" and "high" --->
     <b>Rf</b>: retention factor for thin-layer chromatorgraphy (TLC). The outer <img class="function-icon" alt="add" src="../assets/sample-analysis/img_sample-analysis-phy-add.png">/ <img class="function-icon" alt="remove" src="../assets/sample-analysis/img_sample-analysis-phy-remove.png"> for each TLC performed. The inner <img class="function-icon" alt="add" src="../assets/sample-analysis/img_sample-analysis-phy-add.png">/ <img alt="remove" class="function-icon" src="../assets/sample-analysis/img_sample-analysis-phy-remove.png"> for each solvent used. 
     <p>Select the solvent used, the ratio of the solvent system (eluent), plate used, enter the measured distance the spot traveled in "low" and that of the eluent front in "high", then enter the calculated Rf in the empty field on the right.</p>
     <img alt="calculation of Rf" src="../assets/sample-analysis/img_sample-analysis-tlc.png">
-    </font></li>
+    </li>
   </ul>
 </details>
 
