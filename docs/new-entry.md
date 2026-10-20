@@ -11,9 +11,9 @@ description: Start your entry and prepare for the synthesis.
 
 1. Click <img alt="Electronic Notebook" class="function-icon" src="../assets/new-entry/img_rbf.png"> to open the ELN tab. Click <img alt="Create" class="function-icon" src="../assets/new-entry/img_plus.png">
 2. In "Reaction code" enter your initials and assign a customised number code to it (e.g. Max Mustermann first synthesis ="MM001" ). 
-> The **"Reaction code"** is equivalent to the **"Product code"** of your product/sample and to the **"Reference"** for your measurement request.
+> This **"Reaction code"** also refers to the **"Reference"** shown on the top left corner of the ELN entry AND to the **"Product code"** of your product/sample on the sample page. **Once it is created the entry cannot be deleted, and the reaction code cannot be modified.**
 
-Beware that once entry is created it cannot be deleted and the reaction code cannot be modified. To hide the unwanted entries on the overview of ELN simply click <img alt="The Icon with an eye" class="function-icon" src="../assets/new-entry/img1_Hide-eye.png"> in `Hide` column on the right. 
+To hide the unwanted entries on the overview of ELN simply click <img alt="The Icon with an eye" class="function-icon" src="../assets/new-entry/img1_Hide-eye.png"> in `Hide` column on the right. 
 
 ## 2.  Customize name of entry in 'Title'
 <img alt="screenshot of customized title Sandmeyer Reaktion" src="../assets/new-entry/img_new-entry-title1.png"/>
