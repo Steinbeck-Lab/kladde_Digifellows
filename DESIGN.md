@@ -14,13 +14,11 @@ colors:
   grid: "rgb(0 35 80 / 0.075)"
   rule: "rgb(0 35 80 / 0.22)"
   rule-strong: "rgb(0 35 80 / 0.45)"
+assets:
+  wordmark: "static/img/kladde_spec.svg"
+  wordmark-navbar: "static/img/kladde_spec_navbar.svg"
+  favicon: "static/img/favicon_spec.svg"
 typography:
-  display:
-    fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
-    fontSize: "clamp(3.6rem, 2.4rem + 6vw, 6rem)"
-    fontWeight: 600
-    lineHeight: 0.95
-    letterSpacing: "-0.005em"
   headline:
     fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
     fontSize: "clamp(2.1rem, 1.5rem + 2.4vw, 3.1rem)"
@@ -74,11 +72,6 @@ typography:
     fontSize: "1.02rem"
     fontWeight: 600
     lineHeight: 1.2
-  cover-label:
-    fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
-    fontSize: "1.45rem"
-    fontWeight: 600
-    lineHeight: 1
   index-number:
     fontFamily: "Barlow Semi Condensed, Arial Narrow, sans-serif"
     fontSize: "2.25rem"
@@ -107,10 +100,16 @@ components:
     height: "3.75rem"
   navbar-cover-label:
     backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    typography: "{typography.cover-label}"
+    asset: "{assets.wordmark-navbar}"
     rounded: "{rounded.hairline}"
-    padding: "0.28rem 0.7rem 0.22rem"
+    padding: "0.4rem 0.05rem 0.35rem"
+    height: "1.9rem"
+  home-cover-label:
+    backgroundColor: "{colors.white}"
+    asset: "{assets.wordmark}"
+    rounded: "{rounded.none}"
+    padding: "0.5rem"
+    width: "clamp(13rem, 8rem + 18vw, 19rem)"
   search-input:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
@@ -233,7 +232,8 @@ Colours harmonize with Friedrich Schiller University Jena without following its 
 **Key Characteristics:**
 - Squared paper (20px grid) under every page; content surfaces are white or paper, never tinted panels.
 - FSU-blue ink for all type; green only for links, the current entry and entry numbers; gold only as a line.
-- A condensed label face for what a notebook would print (cover label, entry numbers, condition line, section names, table heads); a hyperlegible text face for everything read.
+- A condensed label face for what a notebook would print (entry numbers, condition line, section names, table heads); a hyperlegible text face for everything read.
+- The name is a drawing, not type: a drafting spec of the word "Kladde" in a paper label, on the cover and at the head of the home page.
 - A margin column with a gold rule down every entry.
 - Screenshots and recordings as taped prints: white mat, hairline border, soft lift, two tilted tape strips.
 - Square or 2px corners throughout; ruled lines instead of cards.
@@ -282,7 +282,6 @@ A cool, near-monochrome notebook page in FSU blue, with one green for action and
 The root is 112.5% (18px at default settings), so every rem below is 18px.
 
 ### Hierarchy
-- **Display** (Barlow Semi Condensed 600, clamp(3.6rem, 2.4rem + 6vw, 6rem), line-height 0.95): the home page title only, "Kladde" set as a cover label.
 - **Headline** (Barlow Semi Condensed 600, clamp(2.1rem, 1.5rem + 2.4vw, 3.1rem), line-height 1.04, -0.005em, balanced): page titles. On a numbered entry the entry number precedes it at 1.6em in green, tabular, line-height 0.82, aligned on the baseline in a two-column grid. Entry titles carry no section prefix.
 - **Title** (Atkinson 700, 1.5rem, line-height 1.22, balanced): h2 and numbered steps ("1. Open your ELN Entry"), 2.75rem above.
 - **Subtitle** (Atkinson 700, 1.2rem): h3, 2rem above.
@@ -295,7 +294,7 @@ The root is 112.5% (18px at default settings), so every rem below is 18px.
 - **Code** (ui-monospace stack, 88%): inline keys and field names as typed.
 
 ### Named Rules
-**The Printed Label Rule.** Barlow Semi Condensed sets only what a notebook would print: the cover label, page titles, entry numbers, box labels, section names, table heads. Anything read as a sentence, including h2 and h3, is Atkinson.
+**The Printed Label Rule.** Barlow Semi Condensed sets only what a notebook would print: page titles, entry numbers, box labels, section names, table heads. Anything read as a sentence, including h2 and h3, is Atkinson. The name "Kladde" is never set in type as a title; it is the wordmark.
 
 **The Figures-as-Data Rule.** Entry numbers, dates, table figures, step counts and timestamps use tabular figures; entry numbers are always two digits with a leading zero (00 to 05).
 
@@ -343,12 +342,19 @@ Square paper geometry. Corners are square (condition boxes, prints, notes, fold 
 The site has no filled buttons. Actions are green underlined links; the controls of its own are Open Kladde, the entry labels on the home index and the fold-box title.
 
 ### Navigation
-- **Navbar (the cover):** ink background, 3.75rem tall, a 1px rgb(0 0 0 / 0.25) bottom line, no shadow. The title "Kladde" is a paper label with an inset ink outline in the label face. Links are white Atkinson 600; hover and active turn green wash, hover adds a 1px underline, the active section a 2px underline offset 0.35em. The search field is a paper box with a 2px radius. The mobile drawer is paper with an ink brand bar.
+- **Navbar (the cover):** ink background, 3.75rem tall, a 1px rgb(0 0 0 / 0.25) bottom line, no shadow. The brand is the wordmark on a paper label with an inset ink outline. Links are white Atkinson 600; hover and active turn green wash, hover adds a 1px underline, the active section a 2px underline offset 0.35em. The search field is a paper box with a 2px radius. The mobile drawer is paper with an ink brand bar.
 - **Sidebar index:** a ruled right edge; category names in the label face; workflow entries numbered by a CSS counter, two digits in gold ink before the title. Links have no underline until hover. The current entry has a green-wash fill, bold title and deep green number. The sidebar does not animate.
 - **Table of contents:** 0.92rem, faded ink links, the active heading in deep green at 650.
 - **Search:** Ctrl+F (⌘F on a Mac) puts the cursor in the search field, in place of the browser's find-on-page.
 - **Navbar items:** each names the page it opens — How to start, Sample Analysis, About (Erste Schritte, Analytik, Über Kladde) — and Open Kladde sits at the right as a paper label. The language dropdown is out while the German locale is switched off; it returns to the right of Open Kladde with it.
 - **Footer:** transparent over the grid, a strong top rule, label-face titles, faded ink copyright.
+
+### Wordmark (signature)
+The name drawn as a drafting spec instead of set in type: ink verticals on a baseline rule with the letters of "Kladde" dotted onto them in faded ink, on a 156.241 by 68.308 canvas (2.29:1) that the drawing runs flush to on all four sides. It stands in two places: the navbar's paper label at 1.9rem tall, and the head of the home page inside the cover label's 2px ink border and 1px ink outline, clamp(13rem, 8rem + 18vw, 19rem) wide. The canvas holds no clear space of its own, so every bit of breathing room around the drawing is the label's padding; redrawing it to a different canvas means matching `aspect-ratio` and that padding again.
+
+Two cuts of one drawing. `kladde_spec.svg` is the drawing. `kladde_spec_navbar.svg` is generated from it with every stroke measure — width, dash array and dash offset — multiplied by 1.4: the drawn 1.958 strokes fall to 1.0px at navbar size, and a dash pattern left at its drawn length turns to blobs under a thicker stroke. The factor follows the drawing — too much and the dotted letters close into blocks, which is the failure to watch for. Regenerate that cut with `npm run wordmark` after redrawing the wordmark; never edit it by hand.
+
+On the home page the drawing is the h1's background rather than an `<img>`, so the title stays in the page as text for the search index and for screen readers, hidden by `font-size: 0`; `background-origin: content-box` keeps the padding clear, which a background otherwise paints over. One consequence: the wordmark does not print, because browsers drop background images and the site sets no `@media print`.
 
 ### Condition Line (signature)
 The entry-header strip: a row of ruled paper boxes that share borders (1px strong rule, overlapping by 1px), each a label in faded ink (500) and a value in ink (600): Entry (00 on home), Updated (a localized short date), and German or Language (translation state). The last box is the language link: green label-face text with an SVG arrow, deep green and underlined on hover. On German pages still showing English, a notice follows: paper fill, 1px gold border, 1rem ink text, max 68ch.

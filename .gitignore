@@ -13,3 +13,6 @@ build/
 .venv/
 .DS_Store
 *.log
+
+# Editor backups
+*~

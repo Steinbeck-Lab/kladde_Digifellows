@@ -5,11 +5,15 @@ import rehypeTapedMedia from './src/plugins/rehypeTapedMedia.js';
 // address stops at a SciPeaks page whose only content is the link to that login.
 const ELN_URL = 'https://scipeaks.uni-jena.de/roc/auth/login/oidc?continue=https%3A%2F%2Fscipeaks.uni-jena.de%2Fpraktikum%2F';
 
+// The exercises that go with the practical. The navbar item and the welcome page button both read
+// this, so the address is written once.
+const TEACHING_URL = 'https://scipeaks.uni-jena.de/teaching/';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Kladde',
   tagline: 'Tutorials and help for the electronic lab notebook of Friedrich Schiller University Jena',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/favicon_spec.svg',
 
   url: 'https://kladde.uni-jena.de',
   baseUrl: '/',
@@ -18,7 +22,7 @@ const config = {
   projectName: 'kladde_Digifellows',
   deploymentBranch: 'gh-pages',
 
-  customFields: {elnUrl: ELN_URL},
+  customFields: {elnUrl: ELN_URL, teachingUrl: TEACHING_URL},
 
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'warn',
@@ -27,19 +31,6 @@ const config = {
     // .md pages stay CommonMark (their raw HTML renders as is); .mdx pages can use components.
     format: 'detect',
     hooks: {onBrokenMarkdownLinks: 'throw'},
-  },
-
-  i18n: {
-    defaultLocale: 'en',
-    // German is switched off: no /de/ site is built, the navbar carries no language dropdown and
-    // the condition line drops its translation box. To bring it back, three edits in this file:
-    // put 'de' into locales, put 'de' back into the search theme's language list, and add
-    // {type: 'localeDropdown', position: 'right'} to the navbar items.
-    locales: ['en'],
-    localeConfigs: {
-      en: {label: 'English', htmlLang: 'en'},
-      de: {label: 'Deutsch', htmlLang: 'de'},
-    },
   },
 
   clientModules: ['./src/clientModules/fonts.js', './src/clientModules/seekVideo.js'],
@@ -106,14 +97,17 @@ const config = {
       docs: {sidebar: {hideable: false, autoCollapseCategories: false}},
       tableOfContents: {minHeadingLevel: 2, maxHeadingLevel: 3},
       navbar: {
-        title: 'Kladde',
+        // The wordmark replaces the typed title. kladde_spec_navbar.svg is the thickened cut of
+        // kladde_spec.svg: the drawn 1.3 strokes land under a pixel at this size.
+        logo: {alt: 'Kladde', src: 'img/kladde_spec_navbar.svg'},
         items: [
           // Plain links with their own active pattern: doc items would all light up,
           // because every page shares one sidebar.
           {to: '/new-entry/', label: 'How to start', position: 'left', activeBaseRegex: '/(new-entry|reaction-scheme|snippets)/$'},
           {to: '/sample-analysis/', label: 'Sample Analysis', position: 'left', activeBaseRegex: '/(sample-analysis|ir|nmr|ms)/$'},
           {to: '/what-is-eln/', label: 'About', position: 'left', activeBaseRegex: '/(what-is-eln|christoph|kevin|kohulan|soyee|license)/$'},
-          {href: ELN_URL, label: 'Open Kladde', position: 'right', className: 'kl-open'},
+          {href: ELN_URL, label: 'Open Scipeaks', position: 'right', className: 'kl-open'},
+          {href: TEACHING_URL, label: 'Open Exercises', position: 'right', className: 'kl-open'},
         ],
       },
       footer: {
@@ -124,14 +118,21 @@ const config = {
             items: [
               {label: 'What is ELN?', to: '/what-is-eln/'},
               {label: 'Meet our team', to: '/christoph/'},
-              {label: 'License', to: '/license/'},
+              { label: 'License', to: '/license/' },
+              { label: 'GitHub', href: 'https://github.com/Steinbeck-Lab/kladde_Digifellows' },
             ],
           },
           {
-            title: 'Built on',
+            title: 'Powered by',
             items: [
-              {label: 'cheminfo', href: 'https://cheminfo.github.io/'},
-              {label: 'Source on GitHub', href: 'https://github.com/Steinbeck-Lab/kladde_Digifellows'},
+              { label: 'cheminfo', href: 'https://cheminfo.github.io/' },
+              { label: 'NMRium', href: 'https://www.nmrium.com/' },
+            ],
+          },
+          {
+            title: 'See also',
+            items: [
+              { label: 'NFDI4Chem', href: 'https://nfdi4chem.de/' },
             ],
           },
         ],

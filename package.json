@@ -11,6 +11,7 @@
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
     "check-media": "node scripts/check-media.mjs",
+    "wordmark": "node scripts/thicken-wordmark.mjs",
     "write-translations": "docusaurus write-translations"
   },
   "dependencies": {

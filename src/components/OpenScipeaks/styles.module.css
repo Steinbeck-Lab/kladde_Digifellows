@@ -1,0 +1,12 @@
+/* Takes the whole row below the labels; the row gap of .kl-actions sets the space above it.
+   It follows its own link in the markup, where a screen reader wants it, and `order` drops it
+   under both labels on screen instead of splitting them. */
+.note {
+  order: 1;
+  flex-basis: 100%;
+  max-width: 52ch;
+  margin: 0;
+  color: var(--kl-ink-soft);
+  font-size: 1rem;
+  line-height: 1.5;
+}

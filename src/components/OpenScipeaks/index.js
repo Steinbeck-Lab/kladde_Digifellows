@@ -1,7 +1,10 @@
 /**
- * The one action on the welcome page: open Kladde. The link goes straight into the university
+ * The first action on the welcome page: open Scipeaks. The link goes straight into the university
  * login, skipping the SciPeaks page that only holds a "log in with Jena University SSO" link.
  * Its address lives in docusaurus.config.js, where the navbar item reads it too.
+ *
+ * It returns the label and its note loose, so the page can stand this label and Open Exercises on
+ * one row with the note wrapping underneath both.
  */
 import React from 'react';
 import Link from '@docusaurus/Link';
@@ -10,14 +13,14 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {ArrowUpRight} from '@site/src/components/Icons';
 import styles from './styles.module.css';
 
-export default function OpenKladde() {
+export default function OpenScipeaks() {
   const {siteConfig} = useDocusaurusContext();
 
   return (
-    <div className={styles.open}>
-      <Link className={styles.link} to={siteConfig.customFields.elnUrl}>
+    <>
+      <Link className="kl-action" to={siteConfig.customFields.elnUrl}>
         <Translate id="kladde.open.label" description="Label of the link that opens the ELN">
-          Open Kladde
+          Open Scipeaks
         </Translate>
         <ArrowUpRight />
       </Link>
@@ -26,6 +29,6 @@ export default function OpenKladde() {
           Logging in from off campus? Connect to the Uni Jena VPN first.
         </Translate>
       </p>
-    </div>
+    </>
   );
 }

@@ -7,7 +7,7 @@
    viewBox="0 0 8.4666664 8.4666666"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="favicon_spec.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,16 +23,17 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.2497775"
-     inkscape:cx="-81.614526"
-     inkscape:cy="-96.817232"
-     inkscape:window-width="1280"
-     inkscape:window-height="698"
-     inkscape:window-x="-6"
-     inkscape:window-y="1074"
+     inkscape:zoom="14.139618"
+     inkscape:cx="12.34121"
+     inkscape:cy="19.130644"
+     inkscape:window-width="1854"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer5"
-     showguides="true" />
+     inkscape:current-layer="layer19"
+     showguides="true"
+     showgrid="false" />
   <defs
      id="defs1" />
   <g
@@ -71,32 +72,20 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="axis 1"
-     transform="matrix(0.50734328,0,0,0.50734328,-1.5613188,16.36395)">
-    <path
-       d="M 4.0279213,-23.973918 H 18.666473"
-       style="fill:none;fill-opacity:0;fill-rule:evenodd;stroke:#002350;stroke-width:0.487112;stroke-dasharray:none;stroke-opacity:1"
-       id="path1-8"
-       sodipodi:nodetypes="cc" />
-  </g>
+     transform="matrix(0.50734328,0,0,0.50734328,-1.5613188,16.36395)" />
   <g
      inkscape:groupmode="layer"
      id="layer18"
      inkscape:label="k top"
-     transform="matrix(0.50734328,0,0,0.50734328,-21.32522,-1.9760359)">
-    <path
-       style="fill:none;fill-opacity:0;fill-rule:evenodd;stroke:#002350;stroke-width:0.487112;stroke-dasharray:none;stroke-opacity:1"
-       d="M 47.446673,12.153586 V 4.8652583"
-       id="path2"
-       sodipodi:nodetypes="cc" />
-  </g>
+     transform="matrix(0.50734328,0,0,0.50734328,-21.32522,-1.9760359)" />
   <g
      inkscape:groupmode="layer"
      id="layer19"
      inkscape:label="k bottom"
      transform="matrix(0.50734328,0,0,0.50734328,-19.7639,0.19393361)">
     <path
-       style="font-size:25.4px;font-family:'Microsoft Yi Baiti';-inkscape-font-specification:'Microsoft Yi Baiti';fill:none;fill-rule:evenodd;stroke:#3a5f91;stroke-width:0.487112;stroke-dasharray:0.487112, 0.487112;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 47.875768,15.113323 -3.198907,-2.24823 m -0.280321,2.34734 V 8.0016576 m 0.258756,4.5374384 2.991556,-2.3305"
+       style="font-size:25.4px;font-family:'Microsoft Yi Baiti';-inkscape-font-specification:'Microsoft Yi Baiti';fill:none;fill-rule:evenodd;stroke:#3a5f91;stroke-width:0.981514;stroke-dasharray:0.98151398,0.98151398;stroke-dashoffset:1.86487655;stroke-opacity:1"
+       d="M 51.654265,14.911076 45.208578,10.38097 m -0.564837,4.975598 V 0.58131633 m 0.521384,9.14278117 6.027882,-4.6958768"
        id="text7"
        aria-label="k"
        sodipodi:nodetypes="cccccc" />

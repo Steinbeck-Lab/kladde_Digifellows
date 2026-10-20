@@ -79,7 +79,7 @@
   --ifm-blockquote-color: var(--kl-ink);
   --ifm-navbar-background-color: var(--kl-cover);
   --ifm-navbar-link-color: #ffffff;
-  --ifm-navbar-link-hover-color: var(--kl-green-wash);
+  --ifm-navbar-link-hover-color: var(--kl-white);
   --ifm-navbar-link-active-color: var(--kl-green-wash);
   --ifm-navbar-height: 3.75rem;
   --ifm-navbar-shadow: none;
@@ -159,17 +159,23 @@ textarea {
   margin-right: 1.25rem;
 }
 
-.navbar__title {
-  padding: 0.28rem 0.7rem 0.22rem;
+/* The wordmark stuck on the cover. Its canvas carries 9% of clear space at each side, so the
+   label adds almost none of its own there and keeps the drawing off the top and bottom edges. */
+.navbar__logo {
+  display: flex;
+  /* Infima pins this to 2rem, which the padding then eats into and the drawing spills out of. */
+  height: auto;
+  padding: 0.4rem 0.5rem 0.35rem;
   border-radius: 2px;
   background-color: var(--kl-paper);
-  color: var(--kl-ink);
   outline: 1px solid var(--kl-ink);
   outline-offset: -4px;
-  font-family: var(--kl-font-label);
-  font-weight: 600;
-  font-size: 1.45rem;
-  line-height: 1;
+}
+
+/* No display rule on the image: it would undo how Docusaurus hides the off-theme copy. */
+.navbar__logo img {
+  width: auto;
+  height: 1.9rem;
 }
 
 .navbar__link {
@@ -190,6 +196,7 @@ textarea {
 .table-of-contents__link:hover,
 .footer__link-item:hover,
 .dropdown__link:hover {
+  transform: scale(1.03);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
@@ -217,7 +224,7 @@ textarea {
 }
 
 .navbar__link.kl-open:hover {
-  background-color: var(--kl-green-wash);
+  transform: scale(1.03);
   color: var(--kl-ink);
   text-decoration: none;
 }
@@ -237,6 +244,15 @@ textarea {
     center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7'/%3E%3Cpath d='M8.5 7H17v8.5'/%3E%3C/svg%3E")
     center / contain no-repeat;
+}
+
+/* Infima drops navbar items into the drawer below 997px with `.navbar__item{display:none}`, which
+   the display rule above outranks — so with two labels they spilled out of the bar and over the
+   page. They stand down here and stay reachable in the drawer. */
+@media (max-width: 996px) {
+  .navbar__items .navbar__link.kl-open {
+    display: none;
+  }
 }
 
 .navbar-sidebar .navbar__link.kl-open {
@@ -1032,18 +1048,103 @@ blockquote .kl-print {
   color: var(--kl-ink-soft);
 }
 
+/* ── Action labels: the controls that are not documentation ─────────────── */
+
+/* The cover label's shape in green. It belonged to the Open Scipeaks button while that was the
+   only action; the exercises link takes the same shape, so it lives here instead. */
+.kl-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem 0.55rem;
+  border: 2px solid var(--kl-green);
+  outline: 1px solid var(--kl-green);
+  outline-offset: 5px;
+  background-color: var(--kl-white);
+  box-shadow: var(--kl-box-lift);
+  color: var(--kl-green-deep);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: transform 160ms var(--kl-ease);
+}
+
+.kl-action2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem 0.55rem;
+  border: 2px solid var(--kl-ink-soft);
+  outline: 1px solid var(--kl-ink-soft);
+  outline-offset: 5px;
+  background-color: var(--kl-white);
+  box-shadow: var(--kl-box-lift);
+  color: var(--kl-ink-soft);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: transform 160ms var(--kl-ease);
+}
+
+.kl-action:hover, .kl-action2:hover {
+  transform: scale(1.03);
+  text-decoration: none;
+}
+
+.kl-action svg, .kl-action2 svg {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+}
+
+/* The labels on one line, anything explaining them on the line below. The gaps clear the outline
+   that sits 5px outside each border, so two labels never crowd each other. */
+.kl-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.1rem 1.6rem;
+  max-width: var(--kl-measure);
+  margin: 0 0 2.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kl-action, .kl-action2 {
+    transition: none;
+  }
+
+  .kl-action:hover, .kl-action2:hover {
+    transform: none;
+  }
+}
+
 /* ── Home: the cover label and the index ────────────────────────────────── */
 
+/* The cover label carries the wordmark instead of the word: the drawing sits in the frame and the
+   title stays in the page for the search index and for screen readers. background-origin keeps the
+   drawing inside the padding, which a background otherwise paints over; the canvas brings its own
+   9% at each side, so the padding here is the top and bottom clearance only. */
 .kl-page--home .markdown > header h1 {
   display: inline-block;
+  box-sizing: content-box;
+  width: clamp(13rem, 8rem + 18vw, 19rem);
+  aspect-ratio: 156.241 / 68.308;
   margin: 0.5rem 0 1.6rem;
-  padding: 0.3rem 1.1rem 0.2rem;
+  padding: 0.5rem 0.5rem;
   border: 2px solid var(--kl-ink);
   background-color: var(--kl-white);
+  background-image: url('/img/kladde_spec.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
   outline: 1px solid var(--kl-ink);
   outline-offset: 5px;
-  font-size: clamp(3.6rem, 2.4rem + 6vw, 6rem);
-  line-height: 0.95;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
 }
 
 .markdown p.kl-lead {
