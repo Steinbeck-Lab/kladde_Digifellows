@@ -4,7 +4,7 @@ description: Tools for IR spectra simulation and analysis.
 ---
 # <img class="function-icon" style="vertical-align: middle" src="../assets/ir/img_ir-tile-icon.png"> Infrared Spectroscopy (IR) 
 
-<iframe src="https://player.vimeo.com/video/593679396?h=7f72cb35ee" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen ></iframe>> 
+<iframe src="https://player.vimeo.com/video/593679396?h=7f72cb35ee" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen ></iframe> 
 
 ## 1. Export your IR-spectrum as `.txt`
 Please consult your lab supervisor about the export of your IR dataset. `.txt` is often recommended since most of the programmes (not limited to this ELN) can intepret it well.
