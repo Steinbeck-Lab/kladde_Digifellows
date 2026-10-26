@@ -16,10 +16,10 @@ The [NMR Platform FSU Jena](https://www.nmr.uni-jena.de/de/index.php) has alread
     <ul>
       <li>From <a href="https://www.nmr.uni-jena.de/de/index.php">NMR Platform FSU Jena</a>
         <ol style="list-style-type: decimal">
-          <li>Click "Create measurement request". The redirected ELN home page looks slightly different from Kladde.</li>
+          <li>Click "Create measurement request". This link redirects to the specific Home page of SciPeaks for the practical course.</li>
           <li>Go to the "NMR" tab, select a sample, click "NMR request" <img class="function-icon" alt="NMR request" src="../assets/nmr/img_nmr-NMR-request.png">.</li>
         </ol>
-      <li>From Kladde
+      <li>From SciPeaks
         <br>Select a sample, and click "NMR request" <img class="function-icon" alt="NMR request" src="../assets/nmr/img_nmr-NMR-request2.png">.</li>
     </ul>
     <p>Fill in the request form accordingly. Please consult your practical supervisor or your supervising assistant for details.</p>
@@ -27,7 +27,7 @@ The [NMR Platform FSU Jena](https://www.nmr.uni-jena.de/de/index.php) has alread
   <tab label="Upload existing NMR data">
     <p>If the sample has already been measured or the NMR data already exists (download your NMR data <code>.zip</code> from <a href="https://data.nmr.uni-jena.de/service/#samples">LOGS</a> if necessary):</p>
     <ol>
-      <li>Open Scipeaks. Select your sample on Home page and click "Upload NMR spectra" <img class="function-icon" alt="Upload NMR spectra" src="../assets/nmr/img_nmr-upload.png">.</li>
+      <li>Open SciPeaks. Select your sample on Home page and click "Upload NMR spectra" <img class="function-icon" alt="Upload NMR spectra" src="../assets/nmr/img_nmr-upload.png">.</li>
       <li>Drag and drop the original <code>.zip</code> folder (also compatible for folder with two measurements, e.g. 1H + 13C).  If a pop-up window is prompted, enter a customised name for the file with <code>.jdx</code> extension (e.g. <code>CSY001-SM-Fr1-13C.jdx</code>). Information about the spectrum/spectra would be automatically extracted and shown <font color="red">above the spectrum preview. </font></li>
       <!--sepctrum preview is still stale -->
     </ol>

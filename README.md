@@ -183,7 +183,7 @@ of `src/css/custom.css`.
 | Token | Value | Source and use |
 |---|---|---|
 | `--kl-ink` | `#002350` | FSU blue; text (15.5:1 on white) and the navbar |
-| `--kl-green` | `#4E7F0A` | Faculty green #74A740 darkened for text (4.8:1); links, entry numbers, Open Scipeaks |
+| `--kl-green` | `#4E7F0A` | Faculty green #74A740 darkened for text (4.8:1); links, entry numbers, Open SciPeaks |
 | `--kl-gold` | `#887440` | FSU gold (4.55:1); margin rule, sidebar numbers, section labels |
 | `--kl-ink-soft` | `#3A5F91` | Secondary text (6.5:1) |
 | `--kl-paper` | `#FCFDFE` | Page ground with a faint 5 mm grid |

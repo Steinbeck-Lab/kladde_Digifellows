@@ -1,5 +1,5 @@
 /**
- * The first action on the welcome page: open Scipeaks. The link goes straight into the university
+ * The first action on the welcome page: open SciPeaks. The link goes straight into the university
  * login, skipping the SciPeaks page that only holds a "log in with Jena University SSO" link.
  * Its address lives in docusaurus.config.js, where the navbar item reads it too.
  *
@@ -18,7 +18,7 @@ export default function OpenScipeaks() {
   return (
     <>
       <Link className="kl-action" to={siteConfig.customFields.elnUrl}>
-        Open Scipeaks
+        Open SciPeaks
         <ArrowUpRight />
       </Link>
       <p className={styles.note}>

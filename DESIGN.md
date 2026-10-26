@@ -238,7 +238,7 @@ A cool, near-monochrome notebook page in FSU blue, with one green for action and
 - **Faded Ink** (#3a5f91): secondary text only: condition-box labels, index descriptions, entry-label descriptions, table-of-contents links, footer copyright, search placeholder, fold-box teasers.
 
 ### Secondary
-- **Faculty Green, text grade** (#4e7f0a): links, Open Scipeaks, page links, the fold-box plus, a glossed word under the pointer, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
+- **Faculty Green, text grade** (#4e7f0a): links, Open SciPeaks, page links, the fold-box plus, a glossed word under the pointer, entry numbers (page title and index), focus outline, progress bar, caret. It is the Chemisch-Geowissenschaftliche Fakultät colour darkened to read as text (4.81:1 on white); Infima's primary scale is generated from it.
 - **Deep Green** (#3d6d00): hover state of every green link and of the fold-box plus, the active table-of-contents link, the active sidebar entry number.
 - **Green Wash** (#dcf0cd): the fill of the current sidebar entry, an entry label under the pointer, text selection, highlighted code lines and dropdown hover; at 60% opacity, the hover fill of index rows. Text on it stays ink or deep green.
 
@@ -329,14 +329,14 @@ Square paper geometry. Corners are square (condition boxes, prints, notes, fold 
 ## Components
 
 ### Buttons
-The site has no filled buttons. Actions are green underlined links; the controls of its own are Open Scipeaks and Open Exercises, the entry labels on the home index and the fold-box title.
+The site has no filled buttons. Actions are green underlined links; the controls of its own are Open SciPeaks and Open Exercises, the entry labels on the home index and the fold-box title.
 
 ### Navigation
 - **Navbar (the cover):** ink background, 3.75rem tall, a 1px rgb(0 0 0 / 0.25) bottom line, no shadow. The brand is the wordmark on a paper label with an inset ink outline. Links are white Atkinson 600; hover and active turn green wash, hover adds a 1px underline, the active section a 2px underline offset 0.35em. The search field is a paper box with a 2px radius. The mobile drawer is paper with an ink brand bar.
 - **Sidebar index:** a ruled right edge; category names in the label face; workflow entries numbered by a CSS counter, two digits in gold ink before the title. Links have no underline until hover. The current entry has a green-wash fill, bold title and deep green number. The sidebar does not animate.
 - **Table of contents:** 0.92rem, faded ink links, the active heading in deep green at 650.
 - **Search:** Ctrl+F (⌘F on a Mac) puts the cursor in the search field, in place of the browser's find-on-page.
-- **Navbar items:** each names the page it opens — How to start, Sample Analysis, About — and Open Scipeaks and Open Exercises sit at the right as paper labels. Below 997px all five fold into the mobile drawer.
+- **Navbar items:** each names the page it opens — How to start, Sample Analysis, About — and Open SciPeaks and Open Exercises sit at the right as paper labels. Below 997px all five fold into the mobile drawer.
 - **Footer:** transparent over the grid, a strong top rule, label-face titles, faded ink copyright.
 
 ### Wordmark (signature)
@@ -352,7 +352,7 @@ The entry-header strip: a row of ruled paper boxes that share borders (1px stron
 ### Actions (signature)
 The two things on the site that are not documentation, both in the cover label's shape: a white label with a 2px border and a 1px outline 5px outside it, the text box lift, 0.5rem by 1.1rem of padding, the name in Atkinson 700 at 1.15rem, followed by the line arrow that marks a link leaving the site. Touched, each grows 3% in 160ms and keeps its shadow.
 
-**Open Scipeaks** is bordered and set in text-grade green and opens the notebook itself. **Open Exercises** is the quieter of the two, bordered and set in faded ink, and opens the exercises for the practical. They stand side by side under the welcome lead, with one line of faded ink below both — "Logging in from off campus? Connect to the Uni Jena VPN first." — and both are pinned to the right end of the navbar as paper labels with an inset ink outline and a green wash on hover, folding into the mobile drawer below 997px. The Scipeaks address starts the university login directly (`/roc/auth/login/oidc`), so nobody has to click through the SciPeaks page first; both addresses live once in `docusaurus.config.js`, where the navbar items and the page labels read them.
+**Open SciPeaks** is bordered and set in text-grade green and opens the notebook itself. **Open Exercises** is the quieter of the two, bordered and set in faded ink, and opens the exercises for the practical. They stand side by side under the welcome lead, with one line of faded ink below both — "Logging in from off campus? Connect to the Uni Jena VPN first." — and both are pinned to the right end of the navbar as paper labels with an inset ink outline and a green wash on hover, folding into the mobile drawer below 997px. The SciPeaks address starts the university login directly (`/roc/auth/login/oidc`), so nobody has to click through the SciPeaks page first; both addresses live once in `docusaurus.config.js`, where the navbar items and the page labels read them.
 
 ### Entry Labels (signature)
 An entry that holds pages of its own (Sample Analysis holds IR, NMR and MS) lists them on the line below it in the home index, 0.6rem clear of the row's hover fill and aligned with the entry title: white labels side by side, each a 2px ink border with a 1px ink outline 5px outside it, 0.5rem by 1.1rem of padding, the page name in the sidebar's face (Atkinson 500, 1rem) over its description in faded ink at 0.9rem, both set top-left. The whole label is the link; like the two actions it answers a touch by growing, 3% in 160ms, keeping its white paper and its text box lift. Below 600px they stack to one column. In the sidebar the same pages sit under the entry, indented to its title along a 1px rule, at 0.95rem and without numbers of their own.

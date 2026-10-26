@@ -104,7 +104,7 @@ const config = {
           {to: '/new-entry/', label: 'How to start', position: 'left', activeBaseRegex: '/(new-entry|reaction-scheme|snippets)/$'},
           {to: '/sample-analysis/', label: 'Sample Analysis', position: 'left', activeBaseRegex: '/(sample-analysis|ir|nmr|ms)/$'},
           {to: '/what-is-eln/', label: 'About', position: 'left', activeBaseRegex: '/(what-is-eln|christoph|kevin|kohulan|soyee|license)/$'},
-          {href: ELN_URL, label: 'Open Scipeaks', position: 'right', className: 'kl-open'},
+          {href: ELN_URL, label: 'Open SciPeaks', position: 'right', className: 'kl-open'},
           {href: TEACHING_URL, label: 'Open Exercises', position: 'right', className: 'kl-open'},
         ],
       },

@@ -1038,7 +1038,7 @@ blockquote .kl-print {
 
 /* ── Action labels: the controls that are not documentation ─────────────── */
 
-/* The cover label's shape in green. It belonged to the Open Scipeaks button while that was the
+/* The cover label's shape in green. It belonged to the Open SciPeaks button while that was the
    only action; the exercises link takes the same shape, so it lives here instead. */
 .kl-action {
   display: inline-flex;
