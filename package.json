@@ -9,8 +9,7 @@
     "build": "docusaurus build",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "check-media": "node scripts/check-media.mjs",
-    "wordmark": "node scripts/thicken-wordmark.mjs"
+    "check-media": "node scripts/check-media.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",

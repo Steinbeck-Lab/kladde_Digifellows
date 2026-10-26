@@ -156,8 +156,8 @@ textarea {
   margin-right: 1.25rem;
 }
 
-/* The wordmark stuck on the cover. Its canvas carries 9% of clear space at each side, so the
-   label adds almost none of its own there and keeps the drawing off the top and bottom edges. */
+/* The wordmark stuck on the cover. Its canvas runs flush to the drawing on all four sides, so
+   every bit of breathing room around it is this label's padding. */
 .navbar__logo {
   display: flex;
   /* Infima pins this to 2rem, which the padding then eats into and the drawing spills out of. */

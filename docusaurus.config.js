@@ -96,9 +96,8 @@ const config = {
       docs: {sidebar: {hideable: false, autoCollapseCategories: false}},
       tableOfContents: {minHeadingLevel: 2, maxHeadingLevel: 3},
       navbar: {
-        // The wordmark replaces the typed title. kladde_spec_navbar.svg is the thickened cut of
-        // kladde_spec.svg: the drawn 1.3 strokes land under a pixel at this size.
-        logo: {alt: 'Kladde', src: 'img/kladde_spec_navbar.svg'},
+        // The wordmark replaces the typed title, the drawing itself at 1.9rem.
+        logo: {alt: 'Kladde', src: 'img/kladde_spec.svg'},
         items: [
           // Plain links with their own active pattern: doc items would all light up,
           // because every page shares one sidebar.

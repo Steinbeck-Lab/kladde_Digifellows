@@ -46,7 +46,6 @@ npm start              # English preview at http://localhost:3000, reloads on ch
 npm run build          # production build into build/
 npm run serve          # serve build/ locally to check the result, including search
 npm run check-media    # every picture and recording a page points at still exists
-npm run wordmark       # cut the navbar copy of the wordmark from the drawn one
 ```
 
 - The build stops on broken links between pages. Links to anchors only warn.
@@ -91,8 +90,7 @@ static/
   assets/<page>/         One folder per page: its screenshots, recordings (*.mp4) and posters
   assets/chemical-editor/  Toolbar icons of the structure editor, used by two pages
   assets/images/         Team photos
-  img/kladde_spec.svg    The wordmark as drawn; the home page cover label
-  img/kladde_spec_navbar.svg  Thickened cut of it for the navbar; `npm run wordmark` writes it
+  img/kladde_spec.svg    The wordmark; the navbar label and the home page cover label
   img/favicon_spec.svg   Site icon
 src/css/custom.css       The Laborkladde theme: tokens and styles
 src/theme/               Docusaurus theme overrides (see Theme and components)

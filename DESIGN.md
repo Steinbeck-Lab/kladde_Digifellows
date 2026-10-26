@@ -16,7 +16,6 @@ colors:
   rule-strong: "rgb(0 35 80 / 0.45)"
 assets:
   wordmark: "static/img/kladde_spec.svg"
-  wordmark-navbar: "static/img/kladde_spec_navbar.svg"
   favicon: "static/img/favicon_spec.svg"
 typography:
   headline:
@@ -100,9 +99,9 @@ components:
     height: "3.75rem"
   navbar-cover-label:
     backgroundColor: "{colors.paper}"
-    asset: "{assets.wordmark-navbar}"
+    asset: "{assets.wordmark}"
     rounded: "{rounded.hairline}"
-    padding: "0.4rem 0.05rem 0.35rem"
+    padding: "0.4rem 0.5rem 0.35rem"
     height: "1.9rem"
   home-cover-label:
     backgroundColor: "{colors.white}"
@@ -343,7 +342,7 @@ The site has no filled buttons. Actions are green underlined links; the controls
 ### Wordmark (signature)
 The name drawn as a drafting spec instead of set in type: ink verticals on a baseline rule with the letters of "Kladde" dotted onto them in faded ink, on a 156.241 by 68.308 canvas (2.29:1) that the drawing runs flush to on all four sides. It stands in two places: the navbar's paper label at 1.9rem tall, and the head of the home page inside the cover label's 2px ink border and 1px ink outline, clamp(13rem, 8rem + 18vw, 19rem) wide. The canvas holds no clear space of its own, so every bit of breathing room around the drawing is the label's padding; redrawing it to a different canvas means matching `aspect-ratio` and that padding again.
 
-Two cuts of one drawing. `kladde_spec.svg` is the drawing. `kladde_spec_navbar.svg` is generated from it with every stroke measure — width, dash array and dash offset — multiplied by 1.4: the drawn 1.958 strokes fall to 1.0px at navbar size, and a dash pattern left at its drawn length turns to blobs under a thicker stroke. The factor follows the drawing — too much and the dotted letters close into blocks, which is the failure to watch for. Regenerate that cut with `npm run wordmark` after redrawing the wordmark; never edit it by hand.
+One file, `kladde_spec.svg`, in both places. The navbar is the hard size: the drawn 1.958 strokes fall to about a pixel there, thin but clean, and the dotted letters are the first thing to go if a redraw thins them further. Check a new drawing in the navbar before anywhere else.
 
 On the home page the drawing is the h1's background rather than an `<img>`, so the title stays in the page as text for the search index and for screen readers, hidden by `font-size: 0`; `background-origin: content-box` keeps the padding clear, which a background otherwise paints over. One consequence: the wordmark does not print, because browsers drop background images and the site sets no `@media print`.
 
