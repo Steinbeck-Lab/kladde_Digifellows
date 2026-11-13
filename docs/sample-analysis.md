@@ -44,7 +44,11 @@ Now you should land on the sample page. Alternatively you may access each specif
     <p>Under "Solvent" select the solvent(s) (eluent) used and enter the corresponding ratio in "Parts". Select the "plate" used. In "Low" enter the distance the spot traveled (a) and in "High" enter the distance the eluent traveled (b). The calculation has to be done manually. Enter the Rf value in the field on the right.</p>
     <img alt="calculation of Rf" src="../assets/sample-analysis/img_sample-analysis-tlc.png">
     <img alt="screenshot of Rf entry" src="../assets/sample-analysis/img_sample-analysis-Rf.png">
-    Example: TLC run with hexane/methanol 90 %/10 % with alumina plate. Sample spot traveled (a) 1.4 cm, eluent traveled (b) 4.5 cm. Rf = 0.31
+    Example: 2 TLC were performed. 
+    <ul>
+      <li>1st run with hexane only (100 %) with alumina plate. Sample spot traveled (a) 0.2 cm, eluent traveled (b) 4.5 cm leads to Rf = 0.04. 
+      <li> 2nd run with hexane/methanol 90/10 with alumina plate, a = 2.3 cm, b = 4.5 cm, Rf = 0.51.
+    </ul>
     </li>
   </ul>
 </details>
