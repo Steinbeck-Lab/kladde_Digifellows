@@ -600,6 +600,14 @@ blockquote .kl-print {
   margin-bottom: 0;
 }
 
+/* :::note admonitions keep Infima's box, with the gold margin rule as their bar */
+.theme-admonition-note {
+  --ifm-alert-border-color: var(--kl-gold);
+  --ifm-alert-foreground-color: var(--kl-gold-ink);
+  width: var(--kl-measure);
+  max-width: 100%;
+}
+
 /* ── Folding boxes: tips that open in place ─────────────────────────────── */
 
 /*

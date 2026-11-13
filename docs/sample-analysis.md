@@ -40,9 +40,11 @@ Now you should land on the sample page. Alternatively you may access each specif
       <li><b>nd</b>: refractive index</li>
       <li><b>[&#945]</b>: Rotation of chiral molecule </li>
       <li><!---- review meaning of "low" and "high" --->
-    <b>Rf</b>: retention factor for thin-layer chromatorgraphy (TLC). The outer <img class="function-icon" alt="add" src="../assets/sample-analysis/img_sample-analysis-phy-add.png">/ <img class="function-icon" alt="remove" src="../assets/sample-analysis/img_sample-analysis-phy-remove.png"> for each TLC performed. The inner <img class="function-icon" alt="add" src="../assets/sample-analysis/img_sample-analysis-phy-add.png">/ <img alt="remove" class="function-icon" src="../assets/sample-analysis/img_sample-analysis-phy-remove.png"> for each solvent used. 
-    <p>Select the solvent used, the ratio of the solvent system (eluent), plate used, enter the measured distance the spot traveled in "low" and that of the eluent front in "high", then enter the calculated Rf in the empty field on the right.</p>
+    <b>Rf</b>: retention factor for <gloss note="Thin Layer Chromatography">TLC</gloss>. The outer <img class="function-icon" alt="add" src="../assets/sample-analysis/img_sample-analysis-phy-add.png">/ <img class="function-icon" alt="remove" src="../assets/sample-analysis/img_sample-analysis-phy-remove.png"> for each <gloss note="Thin Layer Chromatography">TLC</gloss> performed. The inner <img class="function-icon" alt="add" src="../assets/sample-analysis/img_sample-analysis-phy-add.png">/ <img alt="remove" class="function-icon" src="../assets/sample-analysis/img_sample-analysis-phy-remove.png"> for each solvent used. 
+    <p>Under "Solvent" select the solvent(s) (eluent) used and enter the corresponding ratio in "Parts". Select the "plate" used. In "Low" enter the distance the spot traveled (a) and in "High" enter the distance the eluent traveled (b). The calculation has to be done manually. Enter the Rf value in the field on the right.</p>
     <img alt="calculation of Rf" src="../assets/sample-analysis/img_sample-analysis-tlc.png">
+    <img alt="screenshot of Rf entry" src="../assets/sample-analysis/img_sample-analysis-Rf.png">
+    Example: TLC run with hexane/methanol 90 %/10 % with alumina plate. Sample spot traveled (a) 1.4 cm, eluent traveled (b) 4.5 cm. Rf = 0.31
     </li>
   </ul>
 </details>

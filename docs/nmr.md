@@ -4,7 +4,11 @@ description: Tools for NMR spectra simulation and analysis, powered by NMRium.
 ---
 # <img class="function-icon" style="vertical-align: middle;" alt="Analyse NMR" src="../assets/nmr/img_nmr-analyse.png"> Nuclear Magnetic Resonance (NMR)
 
+:::note[NMR request via SciPeaks]
+
 The [NMR Platform FSU Jena](https://www.nmr.uni-jena.de/de/index.php) has already integrated the ELN SciPeaks for sample requests and analyses. For further information, you may visit the website or refer directly to the slides [here](https://www.nmr.uni-jena.de/downloads/lehre/NMR-Seminar1_vs100726_pdf.pdf) (log in with URZ credentials, e.g. ab12cde).
+
+:::
 
 ## 1. Attach your NMR data
 > Your sample should already be listed before creating the request. If it does not come from any of your ELN entries (not a product), click <img class="function-icon" alt="add sample" src="../assets/nmr/img_nmr-add-sample.png"> above the list to create one.
